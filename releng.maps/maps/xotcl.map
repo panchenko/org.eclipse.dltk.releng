@@ -1,8 +1,8 @@
 
-! Cisco xotcl Widget
+! Cisco xotcl
 ! Copyright (c) 2004, 2007 xored software, Inc.
 !
-! $Id: xotcl.map,v 1.7 2007/12/13 09:14:09 asobolev Exp $ 
+! $Id: xotcl.map,v 1.8 2007/12/13 09:58:33 asobolev Exp $ 
 
 feature@org.eclipse.dltk.xotcl=v20071213,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/features/org.eclipse.dltk.xotcl-feature
 feature@org.eclipse.dltk.xotcl.sdk=v20070807,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/features/org.eclipse.dltk.xotcl.sdk
