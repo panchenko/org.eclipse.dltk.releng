@@ -24,6 +24,14 @@
 			<property name="component" value="core.tests" />
 			<property name="ewclipseBuildFailOnError" value="false" />
 		</ant>
+		
+		<ant antfile="${buildTargets}">
+			<property name="component" value="rse" />
+		</ant>
+
+		<ant antfile="${buildTargets}">
+			<property name="component" value="rse-sdk" />
+		</ant>
 
 		<ant antfile="${buildTargets}">
 			<property name="component" value="javascript" />
