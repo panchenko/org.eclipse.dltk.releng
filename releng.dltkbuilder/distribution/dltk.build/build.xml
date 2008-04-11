@@ -11,7 +11,7 @@
 		<ant antfile="${buildTargets}">
 			<property name="component" value="installer" />
 		</ant>
-		
+
 		<ant antfile="${buildTargets}">
 			<property name="component" value="core" />
 		</ant>
@@ -19,12 +19,12 @@
 		<ant antfile="${buildTargets}">
 			<property name="component" value="core-sdk" />
 		</ant>
-		
+
 		<ant antfile="${buildTargets}">
 			<property name="component" value="core.tests" />
 			<property name="ewclipseBuildFailOnError" value="false" />
 		</ant>
-		
+
 		<ant antfile="${buildTargets}">
 			<property name="component" value="rse" />
 		</ant>
@@ -40,11 +40,11 @@
 		<ant antfile="${buildTargets}">
 			<property name="component" value="javascript-sdk" />
 		</ant>
-		
+
 		<ant antfile="${buildTargets}">
 			<property name="component" value="javascript.tests" />
 			<property name="eclipseBuildFailOnError" value="false" />
-		</ant>						
+		</ant>
 
 		<ant antfile="${buildTargets}">
 			<property name="component" value="ruby" />
@@ -58,7 +58,7 @@
 			<property name="component" value="ruby.tests" />
 			<property name="eclipseBuildFailOnError" value="false" />
 		</ant>
-		
+
 		<ant antfile="${buildTargets}">
 			<property name="component" value="tcl" />
 		</ant>
@@ -79,12 +79,12 @@
 		<ant antfile="${buildTargets}">
 			<property name="component" value="python-sdk" />
 		</ant>
-		
+
 		<ant antfile="${buildTargets}">
 			<property name="component" value="python.tests" />
 			<property name="eclipseBuildFailOnError" value="false" />
-		</ant>		
-		
+		</ant>
+
 		<ant antfile="${buildTargets}">
 			<property name="component" value="xotcl" />
 		</ant>
@@ -92,15 +92,28 @@
 		<ant antfile="${buildTargets}">
 			<property name="component" value="xotcl-sdk" />
 		</ant>
-		
+
+		<ant antfile="${buildTargets}">
+			<property name="component" value="itcl" />
+		</ant>
+
+		<ant antfile="${buildTargets}">
+			<property name="component" value="itcl-sdk" />
+		</ant>
+
+		<ant antfile="${buildTargets}">
+			<property name="component" value="itcl.tests" />
+			<property name="eclipseBuildFailOnError" value="false" />
+		</ant>
+
 		<ant antfile="${buildTargets}">
 			<property name="component" value="xotcl.tests" />
 			<property name="eclipseBuildFailOnError" value="false" />
-		</ant>	
-		
+		</ant>
+
 		<ant antfile="${dltk.builder.home}/scripts/build/label.xml" />
-		<antcall target="package"/>
-		
+		<antcall target="package" />
+
 	</target>
 
 	<target name="getBaseBuilder" if="eclipse.builder.fetch">
@@ -110,107 +123,107 @@
 			<property name="eclipse.builder.fetch" value="${eclipse.builder.fetch}" />
 		</ant>
 	</target>
-	
+
 	<target name="package">
 		<!-- post, post packaging, for DLTK ... "manually" assemble the desired zips -->
-	
+
 		<antcall target="combineArchives">
-			<param name="corename" value=""/>
+			<param name="corename" value="" />
 		</antcall>
-	
+
 		<antcall target="combineArchives">
-			<param name="corename" value="-sdk"/>
+			<param name="corename" value="-sdk" />
 		</antcall>
-		
+
 		<antcall target="combineArchivesTests">
-			<param name="corename" value="-Automated_Tests"/>
+			<param name="corename" value="-Automated_Tests" />
 		</antcall>
-			
+
 		<antcall target="combineArchivesCore">
-			<param name="corename" value=""/>
-			<param name="packname" value="ruby"/>
+			<param name="corename" value="" />
+			<param name="packname" value="ruby" />
 		</antcall>
-	
+
 		<antcall target="combineArchivesCore">
-			<param name="corename" value="-sdk"/>
-			<param name="packname" value="ruby"/>
+			<param name="corename" value="-sdk" />
+			<param name="packname" value="ruby" />
 		</antcall>
-		
+
 		<antcall target="combineArchivesCore">
-			<param name="corename" value="-Automated_Tests"/>
-			<param name="packname" value="ruby"/>
+			<param name="corename" value="-Automated_Tests" />
+			<param name="packname" value="ruby" />
 		</antcall>
-			
+
 		<antcall target="combineArchivesCore">
-			<param name="corename" value=""/>
-			<param name="packname" value="python"/>
+			<param name="corename" value="" />
+			<param name="packname" value="python" />
 		</antcall>
-	
+
 		<antcall target="combineArchivesCore">
-			<param name="corename" value="-sdk"/>
-			<param name="packname" value="python"/>
+			<param name="corename" value="-sdk" />
+			<param name="packname" value="python" />
 		</antcall>
-		
+
 		<antcall target="combineArchivesCore">
-			<param name="corename" value="-Automated_Tests"/>
-			<param name="packname" value="python"/>
+			<param name="corename" value="-Automated_Tests" />
+			<param name="packname" value="python" />
 		</antcall>
-		
+
 		<antcall target="combineArchivesCore">
-			<param name="corename" value=""/>
-			<param name="packname" value="tcl"/>
+			<param name="corename" value="" />
+			<param name="packname" value="tcl" />
 		</antcall>
-	
+
 		<antcall target="combineArchivesCore">
-			<param name="corename" value="-sdk"/>
-			<param name="packname" value="tcl"/>
+			<param name="corename" value="-sdk" />
+			<param name="packname" value="tcl" />
 		</antcall>
-		
+
 		<antcall target="combineArchivesCore">
-			<param name="corename" value="-Automated_Tests"/>
-			<param name="packname" value="tcl"/>
+			<param name="corename" value="-Automated_Tests" />
+			<param name="packname" value="tcl" />
 		</antcall>
 
 		<antcall target="combineArchivesXotcl">
-			<param name="corename" value=""/>
+			<param name="corename" value="" />
 		</antcall>
-		
+
 		<antcall target="combineArchivesXotcl">
-			<param name="corename" value="-sdk"/>
+			<param name="corename" value="-sdk" />
 		</antcall>
 	</target>
 	<target name="combineArchives">
 		<property name="archiveName" value="dltk${corename}-${buildLabel}-incubation.zip" />
-		<delete dir="${buildDirectory}/tempforrezipping" failonerror="false"/>
-		
+		<delete dir="${buildDirectory}/tempforrezipping" failonerror="false" />
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-core${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
 		</exec>
-	
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-ruby${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
 		</exec>
-		
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-tcl${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
 		</exec>
-	
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-python${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
 		</exec>
 
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-javascript${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
-		</exec>		
-		
+		</exec>
+
 		<!--exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-xotcl${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
-		</exec-->		
+		</exec-->
 
 		<zip destfile="${buildDirectory}/${buildLabel}/${archiveName}" basedir="${buildDirectory}/tempforrezipping" />
-	
-		<delete dir="${buildDirectory}/tempforrezipping" failonerror="false"/>
-		
+
+		<delete dir="${buildDirectory}/tempforrezipping" failonerror="false" />
+
 		<ant antfile="${dltk.builder.home}/scripts/build/buildutilities.xml" target="createChecksums">
 			<property name="buildDirectory" value="${buildDirectory}" />
 			<property name="buildLabel" value="${buildLabel}" />
@@ -219,20 +232,20 @@
 	</target>
 	<target name="combineArchivesCore">
 		<property name="archiveName" value="dltk-core-${packname}${corename}-${buildLabel}-incubation.zip" />
-		<delete dir="${buildDirectory}/tempforrezippin2" failonerror="false"/>
-		
+		<delete dir="${buildDirectory}/tempforrezippin2" failonerror="false" />
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-core${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezippin2" />
 		</exec>
-	
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-${packname}${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezippin2" />
 		</exec>
-		
+
 		<zip destfile="${buildDirectory}/${buildLabel}/${archiveName}" basedir="${buildDirectory}/tempforrezippin2" />
-	
-		<delete dir="${buildDirectory}/tempforrezippin2" failonerror="false"/>
-		
+
+		<delete dir="${buildDirectory}/tempforrezippin2" failonerror="false" />
+
 		<ant antfile="${dltk.builder.home}/scripts/build/buildutilities.xml" target="createChecksums">
 			<property name="buildDirectory" value="${buildDirectory}" />
 			<property name="buildLabel" value="${buildLabel}" />
@@ -242,28 +255,28 @@
 
 	<target name="combineArchivesXotcl">
 		<property name="archiveName" value="dltk-xotcl-tcl-core${corename}-${buildLabel}-incubation.zip" />
-		<delete dir="${buildDirectory}/tempforrezippin3" failonerror="false"/>
-		
+		<delete dir="${buildDirectory}/tempforrezippin3" failonerror="false" />
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-core${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezippin3" />
 		</exec>
-	
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-tcl${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezippin3" />
 		</exec>
-		
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-xotcl${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezippin3" />
 		</exec>
-		
+
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-itcl${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezippin3" />
 		</exec>
-		
+
 		<zip destfile="${buildDirectory}/${buildLabel}/${archiveName}" basedir="${buildDirectory}/tempforrezippin3" />
-	
-		<delete dir="${buildDirectory}/tempforrezippin3" failonerror="false"/>
-		
+
+		<delete dir="${buildDirectory}/tempforrezippin3" failonerror="false" />
+
 		<ant antfile="${dltk.builder.home}/scripts/build/buildutilities.xml" target="createChecksums">
 			<property name="buildDirectory" value="${buildDirectory}" />
 			<property name="buildLabel" value="${buildLabel}" />
@@ -271,42 +284,42 @@
 		</ant>
 	</target>
 	<target name="combineArchivesTests">
-			<property name="archiveName" value="dltk${corename}-${buildLabel}-incubation.zip" />
-			<delete dir="${buildDirectory}/tempforrezipping" failonerror="false"/>
-			
-			<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
-				<arg line="-o -qq dltk-core${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
-			</exec>
-		
-			<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
-				<arg line="-o -qq dltk-ruby${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
-			</exec>
-			
-			<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
-				<arg line="-o -qq dltk-tcl${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
-			</exec>
-		
-			<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
-				<arg line="-o -qq dltk-python${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
-			</exec>
+		<property name="archiveName" value="dltk${corename}-${buildLabel}-incubation.zip" />
+		<delete dir="${buildDirectory}/tempforrezipping" failonerror="false" />
 
-			<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
-				<arg line="-o -qq dltk-javascript${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
-			</exec>		
-			
-			<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
-				<arg line="-o -qq dltk-xotcl${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
-			</exec>		
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
+			<arg line="-o -qq dltk-core${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
+		</exec>
 
-			<zip destfile="${buildDirectory}/${buildLabel}/${archiveName}" basedir="${buildDirectory}/tempforrezipping" />
-		
-			<delete dir="${buildDirectory}/tempforrezipping" failonerror="false"/>
-			
-			<ant antfile="${dltk.builder.home}/scripts/build/buildutilities.xml" target="createChecksums">
-				<property name="buildDirectory" value="${buildDirectory}" />
-				<property name="buildLabel" value="${buildLabel}" />
-				<property name="archiveName" value="${archiveName}" />
-			</ant>
-		</target>
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
+			<arg line="-o -qq dltk-ruby${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
+		</exec>
+
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
+			<arg line="-o -qq dltk-tcl${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
+		</exec>
+
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
+			<arg line="-o -qq dltk-python${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
+		</exec>
+
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
+			<arg line="-o -qq dltk-javascript${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
+		</exec>
+
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
+			<arg line="-o -qq dltk-xotcl${corename}-${buildLabel}-incubation.zip -d ${buildDirectory}/tempforrezipping" />
+		</exec>
+
+		<zip destfile="${buildDirectory}/${buildLabel}/${archiveName}" basedir="${buildDirectory}/tempforrezipping" />
+
+		<delete dir="${buildDirectory}/tempforrezipping" failonerror="false" />
+
+		<ant antfile="${dltk.builder.home}/scripts/build/buildutilities.xml" target="createChecksums">
+			<property name="buildDirectory" value="${buildDirectory}" />
+			<property name="buildLabel" value="${buildLabel}" />
+			<property name="archiveName" value="${archiveName}" />
+		</ant>
+	</target>
 
 </project>
