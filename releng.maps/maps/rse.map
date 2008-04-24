@@ -1,11 +1,11 @@
 
 ! RSE Environment implementation (DLTK)
 !
-! $Id: rse.map,v 1.6 2008/04/17 13:37:23 asobolev Exp $ 
+! $Id: rse.map,v 1.7 2008/04/24 10:34:48 asobolev Exp $ 
 
 feature@org.eclipse.dltk.rse=v20080411-1713,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/features/org.eclipse.dltk.rse-feature
 feature@org.eclipse.dltk.rse.sdk=v20080411-1735,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/features/org.eclipse.dltk.rse.sdk
 
 plugin@org.eclipse.dltk.rse=v20080411-1327,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse
-plugin@org.eclipse.dltk.rse.core=v20080417-2036,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse.core
+plugin@org.eclipse.dltk.rse.core=v20080424-1732,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse.core
 plugin@org.eclipse.dltk.rse.ui=v20080411-1327,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse.ui
