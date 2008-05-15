@@ -1,7 +1,7 @@
 
 ! Javascript Development Tools (DLTK)
 !
-! $Id: javascript.map,v 1.51 2008/05/15 05:03:39 asobolev Exp $ 
+! $Id: javascript.map,v 1.52 2008/05/15 11:35:30 asobolev Exp $ 
 
 feature@org.eclipse.dltk.javascript=v20080506-2150,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript-feature
 feature@org.eclipse.dltk.javascript.sdk=v20080401-1722,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript.sdk
@@ -10,7 +10,7 @@ plugin@org.eclipse.dltk.javascript.core=v20080506-1923,:pserver:anonymous@dev.ec
 plugin@org.eclipse.dltk.javascript.core.dom.support=v20080506-1923,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.core.dom.support
 plugin@org.eclipse.dltk.javascript.core.dom.support.sample=v20080331-1339,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.core.dom.support.sample
 plugin@org.eclipse.dltk.javascript.debug=v20080506-1923,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.debug
-plugin@org.eclipse.dltk.javascript.debug.ui=v20080506-1923,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.debug.ui
+plugin@org.eclipse.dltk.javascript.debug.ui=v20080515-1835,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.debug.ui
 plugin@org.eclipse.dltk.javascript.jdt.integration=v20080410-2046,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.jdt.integration
 plugin@org.eclipse.dltk.javascript.launching=v20080506-1923,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.launching
 plugin@org.eclipse.dltk.javascript.rhino=v20080506-2032,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.rhino
