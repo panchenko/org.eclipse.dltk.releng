@@ -1,11 +1,11 @@
 
 ! RSE Environment implementation (DLTK)
 !
-! $Id: rse.map,v 1.14 2008/05/21 10:27:23 asobolev Exp $ 
+! $Id: rse.map,v 1.15 2008/05/26 07:27:00 asobolev Exp $ 
 
-feature@org.eclipse.dltk.rse=v20080513-1615,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/features/org.eclipse.dltk.rse-feature
-feature@org.eclipse.dltk.rse.sdk=v20080513-1615,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/features/org.eclipse.dltk.rse.sdk
+feature@org.eclipse.dltk.rse=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/features/org.eclipse.dltk.rse-feature
+feature@org.eclipse.dltk.rse.sdk=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/features/org.eclipse.dltk.rse.sdk
 
-plugin@org.eclipse.dltk.rse=v20080513-1615,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse
-plugin@org.eclipse.dltk.rse.core=v20080521-1725,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse.core
-plugin@org.eclipse.dltk.rse.ui=v20080521-1725,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse.ui
+plugin@org.eclipse.dltk.rse=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse
+plugin@org.eclipse.dltk.rse.core=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse.core
+plugin@org.eclipse.dltk.rse.ui=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/rse/plugins/org.eclipse.dltk.rse.ui
