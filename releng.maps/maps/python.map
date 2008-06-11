@@ -1,10 +1,10 @@
 
 ! Python Development Tools (DLTK)
 !
-! $Id: python.map,v 1.32 2008/05/26 07:27:00 asobolev Exp $ 
+! $Id: python.map,v 1.33 2008/06/11 11:08:51 aplatov Exp $ 
 
 feature@org.eclipse.dltk.python=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python-feature
-feature@org.eclipse.dltk.python.sdk=v20070725,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python.sdk
+feature@org.eclipse.dltk.python.sdk=v20080611-1752,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python.sdk
 
 plugin@org.eclipse.dltk.python.core=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.core
 plugin@org.eclipse.dltk.python.launching=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.launching
