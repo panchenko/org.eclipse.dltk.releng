@@ -1,7 +1,7 @@
 
 ! Python Development Tools (DLTK)
 !
-! $Id: python.map,v 1.33 2008/06/11 11:08:51 aplatov Exp $ 
+! $Id: python.map,v 1.34 2008/06/11 11:32:53 aplatov Exp $ 
 
 feature@org.eclipse.dltk.python=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python-feature
 feature@org.eclipse.dltk.python.sdk=v20080611-1752,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python.sdk
@@ -12,4 +12,4 @@ plugin@org.eclipse.dltk.python.debug=v20080526-1423,:pserver:anonymous@dev.eclip
 plugin@org.eclipse.dltk.python.ui=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.ui
 plugin@org.eclipse.dltk.python.debug.ui=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.debug.ui
 plugin@org.eclipse.dltk.python.antlr=v20070725,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.antlr
-plugin@org.eclipse.dltk.python.activestatedebugger=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.activestatedebugger
+plugin@org.eclipse.dltk.python.activestatedebugger=v20080611-1820,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.activestatedebugger
