@@ -18,4 +18,4 @@ plugin@org.eclipse.dltk.validators.core=v20080529-1512,:pserver:anonymous@dev.ec
 plugin@org.eclipse.dltk.validators.ui=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.ui
 
 plugin@org.eclipse.dltk.testing=v20080609-1540,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.testing
-plugin@org.eclipse.dltk.core.doc.isv=v20080513-1615,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.doc.isv
+plugin@org.eclipse.dltk.core.doc.isv=v20080622-0123,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.doc.isv

@@ -2,9 +2,9 @@
 ! XOTcl Extension Support for DLTK TCL IDE
 ! Copyright (c) 2007, 2008 xored software, Inc. and others
 !
-! $Id: xotcl.map,v 1.45 2008/06/17 08:02:48 asobolev Exp $ 
+! $Id: xotcl.map,v 1.46 2008/06/22 18:33:44 aplatov Exp $ 
 
-feature@org.eclipse.dltk.xotcl=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/features/org.eclipse.dltk.xotcl-feature
+feature@org.eclipse.dltk.xotcl=v20080622-0123,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/features/org.eclipse.dltk.xotcl-feature
 feature@org.eclipse.dltk.xotcl.sdk=v20080526-1423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/features/org.eclipse.dltk.xotcl.sdk
 
 plugin@org.eclipse.dltk.xotcl=v20080605-1144,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/plugins/org.eclipse.dltk.xotcl
