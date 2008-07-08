@@ -25,6 +25,7 @@ public class AllTests {
 		suite.addTest(org.eclipse.dltk.python.ui.tests.AllTests.suite());
 
 		suite.addTest(org.eclipse.dltk.ruby.core.tests.AllTests.suite());
+		suite.addTest(org.eclipse.dltk.ruby.debug.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.ruby.ui.tests.AllTests.suite());
 
 		suite.addTest(org.eclipse.dltk.tcl.core.tests.AllTests.suite());
