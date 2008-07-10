@@ -20,6 +20,7 @@ public class AllTests {
 		suite.addTest(org.eclipse.dltk.core.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.debug.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.ui.tests.AllTests.suite());
+		suite.addTest(org.eclipse.dltk.validators.core.tests.AllTests.suite());
 
 		suite.addTest(org.eclipse.dltk.python.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.python.ui.tests.AllTests.suite());
