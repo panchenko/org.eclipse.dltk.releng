@@ -32,6 +32,7 @@ public class AllTests {
 		suite.addTest(org.eclipse.dltk.tcl.core.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.tcl.ui.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.xotcl.core.tests.AllTests.suite());
+		suite.addTest(org.eclipse.dltk.itcl.core.tests.AllTests.suite());
 
 		// $JUnit-END$
 		return suite;
