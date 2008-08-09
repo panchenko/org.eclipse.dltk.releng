@@ -1,6 +1,6 @@
 !********* Eclipse Dynamic Languages Toolkit (DLTK)
 !
-! $Id: ruby-tests.map,v 1.14 2008/08/08 11:24:41 apanchenk Exp $
+! $Id: ruby-tests.map,v 1.15 2008/08/09 05:14:56 apanchenk Exp $
 !
 
 feature@org.eclipse.dltk.ruby.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/features/org.eclipse.dltk.ruby.tests
@@ -9,4 +9,4 @@ plugin@org.eclipse.dltk.ruby.core.tests=HEAD,:pserver:anonymous@dev.eclipse.org:
 plugin@org.eclipse.dltk.ruby.ui.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.ui.tests
 plugin@org.eclipse.dltk.ruby.ui.bot.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.ui.bot.tests
 plugin@org.eclipse.dltk.ruby.debug.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.debug.tests
-plugin@org.eclipse.dltk.ruby.formatter.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.formatter.tests
+fragment@org.eclipse.dltk.ruby.formatter.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.formatter.tests
