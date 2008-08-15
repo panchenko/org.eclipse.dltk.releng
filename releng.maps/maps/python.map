@@ -1,15 +1,15 @@
 
 ! Python Development Tools (DLTK)
 !
-! $Id: python.map,v 1.45 2008/08/08 10:08:28 apanchenk Exp $ 
+! $Id: python.map,v 1.46 2008/08/15 06:30:00 asobolev Exp $ 
 
-feature@org.eclipse.dltk.python=v20080611-2024,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python-feature
-feature@org.eclipse.dltk.python.sdk=v20080623-1408,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python.sdk
+feature@org.eclipse.dltk.python=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python-feature
+feature@org.eclipse.dltk.python.sdk=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python.sdk
 
-plugin@org.eclipse.dltk.python.core=v20080724,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.core
-plugin@org.eclipse.dltk.python.launching=v20080724,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.launching
-plugin@org.eclipse.dltk.python.debug=v20080724,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.debug
-plugin@org.eclipse.dltk.python.ui=v20080808-1637,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.ui
-plugin@org.eclipse.dltk.python.debug.ui=v20080729,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.debug.ui
+plugin@org.eclipse.dltk.python.core=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.core
+plugin@org.eclipse.dltk.python.launching=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.launching
+plugin@org.eclipse.dltk.python.debug=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.debug
+plugin@org.eclipse.dltk.python.ui=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.ui
+plugin@org.eclipse.dltk.python.debug.ui=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.debug.ui
 plugin@org.eclipse.dltk.python.antlr=v20080724,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.antlr
-plugin@org.eclipse.dltk.python.activestatedebugger=v20080724,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.activestatedebugger
+plugin@org.eclipse.dltk.python.activestatedebugger=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.activestatedebugger
