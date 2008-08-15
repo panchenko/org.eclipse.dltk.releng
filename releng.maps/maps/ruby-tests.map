@@ -1,11 +1,11 @@
 !********* Eclipse Dynamic Languages Toolkit (DLTK)
 !
-! $Id: ruby-tests.map,v 1.16 2008/08/15 06:30:00 asobolev Exp $
+! $Id: ruby-tests.map,v 1.17 2008/08/15 08:48:35 asobolev Exp $
 !
 
 feature@org.eclipse.dltk.ruby.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/features/org.eclipse.dltk.ruby.tests
 
-plugin@org.eclipse.dltk.ruby.core.tests=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.core.tests
+plugin@org.eclipse.dltk.ruby.core.tests=v20080815-1547,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.core.tests
 plugin@org.eclipse.dltk.ruby.ui.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.ui.tests
 plugin@org.eclipse.dltk.ruby.ui.bot.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.ui.bot.tests
 plugin@org.eclipse.dltk.ruby.debug.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.debug.tests
