@@ -38,6 +38,8 @@ public class AllTests {
 		suite.addTest(org.eclipse.dltk.ruby.ui.tests.AllTests.suite());
 
 		suite.addTest(org.eclipse.dltk.tcl.core.tests.AllTests.suite());
+		suite.addTest(org.eclipse.dltk.tcl.parser.tests.AllTestsRunner.suite());
+		suite.addTest(org.eclipse.dltk.tcl.validators.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.tcl.ui.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.xotcl.core.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.itcl.core.tests.AllTests.suite());
