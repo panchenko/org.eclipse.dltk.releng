@@ -2,7 +2,7 @@
 ! XOTcl Extension Support for DLTK TCL IDE
 ! Copyright (c) 2007, 2008 xored software, Inc. and others
 !
-! $Id: xotcl.map,v 1.55 2008/08/15 06:30:00 asobolev Exp $ 
+! $Id: xotcl.map,v 1.56 2008/08/27 13:16:45 apanchenk Exp $ 
 
 feature@org.eclipse.dltk.xotcl=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/features/org.eclipse.dltk.xotcl-feature
 feature@org.eclipse.dltk.xotcl.sdk=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/features/org.eclipse.dltk.xotcl.sdk
@@ -10,4 +10,4 @@ feature@org.eclipse.dltk.xotcl.sdk=v20080815-1326,:pserver:anonymous@dev.eclipse
 plugin@org.eclipse.dltk.xotcl=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/plugins/org.eclipse.dltk.xotcl
 plugin@org.eclipse.dltk.xotcl.core=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/plugins/org.eclipse.dltk.xotcl.core
 plugin@org.eclipse.dltk.xotcl.ui=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/plugins/org.eclipse.dltk.xotcl.ui
-plugin@org.eclipse.dltk.xotcl.testing.xounit=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/plugins/org.eclipse.dltk.xotcl.testing.xounit
+plugin@org.eclipse.dltk.xotcl.testing.xounit=v20080827,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/xotcl/plugins/org.eclipse.dltk.xotcl.testing.xounit
