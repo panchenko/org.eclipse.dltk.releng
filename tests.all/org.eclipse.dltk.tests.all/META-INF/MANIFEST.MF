@@ -26,5 +26,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.dltk.itcl.core.tests,
  org.eclipse.dltk.xotcl.core.tests,
  org.eclipse.dltk.ruby.formatter,
- org.junit
+ org.junit,
+ org.eclipse.dltk.ruby.testing
 Eclipse-LazyStart: true
