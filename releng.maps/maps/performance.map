@@ -1,0 +1,13 @@
+
+! Performance (DLTK)
+!
+! $Id: performance.map,v 1.1 2008/10/14 07:43:46 asobolev Exp $ 
+
+feature@org.eclipse.dltk.performance=HEAD,:ext:devteam@cvs.xored.com:/cvsroot/dltk,,org.eclipse.dltk.performance-feature
+
+plugin@org.eclipse.dltk.performance=HEAD,:ext:devteam@cvs.xored.com:/cvsroot/dltk,,
+plugin@org.eclipse.dltk.core.tests.performance=HEAD,:ext:devteam@cvs.xored.com:/cvsroot/dltk,,
+plugin@org.eclipse.dltk.tests.performance=HEAD,:ext:devteam@cvs.xored.com:/cvsroot/dltk,,
+
+plugin@org.eclipse.test.performance=HEAD,:ext:devteam@cvs.xored.com:/cvsroot/dltk,,
+plugin@org.eclipse.test.performance.ui=HEAD,:ext:devteam@cvs.xored.com:/cvsroot/dltk,,
