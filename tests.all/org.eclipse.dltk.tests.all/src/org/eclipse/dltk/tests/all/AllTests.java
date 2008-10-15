@@ -44,7 +44,7 @@ public class AllTests {
 		suite.addTest(org.eclipse.dltk.xotcl.core.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.itcl.core.tests.AllTests.suite());
 		// load class from the o.e.d.ruby.formatter.tests fragment
-		suite.addTest(loadClass("org.eclipse.dltk.ruby.formatter", //$NON-NLS-1$
+		suite.addTest(loadClass("org.eclipse.dltk.ruby.formatter.tests", //$NON-NLS-1$
 				"org.eclipse.dltk.ruby.formatter.tests.AllTests")); //$NON-NLS-1$
 		// load class from the o.e.d.ruby.testing.tests fragment
 		suite.addTest(loadClass("org.eclipse.dltk.ruby.testing", //$NON-NLS-1$
