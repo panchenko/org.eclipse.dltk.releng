@@ -27,7 +27,7 @@
     	if running "standalone", we make this simplifying assumption.
     -->
     <property name="build.distribution" value="dltk" />
-    <property name="buildBranch" value="R0.9" />
+    <property name="buildBranch" value="R1.0" />
     <property name="buildType" value="I" />
     <property name="checkoutprojectname" value="${build.distribution}-${buildBranch}-${buildType}" />
 
@@ -35,15 +35,10 @@
 
         <!-- set main builder file name, based on distribution, buildBranch and build type -->
         <property name="dltkBuilder"
-                  value="${env.BUILD_HOME}/build-node/checkout/${checkoutprojectname}/org.eclipse.dltk/releng.dltkbuilder/build.xml" />
-
-
+                  value="${env.BUILD_HOME}/build-node/checkout/${checkoutprojectname}/releng.dltkbuilder.local/build.xml" />
 
         <!-- clean previous build -->
         <antcall target="clean" />
-
-
-
 
         <!-- check out fresh set of appropriate files  -->
         <!-- this is to make sure maps and builders are correct, but also to 
@@ -51,14 +46,13 @@
 			 time around -->
         <ant antfile="checkout.xml">
             <property name="checkoutprojectname" value="${checkoutprojectname}"/>
-
         </ant>
 
 
 
         <!-- build and create preliminary download site files -->
         <ant antfile="${dltkBuilder}" target="build" />
-        <ant antfile="${dltkBuilder}" target="pack" />
+        <!--ant antfile="${dltkBuilder}" target="pack" /-->
 
         <ant antfile="${dltkBuilder}" target="site" />
         
@@ -78,6 +72,8 @@
 
 
     <target name="clean" depends="check.clean" if="doClean">
+	<delete dir="/home/dltk/build-dltk-R1.0-I"/>
+	<delete dir="/home/dltk/test-dltk-R1.0-I"/>
         <delete dir="${env.BUILD_HOME}/build-${checkoutprojectname}"
                 failonerror="false" />
         <delete dir="${env.BUILD_HOME}/test-${checkoutprojectname}"

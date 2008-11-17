@@ -17,7 +17,7 @@ echo "	removing all of releng.control ..."
 rm -fr releng.control
 
 echo "	checking out head of releng.control from cvs ..."
-cvs -Q -d aplatov@dev.eclipse.org:/cvsroot/technology export -r HEAD -d releng.control org.eclipse.dltk/releng.control 
+cvs -Q -d :pserver:anonymous@dev.eclipse.org:/cvsroot/technology/org.eclipse.dltk export -r HEAD -d releng.control releng.control
 
 echo "	restoring serialized state ..."
 mv *.ser releng.control

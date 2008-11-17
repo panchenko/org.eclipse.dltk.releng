@@ -26,7 +26,11 @@
 
     <property name="mapCvsRoot"
               value=":${cvsProtocol}:${cvsUser}@${cvsServer}:${cvsRoot}" />
+	<property name="builderCvsRoot"
+	              value=":${cvsBuilderProtocol}:${cvsBuilderUser}@${cvsBuilderServer}:/cvsroot/technology/org.eclipse.dltk/" />
+	<echo message="builderCvsRoot: ${builderCvsRoot}" />
 
+	
     <property name="codir"
               value="${env.BUILD_HOME}/build-node/checkout/${checkoutprojectname}" />
 
@@ -41,12 +45,6 @@
     </target>
 
     <target name="dltk-R1.0-N">
-
-        <!-- 
-        	do not need, since we do nightly builds "on demand" only
-            <cvs quiet="true" cvsRoot="${mapCvsRoot}" package="${wst}" dest="${codir}" />
-            <cvs quiet="true" cvsRoot="${mapCvsRoot}" package="${jst}" dest="${codir}" />
-        -->
 
     </target>
 
@@ -66,6 +64,20 @@
              tag="HEAD" />
     </target>
 
+    <target name="dltk-R0.95-M">
+        <cvs quiet="true"
+             cvsRoot="${mapCvsRoot}"
+             package="${cvsPrefix}/${releng}"
+             dest="${codir}"
+             tag="R0_95_maintenance" />
+    </target>
+    <target name="dltk-R0.95.1-R">
+        <cvs quiet="true"
+             cvsRoot="${mapCvsRoot}"
+             package="${cvsPrefix}/${releng}"
+             dest="${codir}"
+             tag="R0_95_maintenance" />
+    </target>
     <target name="dltk-R0.9-M">
         <cvs
             quiet="true"
@@ -74,6 +86,7 @@
             dest="${codir}"
             tag="R0_9_maintenance" />
     </target>
+	
 	
     <!-- 
         The order of execution of these three worker targets
@@ -86,13 +99,15 @@
         <!-- This is a special property file, that contains (only) the 
         value of dltkBuilderVersion. Then, that version of the builder 
         is fetched to control the rest of the build -->
-        <property file="${codir}/${cvsPrefix}/${releng}/build.cfg" />
+    	<echo message="${codir}/${cvsPrefix}/${releng}/maps/build.cfg" />
+        <property file="${codir}/${cvsPrefix}/${releng}/maps/build.cfg" />
         <delete dir="${codir}/releng.dltkbuilder"
                 failonerror="false" />
         <echo message="Version tag for ${releng.builder} is: ${dltkBuilderVersion}" />
+    	<echo message="releng.builder is downloading from here: ${builderCvsRoot}" />
         <cvs quiet="true"
-             cvsRoot="${mapCvsRoot}"
-             package="${cvsPrefix}/${releng.builder}"
+             cvsRoot="${builderCvsRoot}"
+             package="${releng.builder}"
              dest="${codir}"
              tag="${dltkBuilderVersion}" />
     </target>
@@ -114,7 +129,6 @@
              package="${cvsPrefix}/${releng}"
              dest="${codir}"
              tag="${mapVersionTag}" />
-    	<exec command="sh ${env.BUILD_HOME}/replace.sh ${codir}/${cvsPrefix}/${releng}" />
     </target>
 
 

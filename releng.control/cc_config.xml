@@ -58,7 +58,7 @@
         </modificationset>
         <publishers>
             <email
-                mailhost="us.xored.com"
+                mailhost="gaea.xored.com"
                 returnaddress="${env.BUILD_BUILDMASTER_EMAIL}"
                 skipusers="false"
                 subjectprefix="[${project.name}]"
@@ -104,20 +104,62 @@
                 <property
                     name="checkoutprojectname"
                     value="${project.name}" />
-
+		    
                 <property
                     name="mapVersionTag"
                     value="HEAD" />
                 <property
                     name="build.distribution"
                     value="dltk" />
-
-
+                <property
+                    name="SKIP_JAR_SIGNING"
+                    value="true" />
             </ant>
         </schedule>
 
     </project>
+<!-- Cisco DLTK 1.0 build target-->
+    <!--project name="dltk-R1.0-I-cisco">
+        <modificationset quietperiod="120">
+            <cvs module="${env.CVS_RELENG}" />
 
+        </modificationset>
+
+        <schedule interval="${time.oneHour}">
+            <ant
+                antscript="${env.BUILD_HOME}/releng.control/ant.sh"
+                buildfile="cc_project_build.xml"
+                target="Build"
+                useQuiet="false"
+                useLogger="false"
+                savelogdir="${logDir}"
+                usedebug="false"
+                antworkingdir="${env.BUILD_HOME}/releng.control">
+                <property
+                    name="buildType"
+                    value="I" />
+                <property
+                    name="buildBranch"
+                    value="R1.0" />
+                <property
+                    name="checkoutprojectname"
+                    value="${project.name}" />
+
+                <property
+                    name="mapVersionTag"
+                    value="wave" />
+                <property
+                    name="build.distribution"
+                    value="dltk" />
+                <property
+                    name="SKIP_JAR_SIGNING"
+                    value="true" />
+            </ant>
+        </schedule>
+
+    </project-->
+
+<!-- Cisco DLTK 1.0 build target-->
 
     <project name="dltk-R1.0-N">
 
@@ -147,6 +189,9 @@
                 <property
                     name="build.trial"
                     value="true" />
+                <property
+                    name="SKIP_JAR_SIGNING"
+                    value="true" />
 
 
             </ant>
@@ -159,7 +204,6 @@
         <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
             <cvs module="${env.CVS_RELENG}" />
-
         </modificationset>
 
         <schedule interval="${time.VeryVeryLongTime}">
@@ -177,14 +221,14 @@
                     value="S" />
                 <property
                     name="buildId"
-                    value="1.0M1" />
+                    value="1.0M3" />
                 <property
                     name="buildBranch"
                     value="R1.0" />
                 <property
                     name="checkoutprojectname"
                     value="${project.name}" />
-
+		
                 <property
                     name="mapVersionTag"
                     value="HEAD" />
@@ -194,9 +238,114 @@
                 <property
                     name="build.pack-all-in-one"
                     value="true" />
+                <property
+                    name="SKIP_JAR_SIGNING"
+                    value="false" />
 
             </ant>
         </schedule>
+    </project>
+
+    <project name="dltk-R0.95-M">
+        <!-- Defines where cruise looks for changes, to decide whether to run the build -->
+        <modificationset quietperiod="120">
+            <cvs                 
+            	tag="R0_95_maintenance"
+             	module="${env.CVS_RELENG}" />
+
+        </modificationset>
+
+        <schedule interval="${time.oneHour}">
+            <ant
+                antscript="${env.BUILD_HOME}/releng.control/ant.sh"
+                buildfile="cc_project_build.xml"
+                target="Build"
+                useQuiet="false"
+                useLogger="false"
+                savelogdir="${logDir}"
+                usedebug="false"
+                antworkingdir="${env.BUILD_HOME}/releng.control">
+                
+                <!-- this "M" label should be changed to "R" once maintenance release
+                    is warming up for its "R"elease.
+                -->
+                
+                <property
+                    name="buildType"
+                    value="M" />
+                <property
+                    name="buildBranch"
+                    value="R0.95" />
+		<!--property
+                    name="buildId"
+                    value="0.95.1" /-->
+                <property
+                    name="checkoutprojectname"
+                    value="${project.name}" />
+
+                <property
+                    name="mapVersionTag"
+                    value="R0_95_maintenance" />
+                <property
+                    name="build.distribution"
+                    value="dltk" />
+                <property
+                    name="SKIP_JAR_SIGNING"
+                    value="true" />
+            </ant>
+        </schedule>
+
+    </project>
+
+
+    <project name="dltk-R0.95.1-R">
+        <!-- Defines where cruise looks for changes, to decide whether to run the build -->
+        <modificationset quietperiod="120">
+            <cvs                 
+            	tag="R0_95_maintenance"
+             	module="${env.CVS_RELENG}" />
+
+        </modificationset>
+
+        <schedule interval="${time.VeryVeryLongTime}">
+            <ant
+                antscript="${env.BUILD_HOME}/releng.control/ant.sh"
+                buildfile="cc_project_build.xml"
+                target="Build"
+                useQuiet="false"
+                useLogger="false"
+                savelogdir="${logDir}"
+                usedebug="false"
+                antworkingdir="${env.BUILD_HOME}/releng.control">
+                
+                <!-- this "M" label should be changed to "R" once maintenance release
+                    is warming up for its "R"elease.
+                -->
+                
+                <property
+                    name="buildType"
+                    value="R" />
+                <property
+                    name="buildBranch"
+                    value="R0.95" />
+                <property
+                    name="checkoutprojectname"
+                    value="${project.name}" />
+		<property
+                    name="buildId"
+                    value="0.95.1"/>
+                <property
+                    name="mapVersionTag"
+                    value="R0_95_maintenance" />
+                <property
+                    name="build.distribution"
+                    value="dltk" />
+                <property
+                    name="SKIP_JAR_SIGNING"
+                    value="false" />
+            </ant>
+        </schedule>
+
     </project>
 
     <project name="dltk-R0.9-M">
@@ -210,7 +359,7 @@
         <schedule interval="${time.oneHour}">
             <ant
                 antscript="${env.BUILD_HOME}/releng.control/ant.sh"
-                buildfile="cc_project_build_0_9.xml"
+                buildfile="cc_project_build.xml"
                 target="Build"
                 useQuiet="false"
                 useLogger="false"
@@ -240,58 +389,17 @@
                 <property
                     name="mapVersionTag"
                     value="R0_9_maintenance" />                    
+                <property
+                    name="SKIP_JAR_SIGNING"
+                    value="true" />
 
             </ant>
         </schedule>
 
     </project>
 
-<project name="dltk-R0.9.1-R">
-            <cvs
-                tag="R0_9_maintenance"
-                module="${env.CVS_RELENG}" />
-        </modificationset>
 
-        <schedule interval="${time.oneHour}">
-            <ant
-                antscript="${env.BUILD_HOME}/releng.control/ant.sh"
-                buildfile="cc_project_build_0_9.xml"
-                target="Build"
-                useQuiet="false"
-                useLogger="false"
-                savelogdir="${logDir}"
-                usedebug="false"
-                antworkingdir="${env.BUILD_HOME}/releng.control">
-
-                <!-- this "M" label should be changed to "R" once maintenance release
-                    is warming up for its "R"elease.
-                -->
-                <property
-                    name="buildType"
-                    value="R" />
-
-                <property
-                    name="buildId"
-                    value="0.9.1" />
-                <property
-                    name="buildBranch"
-                    value="R0.9" />
-
-                <property
-                    name="checkoutprojectname"
-                    value="${project.name}" />
-
-
-                <property
-                    name="mapVersionTag"
-                    value="R0_9_maintenance" />                    
-
-            </ant>
-        </schedule>
-
-    </project>
-
-    <project name="dltk-whatisfixed">
+    <!--project name="dltk-whatisfixed">
         <schedule interval="${time.VeryVeryLongTime}">
             <ant
                 antscript="${env.BUILD_HOME}/releng.control/ant.sh"
@@ -306,7 +414,7 @@
             </ant>
         </schedule>
 
-    </project>
+    </project-->
 
 
 </cruisecontrol>

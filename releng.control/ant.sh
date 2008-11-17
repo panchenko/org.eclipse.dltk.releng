@@ -15,7 +15,7 @@ fi
 # so if not desired (such as for WTP 2.0 unit tests), 
 # then we have to spec Java 5 right there where we run 
 # the tests. 
-export JAVA_HOME=${JAVA_4_HOME}
+export JAVA_HOME=${JAVA_5_HOME}
 
 
 ANT_CMD=${ANT_HOME}/bin/ant
