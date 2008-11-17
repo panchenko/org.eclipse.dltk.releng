@@ -107,7 +107,7 @@
     	<echo message="releng.builder is downloading from here: ${builderCvsRoot}" />
         <cvs quiet="true"
              cvsRoot="${builderCvsRoot}"
-             package="${releng.builder}"
+             package="${cvsPrefix}/${releng.builder}"
              dest="${codir}"
              tag="${dltkBuilderVersion}" />
     </target>
