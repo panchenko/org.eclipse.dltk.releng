@@ -105,7 +105,7 @@
                 failonerror="false" />
         <echo message="Version tag for ${releng.builder} is: ${dltkBuilderVersion}" />
     	<echo message="releng.builder is downloading from here: ${builderCvsRoot}" />
-        <cvs quiet="true"
+        <cvs quiet="false"
              cvsRoot="${builderCvsRoot}"
              package="${cvsPrefix}/${releng.builder}"
              dest="${codir}"
