@@ -81,8 +81,7 @@
     <project name="dltk-R1.0-I">
         <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
-        <cvs module="${env.CVS_RELENG}" />
-
+	        <cvs module="${env.CVS_RELENG}" />
         </modificationset>
 
         <schedule>
@@ -120,7 +119,6 @@
     </project>
 
     <!--project name="dltk-R1.0-N">
-
         <schedule>
             <ant
                 antscript="${env.BUILD_HOME}/releng.control/ant.sh"
@@ -134,7 +132,6 @@
                 <property
                     name="buildType"
                     value="N" />
-                <!-- in this context, buildBranch is simply a label -->
                 <property
                     name="buildBranch"
                     value="R1.0" />
@@ -150,16 +147,11 @@
                 <property
                     name="SKIP_JAR_SIGNING"
                     value="true" />
-
-
             </ant>
         </schedule>
-
     </project-->
 
-
     <!--project name="dltk-R1.0-S">
-        <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
             <cvs module="${env.CVS_RELENG}" />
         </modificationset>
@@ -199,13 +191,11 @@
                 <property
                     name="SKIP_JAR_SIGNING"
                     value="false" />
-
             </ant>
         </schedule>
     </project-->
 
     <!--project name="dltk-R0.95-M">
-        <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
             <cvs                 
             	tag="R0_95_maintenance"
@@ -223,20 +213,13 @@
                 savelogdir="${logDir}"
                 usedebug="false"
                 antworkingdir="${env.BUILD_HOME}/releng.control">
-                
-                <!-- this "M" label should be changed to "R" once maintenance release
-                    is warming up for its "R"elease.
-                -->
-                
+                               
                 <property
                     name="buildType"
                     value="M" />
                 <property
                     name="buildBranch"
                     value="R0.95" />
-		<!--property
-                    name="buildId"
-                    value="0.95.1" /-->
                 <property
                     name="checkoutprojectname"
                     value="${project.name}" />
@@ -252,17 +235,14 @@
                     value="true" />
             </ant>
         </schedule>
-
     </project-->
 
 
     <!--project name="dltk-R0.95.1-R">
-        <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
             <cvs                 
             	tag="R0_95_maintenance"
              	module="${env.CVS_RELENG}" />
-
         </modificationset>
 
        <schedule>
@@ -275,11 +255,6 @@
                 savelogdir="${logDir}"
                 usedebug="false"
                 antworkingdir="${env.BUILD_HOME}/releng.control">
-                
-                <!-- this "M" label should be changed to "R" once maintenance release
-                    is warming up for its "R"elease.
-                -->
-                
                 <property
                     name="buildType"
                     value="R" />
@@ -289,8 +264,8 @@
                 <property
                     name="checkoutprojectname"
                     value="${project.name}" />
-		<property
-                    name="buildId"
+				<property
+	                   name="buildId"
                     value="0.95.1"/>
                 <property
                     name="mapVersionTag"
@@ -303,7 +278,6 @@
                     value="false" />
             </ant>
         </schedule>
-
     </project-->
 
     <!--project name="dltk-R0.9-M">
