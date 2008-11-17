@@ -119,7 +119,7 @@
 
     </project>
 
-    <project name="dltk-R1.0-N">
+    <!--project name="dltk-R1.0-N">
 
         <schedule>
             <ant
@@ -155,10 +155,10 @@
             </ant>
         </schedule>
 
-    </project>
+    </project-->
 
 
-    <project name="dltk-R1.0-S">
+    <!--project name="dltk-R1.0-S">
         <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
             <cvs module="${env.CVS_RELENG}" />
@@ -202,9 +202,9 @@
 
             </ant>
         </schedule>
-    </project>
+    </project-->
 
-    <project name="dltk-R0.95-M">
+    <!--project name="dltk-R0.95-M">
         <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
             <cvs                 
@@ -253,10 +253,10 @@
             </ant>
         </schedule>
 
-    </project>
+    </project-->
 
 
-    <project name="dltk-R0.95.1-R">
+    <!--project name="dltk-R0.95.1-R">
         <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
             <cvs                 
@@ -304,9 +304,9 @@
             </ant>
         </schedule>
 
-    </project>
+    </project-->
 
-    <project name="dltk-R0.9-M">
+    <!--project name="dltk-R0.9-M">
         <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
             <cvs
@@ -354,7 +354,7 @@
             </ant>
         </schedule>
 
-    </project>
+    </project-->
 
 
     <!--project name="dltk-whatisfixed">
