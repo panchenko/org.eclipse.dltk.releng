@@ -79,7 +79,6 @@
     -->
 
     <project name="dltk-R1.0-I">
-        <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
 	        <cvs module="${env.CVS_RELENG}" />
         </modificationset>
@@ -281,7 +280,6 @@
     </project-->
 
     <!--project name="dltk-R0.9-M">
-        <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
             <cvs
                 tag="R0_9_maintenance"
@@ -299,9 +297,6 @@
                 usedebug="false"
                 antworkingdir="${env.BUILD_HOME}/releng.control">
 
-                <!-- this "M" label should be changed to "R" once maintenance release
-                    is warming up for its "R"elease.
-                -->
                 <property
                     name="buildType"
                     value="M" />
