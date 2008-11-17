@@ -112,8 +112,8 @@
             package="${cvsPackage}"
             dest="${buildDirectory}/maps"
             tag="${mapVersionTag}" />
-    	<exec command="sh ${dltk.builder.home}/scripts/replace.sh ${buildDirectory}/maps/${cvsPackage}" />
-    	<exec command="ssh devteam@cvs.xored.com /export/home/devteam/get-dltk.sh" />
+    	<!--exec command="sh ${dltk.builder.home}/scripts/replace.sh ${buildDirectory}/maps/${cvsPackage}" /-->
+    	<!--exec command="ssh devteam@cvs.xored.com /export/home/devteam/get-dltk.sh" /-->
         <!--tag the map files project-->
         <antcall target="tagMapFiles">
             <param
