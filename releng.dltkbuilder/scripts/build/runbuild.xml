@@ -165,7 +165,7 @@
         <!-- ***  change the repo info -->
         <property
             name="builderCvsRoot"
-            value=":ext:devteam@cvs.xored.com:/cvsroot/dltk" />
+            value=":pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse" />
 
         <property
             name="basebuilder.path"
