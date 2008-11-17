@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<site pack200="true"
-mirrorsURL="http://www.eclipse.org/downloads/download.php?file=/technology/dltk/updates/1.0/site-interim.xml&amp;format=xml"
-digestURL="http://download.eclipse.org/technology/dltk/updates/1.0/">
+<site pack200="false"
+mirrorsURL="http://www.eclipse.org/downloads/download.php?file=/technology/dltk/updates-dev/1.0/site.xml&amp;format=xml"
+digestURL="http://download.eclipse.org/technology/dltk/updates-dev/1.0/">
 
    <description url="http://download.eclipse.org/technology/dltk/index.html">
       The update site contains the features of the Eclipse Dynamic Languages Toolkit Project (DLTK)
@@ -12,6 +12,22 @@ digestURL="http://download.eclipse.org/technology/dltk/updates/1.0/">
    </feature>
 
    <feature url="features/org.eclipse.dltk.core.sdk_@org.eclipse.dltk.core.sdk@.jar" id="org.eclipse.dltk.core.sdk" version="@org.eclipse.dltk.core.sdk@">
+      <category name="Dynamic Languages Toolkit (DLTK)" />
+   </feature>
+   
+   <feature url="features/org.eclipse.dltk.rse_@org.eclipse.dltk.rse@.jar" id="org.eclipse.dltk.rse" version="@org.eclipse.dltk.rse@">
+      <category name="Dynamic Languages Toolkit (DLTK)" />
+   </feature>
+
+   <feature url="features/org.eclipse.dltk.rse.sdk_@org.eclipse.dltk.rse.sdk@.jar" id="org.eclipse.dltk.rse.sdk" version="@org.eclipse.dltk.rse.sdk@">
+      <category name="Dynamic Languages Toolkit (DLTK)" />
+   </feature>
+   
+   <feature url="features/org.eclipse.dltk.mylyn_@org.eclipse.dltk.mylyn@.jar" id="org.eclipse.dltk.mylyn" version="@org.eclipse.dltk.mylyn@">
+      <category name="Dynamic Languages Toolkit (DLTK)" />
+   </feature>
+
+   <feature url="features/org.eclipse.dltk.mylyn.sdk_@org.eclipse.dltk.mylyn.sdk@.jar" id="org.eclipse.dltk.mylyn.sdk" version="@org.eclipse.dltk.mylyn.sdk@">
       <category name="Dynamic Languages Toolkit (DLTK)" />
    </feature>
 
@@ -47,11 +63,19 @@ digestURL="http://download.eclipse.org/technology/dltk/updates/1.0/">
       <category name="Dynamic Languages Toolkit (DLTK)" />
    </feature>
 
-	<feature url="features/org.eclipse.dltk.xotcl_@org.eclipse.dltk.xotcl@.jar" id="org.eclipse.dltk.xotcl" version="@org.eclipse.dltk.xotcl@">
+   <feature url="features/org.eclipse.dltk.xotcl_@org.eclipse.dltk.xotcl@.jar" id="org.eclipse.dltk.xotcl" version="@org.eclipse.dltk.xotcl@">
       <category name="Dynamic Languages Toolkit (DLTK)" />
-	</feature>
+   </feature>
 
    <feature url="features/org.eclipse.dltk.xotcl.sdk_@org.eclipse.dltk.xotcl.sdk@.jar" id="org.eclipse.dltk.xotcl.sdk" version="@org.eclipse.dltk.xotcl.sdk@">
+      <category name="Dynamic Languages Toolkit (DLTK)" />
+   </feature>
+
+   <feature url="features/org.eclipse.dltk.itcl_@org.eclipse.dltk.itcl@.jar" id="org.eclipse.dltk.itcl" version="@org.eclipse.dltk.itcl@">
+      <category name="Dynamic Languages Toolkit (DLTK)" />
+   </feature>
+
+   <feature url="features/org.eclipse.dltk.itcl.sdk_@org.eclipse.dltk.itcl.sdk@.jar" id="org.eclipse.dltk.itcl.sdk" version="@org.eclipse.dltk.itcl.sdk@">
       <category name="Dynamic Languages Toolkit (DLTK)" />
    </feature>
 

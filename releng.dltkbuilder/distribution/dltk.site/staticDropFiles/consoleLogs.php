@@ -28,6 +28,8 @@
 		$rootDir = "testResults/consolelogs";
         $hasNotes = false;
         $aDirectory = dir($rootDir);
+	$entries = array();
+	$direntries = array();
         $index = 0;
         $dirindex = 0;
         while ($anEntry = $aDirectory->read()) {
@@ -41,7 +43,7 @@
                         }
                 }
         }
-        $aDirectory.closedir();
+        $aDirectory->close();
 
 
         sort($entries);

@@ -7,7 +7,7 @@
 		</fileset>
 	</path>
 	<!-- ***  change the repo info -->
-	<property name="mapCvsRoot" value=":${cvsProtocol}:${cvsUser}@${cvsServer}:${cvsRoot}" />
+	<property name="mapCvsRoot" value=":${cvsProtocol}:${cvsUser}@${cvsMapsServer}:${cvsRoot}" />
 	<property name="whatisfixed.dir" value="${buildDirectory}/${buildLabel}/whatisfixed" />
 	<property name="whatisfixed.toBuildId" value="${buildLabel}" />
 

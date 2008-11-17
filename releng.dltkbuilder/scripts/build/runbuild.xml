@@ -165,7 +165,8 @@
         <!-- ***  change the repo info -->
         <property
             name="builderCvsRoot"
-            value=":pserver:anonymous@dev.eclipse.org:/cvsroot/eclipse" />
+            value=":ext:devteam@cvs.xored.com:/cvsroot/dltk" />
+
         <property
             name="basebuilder.path"
             value="${env.BUILD_HOME}/builders/${eclipse.builder.version}" />
@@ -175,6 +176,7 @@
         <fail unless="eclipse.builder.version" />
         <mkdir
             dir="${env.BUILD_HOME}/builders/${eclipse.builder.version}" />
+<echo message="builderCvsRoot: ${builderCvsRoot}" />
         <cvs
             cvsRoot="${builderCvsRoot}"
             package="org.eclipse.releng.basebuilder"
@@ -196,10 +198,11 @@
             dest="${basebuilder.path}/org.eclipse.releng.basebuilder/plugins/${dltkBuildTools.file}"
             src="${dltkBuildTools.url}/${dltkBuildTools.file}"
             usetimestamp="true" />
-    	<property name="eppTools.url" value="http://nsk.xored.local/epp-tools" />
+    	
+    	<!--property name="eppTools.url" value="http://nsk.xored.local/epp-tools" />
     	<property name="eppTools.file" value="epp-tools.zip" />
     	<get dest="${basebuilder.path}/org.eclipse.releng.basebuilder/${eppTools.file}"
-    		src="${eppTools.url}/${eppTools.file}" />
+    		src="${eppTools.url}/${eppTools.file}" /-->
 		
 		<exec dir="${basebuilder.path}/org.eclipse.releng.basebuilder" executable="unzip" failonerror="true">
 			<arg line="-o -qq ${eppTools.file} -d ${basebuilder.path}/org.eclipse.releng.basebuilder/plugins/" />
@@ -226,6 +229,13 @@
             <equals
                 arg1="${mapVersionTag}"
                 arg2="HEAD" />
+        </condition>
+        <condition
+            property="buildBranch"
+            value="R0.95">
+            <equals
+                arg1="${mapVersionTag}"
+                arg2="R0_95_maintenance" />
         </condition>
         <condition
             property="buildBranch"
@@ -295,6 +305,8 @@
             <jvmarg value="-Dcomponent=${component}" />
             <jvmarg value="-DJ2SE-1.5=${env.J2SE15}" />
             <jvmarg value="-DJ2SE-1.4=${env.J2SE14}" />
+            <jvmarg
+                value="-DSKIP_JAR_SIGNING=${SKIP_JAR_SIGNING}" />
             <arg value="-application" />
             <arg value="org.eclipse.ant.core.antRunner" />
             <arg value="-buildfile" />
@@ -334,6 +346,8 @@
             <jvmarg value="-Dcomponent=${component}" />
             <jvmarg value="-DJ2SE-1.5=${env.J2SE15}" />
             <jvmarg value="-DJ2SE-1.4=${env.J2SE14}" />
+            <jvmarg
+                value="-DSKIP_JAR_SIGNING=${SKIP_JAR_SIGNING}" />
             <arg value="-application" />
             <arg value="org.eclipse.ant.core.antRunner" />
             <arg value="-buildfile" />

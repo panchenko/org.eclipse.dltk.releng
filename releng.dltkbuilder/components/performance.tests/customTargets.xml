@@ -2,6 +2,8 @@
     name="Build specific targets and properties"
     default="noDefault">
 
+
+
     <!-- ===================================================================== -->
     <!-- Run a given ${target} on all elements being built -->
     <!-- Add on <ant> task for each top level element being built. -->
@@ -11,7 +13,6 @@
         <echo message="basedir: ${basedir}" />
         <echo message="buildDirectory: ${buildDirectory}" />
         <echo message="baseLocation: ${baseLocation}" />
-        <echo message="generic target: ${genericTargets}" />
         <ant
             antfile="${genericTargets}"
             target="${target}">
@@ -20,7 +21,7 @@
                 value="feature" />
             <property
                 name="id"
-                value="org.eclipse.dltk.python.sdk" />
+                value="org.eclipse.dltk.performance" />
         </ant>
     </target>
 
@@ -31,10 +32,10 @@
     <!-- Add one target for each root element and each configuration -->
     <!-- ===================================================================== -->
 
-    <target name="assemble.org.eclipse.dltk.python.sdk">
+    <target name="assemble.org.eclipse.dltk.performance">
         <property
             name="archiveName"
-            value="dltk-python-sdk-${buildLabel}-incubation.zip" />
+            value="dltk-performance-Automated_Tests-${buildLabel}-incubation.zip" />
         <ant
             antfile="${assembleScriptName}"
             dir="${buildDirectory}" />
@@ -42,11 +43,11 @@
 
     <target name="prePackage" />
 
-    <target name="postPackage">
 
+    <target name="postPackage">
         <property
             name="archiveName"
-            value="dltk-python-sdk-${buildLabel}-incubation.zip" />
+            value="dltk-performance-Automated_Tests-${buildLabel}-incubation.zip" />
 
         <ant
             antfile="${dltk.builder.home}/scripts/build/buildutilities.xml"
@@ -61,22 +62,6 @@
                 name="archiveName"
                 value="${archiveName}" />
         </ant>
-
-        <ant
-            antfile="${dltk.builder.home}/scripts/build/buildutilities.xml"
-            target="createChecksums">
-            <property
-                name="buildDirectory"
-                value="${buildDirectory}" />
-            <property
-                name="buildLabel"
-                value="${buildLabel}" />
-            <property
-                name="archiveName"
-                value="${archiveName}" />
-        </ant>
-
-
 
     </target>
 
@@ -106,7 +91,6 @@
             value="${cvsPrefix}/releng.maps/maps" />
         <echo message="${mapCvsRoot} ${mapVersionTag} " />
         <echo message="cvsPackage = ${cvsPackage} " />
-
         <cvs
             cvsRoot="${mapCvsRoot}"
             package="${cvsPackage}"
@@ -155,7 +139,27 @@
                 name="base.install.dir"
                 value="${buildRoot}" />
         </ant>
-
+        <!--fetch the additional pieces to build wst tests -->
+        <property
+            name="featureOnly"
+            value="false" />
+        <property
+            name="featureAndPlugins"
+            value="true" />
+        <property
+            name="featuresRecursively"
+            value="true" />
+        <ant
+            antfile="genericTargets.xml"
+            dir="${pde.build.scripts}"
+            target="fetchElement">
+            <property
+                name="type"
+                value="feature" />
+            <property
+                name="id"
+                value="org.eclipse.dltk.performance" />
+        </ant>
     </target>
 
     <!-- ===================================================================== -->
@@ -183,46 +187,40 @@
     <!-- ===================================================================== -->
     <!-- Steps to do before running the build.xmls for the elements being built. -->
     <!-- ===================================================================== -->
-    <target name="preProcess">
-        <replace
-            dir="${buildDirectory}/plugins"
-            value="${timestamp}"
-            token="@build@">
-            <include name="**/about.mappings" />
-        </replace>
-    </target>
+    <target name="preProcess"></target>
 
     <!-- ===================================================================== -->
     <!-- Steps to do after running the build.xmls for the elements being built. -->
     <!-- ===================================================================== -->
     <target name="postProcess">
-            <condition property="logsAvailable">
+
+        <condition property="logsAvailable">
             <istrue value="${javacVerbose}" />
         </condition>
-    	<antcall target="gatherLogs" />
+        <antcall target="gatherLogs" />
+   
     </target>
 
 
     <!-- ===================================================================== -->
     <!-- Steps to do before running assemble. -->
     <!-- ===================================================================== -->
-    <target name="preAssemble">
-    </target>
+    <target name="preAssemble"></target>
 
     <!-- ===================================================================== -->
     <!-- Steps to do after  running assemble. -->
     <!-- ===================================================================== -->
-    <target name="postAssemble">
-
-    </target>
+    <target name="postAssemble"></target>
 
     <!-- ===================================================================== -->
     <!-- Steps to do after the build is done. -->
     <!-- ===================================================================== -->
     <target name="postBuild"></target>
 
+
+
     <!-- ===================================================================== -->
-    <!-- Steps to do to test the build results -->
+    <!-- Steps to test the build results -->
     <!-- ===================================================================== -->
     <target name="test"></target>
 
@@ -230,14 +228,13 @@
     <!-- Steps to do to publish the build results -->
     <!-- ===================================================================== -->
     <target name="publish"></target>
-
     <!-- ===================================================================== -->
     <!-- Helper targets -->
     <!-- ===================================================================== -->
     <target
         name="gatherLogs"
         if="logsAvailable">
-        <mkdir dir="${buildDirectory}/${buildLabel}/compilelogs" />
+        <mkdir dir="${buildDirectory}/${buildLabel}/testcompilelogs" />
         <echo message="logExtension: ${logExtension}" />
         <antcall target="allElements">
             <param
@@ -248,12 +245,13 @@
                 value="${logExtension}" />
         </antcall>
         <unzip
-            dest="${buildDirectory}/${buildLabel}/compilelogs"
+            dest="${buildDirectory}/${buildLabel}/testcompilelogs"
             overwrite="true">
-            <fileset dir="${buildDirectory}/features/org.eclipse.dltk.python.sdk">
+            <fileset dir="${buildDirectory}/features/org.eclipse.dltk.performance">
                 <include name="**/*.log.zip" />
             </fileset>
         </unzip>
+
 
     </target>
 
@@ -266,7 +264,6 @@
                 value="cleanElement" />
         </antcall>
     </target>
-
     <!-- ===================================================================== -->
     <!-- Default target                                                        -->
     <!-- ===================================================================== -->

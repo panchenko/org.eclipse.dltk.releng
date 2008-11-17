@@ -28,7 +28,7 @@
 		<property name="data-dir" value="${testRoot}/junitworkspaces/workspace-${classname}" />
 
 		<property name="testRoot" value="${testRoot}" />
-		<property name="timeout" value="300000" />
+		<property name="timeout" value="900000" />
 		<property name="junit-report-output" value="${junit-report-output}" />
 		<property name="plugin-path" value="${testRoot}/plugins/${testPlugin}" />
 		<property name="formatter" value="org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter" />
@@ -76,6 +76,13 @@
 			<property name="application" value="org.eclipse.test.uitestapplication" />
 		</ant>
 	</target>
+	
+	<target name="swtbot-test" depends="init">
+		<echo message="test-type: swtbot-ui-test" />
+		<ant antfile="${ant.file}" dir="${currentDir}" target="eclipse-test2">
+			<property name="application" value="net.sf.swtbot.eclipse.ui.swtbottestapplication" />
+		</ant>
+	</target>
 
 	<target name="eclipse-test" description="Runs the specified classname as a plug-in test.">
 
@@ -99,6 +106,9 @@
 			</condition>
 			<fail message="Did not find expected number of launcher jars. Check installation." unless="expectedNumberOfLaunchers" />
 		-->
+	    <property name="performance.dbloc" value="/storage/linux/dltk/perfDB"/>	
+		<echo message="DBLOCATION:-Declipse.perf.dbloc=${performance.dbloc}"/>
+		<echo message="PERF_PARAMS:-Declipse.perf.config=build=N.1_${timestamp}_${timestamp};jvm=sun;config=DLTK_Performance;"/>
 		<java 
 		taskname="suiteUnitTest" 
 		fork="true" 
@@ -126,6 +136,8 @@
 			<jvmarg value="-Dwtp.autotest.noninteractive=true" />
 			<jvmarg value="-Dosgi.clean=true" />
 			<jvmarg value="-DPLUGIN_PATH=${plugin-path}"/>
+			<jvmarg value="-Declipse.perf.dbloc=${performance.dbloc}"/>
+			<jvmarg value="-Declipse.perf.config=build=N.1_${timestamp}_${timestamp};jvm=sun;config=DLTK_Performance;"/>
 			<jvmarg line="${extraVMargs}"/>
 			
 			<arg value="-nosplash" />
@@ -146,19 +158,94 @@
 				error="${junit-report-output}/${classname}.error.txt" />
 		</java>
 
-
-
-
-
-
-
-
-				
+			
 		<antcall target="collect-results"/>
 		
 		<echo message="suitejunitresult: ${suitejunitresult}"/>
 		
 	</target>
+	<target name="eclipse-test2" description="Runs the specified classname as a plug-in test.">
+
+			<echo message="Running ${classname}" />
+			<echo message="Result file: ${junit-report-output}/${classname}.xml." />
+			<echo message="DISPLAY: ${env.DISPLAY}" />
+
+			<!-- If there is not exactly one launcher in the stack, 
+				we'd best fail fast, since we are not expecting that, 
+				and may indicate an installation that would produce unpredictable
+				results -->
+			<!-- requires ant 1.7, and at this point, we're running 1.6 from 
+				eclipse ... 
+				
+				<condition property="expectedNumberOfLaunchers">
+					<resourcecount when="equal" count="1" >
+						<fileset dir="${testRoot}/eclipse/plugins">
+							<include name="org.eclipse.equinox.launcher_*.jar" />
+						</fileset>		
+					</resourcecount>
+				</condition>
+				<fail message="Did not find expected number of launcher jars. Check installation." unless="expectedNumberOfLaunchers" />
+			-->
+		    <property name="performance.dbloc" value="/storage/linux/dltk/perfDB"/>	
+			<echo message="DBLOCATION:-Declipse.perf.dbloc=${performance.dbloc}"/>
+			<echo message="PERF_PARAMS:-Declipse.perf.config=build=N.1_${timestamp}_${timestamp};jvm=sun;config=DLTK_Performance;"/>
+			<java 
+			taskname="suiteUnitTest" 
+			fork="true" 
+			resultProperty="suitejunitresult" 
+			failonerror="false" 
+			timeout="${timeout}" 
+			dir="${testRoot}/eclipse" 
+			jvm="${env.JAVA_5_HOME}/bin/java" 
+			classname="org.eclipse.equinox.launcher.Main">
+				<classpath>
+					<fileset dir="${testRoot}/eclipse/plugins">
+						<include name="org.eclipse.equinox.launcher_*.jar" />
+					</fileset>
+				</classpath>
+
+				<jvmarg value="-Xms256m" />
+				<jvmarg value="-Xmx1024m" />
+				
+				<jvmarg value="-Dosgi.ws=${env.BASEWS}" />
+				<jvmarg value="-Dosgi.os=${env.BASEOS}" />
+				<jvmarg value="-Dosgi.arch=${env.BASEARCH}" />
+				<jvmarg value="-DbuildLabel=${buildLabel}"/>
+				<jvmarg value="-DbuildDirectory=${buildDirectory}"/>
+				
+				<jvmarg value="-Dwtp.autotest.noninteractive=true" />
+				<jvmarg value="-Dosgi.clean=true" />
+				<jvmarg value="-DPLUGIN_PATH=${plugin-path}"/>
+				<jvmarg value="-Declipse.perf.dbloc=${performance.dbloc}"/>
+				<jvmarg value="-Declipse.perf.config=build=N.1_${timestamp}_${timestamp};jvm=sun;config=DLTK_Performance;"/>
+				<jvmarg line="${extraVMargs}"/>
+				
+				<arg value="-nosplash" />
+				<arg value="-consolelog" />
+				<arg value="-debug" />
+				<arg value="-data" />
+				<arg value="${data-dir}" />
+				<arg value="-application" />
+				<arg value="${application}" />
+				<arg value="-testApplication" />
+				<arg value="org.eclipse.test.uitestapplication" />
+				<arg value="formatter=${formatter},${test-output}" />
+				<arg value="-testPluginName" />
+				<arg value="${plugin-name}" />
+				<arg value="-className" />
+				<arg value="${classname}" />
+				<env key="DISPLAY" value="${env.DISPLAY}" />
+				<redirector 
+					output="${junit-report-output}/${classname}.output.txt" 
+					error="${junit-report-output}/${classname}.error.txt" />
+			</java>
+
+				
+			<antcall target="collect-results"/>
+			
+			<echo message="suitejunitresult: ${suitejunitresult}"/>
+			
+		</target>
 
 	<target name="collect-results">
 		<dirname property="output-dir" file="${test-output}" />

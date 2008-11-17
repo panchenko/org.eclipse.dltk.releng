@@ -41,7 +41,7 @@
 	    </condition>
 		<property name="extraVMargs" value=""/>
 		<property name="plugin-path" value="" />
-		<property name="timeout" value="300000" />
+		<property name="timeout" value="600000" />
 		<property name="test-output" value="${eclipse-home}/${classname}.xml" />
 		<property name="junit-report-output" value="${eclipse-home}/results" />
 		<mkdir dir="${junit-report-output}"/>

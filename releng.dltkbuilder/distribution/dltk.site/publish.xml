@@ -30,6 +30,7 @@
         <antcall target="generateJUnitTestsIndex" />
         <antcall target="getStaticFiles" />
     	<antcall target="updateSite" />
+    	<antcall target="digest" />
     </target>
 
     <target name="generateCompileIndex" >
@@ -54,7 +55,7 @@
             
             
         -->
-        <property file="${buildDirectory}/maps/org.eclipse.dltk/releng.maps/dependencies.properties" />
+        <property file="${buildDirectory}/maps/org.eclipse.dltk/releng.maps/maps/dependencies.properties" />
 
         <!-- create tables of test plugin compiles first -->
         <summarizeResults isBuildTested="false"
@@ -106,14 +107,10 @@
         <antcall target="${buildType}" />
 
         <!--  Insert Build Date  -->
-        <replace file="${resultingIndex}"
-                 token="@date@"
-                 value="${TODAY}" />
+        <replace file="${resultingIndex}" token="@date@"  value="${TODAY}" />
 
         <!--  Insert Build Name  -->
-        <replace file="${resultingIndex}"
-                 token="@build@"
-                 value="${buildLabel}" />
+        <replace file="${resultingIndex}" token="@build@" value="${buildLabel}" />
 
         <!--  Insert Mirror  Name  -->
     	<!--
@@ -125,44 +122,36 @@
 
         <!--  Insert PreRequsites  -->
 
-        <replace file="${resultingIndex}"
-                 token="@eclipseFile@"
-                 value="${eclipse.file.linux-gtk-x86}" />
-        <replace file="${resultingIndex}"
-                 token="@eclipseURL@"
-                 value="${eclipse.url}/${eclipse.file.linux-gtk-x86}" />
-        <replace file="${resultingIndex}"
-                 token="@eclipseBuildURL@"
-                 value="${eclipse.url}" />
-        <replace file="${resultingIndex}"
-                 token="@emfFile@"
-                 value="${emf.file}" />
-        <replace file="${resultingIndex}"
-                 token="@emfURL@"
-                 value="${emf.url}/${emf.file}" />
-        <replace file="${resultingIndex}"
-                 token="@gefFile@"
-                 value="${gef.file}" />
-        <replace file="${resultingIndex}"
-                 token="@gefURL@"
-                 value="${gef.url}/${gef.file}" />
-        <replace file="${resultingIndex}"
-                 token="@jemFile@"
-                 value="${jem.file}" />
-        <replace file="${resultingIndex}"
-                 token="@jemURL@"
-                 value="${jem.url}/${jem.file}" />
+		<!-- eclipse -->
+        <replace file="${resultingIndex}" token="@eclipseFile@"     value="${eclipse.file.linux-gtk-x86}" />
+        <replace file="${resultingIndex}" token="@eclipseURL@"      value="${eclipse.url}/${eclipse.file.linux-gtk-x86}" />
+        <replace file="${resultingIndex}" token="@eclipseBuildURL@" value="${eclipse.url}" />
+		<!-- RSE -->
+        <replace file="${resultingIndex}" token="@rseFile@"         value="${rse.file}" />
+        <replace file="${resultingIndex}" token="@rseURL@"          value="${rse.url}/${rse.file}" />
+		<!-- EMF -->
+        <replace file="${resultingIndex}" token="@emfFile@"         value="${emf.file}" />
+    	<replace file="${resultingIndex}" token="@emfURL@"          value="${emf.url}/${emf.file}" />
+    	<!--DERBY-->
+    	<replace file="${resultingIndex}" token="@dearbyFile@"         value="${dearby.file}" />
+    	<replace file="${resultingIndex}" token="@dearbyURL@"          value="${dearby.url}/${dearby.file}" />
+		<!-- EMF-XSD -->
+    	<!--replace file="${resultingIndex}" token="@xsdFile@"         value="${emf_xsd.file}" /-->
+    	<!--replace file="${resultingIndex}" token="@xsdURL@"          value="${emf_xsd.url}/${emf_xsd.file}" /-->
+    	<!-- GEF - TODO why is it here ? -->
+        <replace file="${resultingIndex}" token="@gefFile@"         value="${gef.file}" />
+        <replace file="${resultingIndex}" token="@gefURL@"          value="${gef.url}/${gef.file}" />
+    	<!-- JEM - TODO why is it here ? -->
+        <replace file="${resultingIndex}" token="@jemFile@"         value="${jem.file}" />
+        <replace file="${resultingIndex}" token="@jemURL@"          value="${jem.url}/${jem.file}" />
         <!-- 
 	   these token/s should not exist in maintenance stream, but 
 	   no harm done, so in the interests of keeping builder 
 	   streams in sync, we'll leave them here as place hold
 -->
-        <replace file="${resultingIndex}"
-                 token="@dtpFile@"
-                 value="${dtp.file}" />
-        <replace file="${resultingIndex}"
-                 token="@dtpURL@"
-                 value="${dtp.url}/${dtp.file}" />
+    	<!-- DTP - TODO why is it here ? -->
+        <replace file="${resultingIndex}" token="@dtpFile@"         value="${dtp.file}" />
+        <replace file="${resultingIndex}" token="@dtpURL@"          value="${dtp.url}/${dtp.file}" />
 
         <mkdir dir="${resultDir}/whatisfixed" />
         <echo file="${resultDir}/whatisfixed/buglog.html"
@@ -191,7 +180,7 @@
             
             
         -->
-        <property file="${buildDirectory}/maps/org.eclipse.dltk/releng.maps/dependencies.properties" />
+        <property file="${buildDirectory}/maps/org.eclipse.dltk/releng.maps/maps/dependencies.properties" />
         <!-- create table of test plugin compiles first -->
         <!-- set isBuildTested to true for the "compile only" results -->
 
@@ -214,49 +203,35 @@
         <antcall target="${buildType}" />
 
         <!--  Insert Build Date  -->
-        <replace file="${resultingIndex}"
-                 token="@date@"
-                 value="${TODAY}" />
+        <replace file="${resultingIndex}" token="@date@" value="${TODAY}" />
 
         <!--  Insert Build Name  -->
-        <replace file="${resultingIndex}"
-                 token="@build@"
-                 value="${buildLabel}" />
+        <replace file="${resultingIndex}" token="@build@" value="${buildLabel}" />
 
         <!--  Insert Mirror  Name  -->
-        <replace file="${resultingIndex}"
-                 token="@mirror@"
-                 value="${webtoolsDownloadURL}/${buildBranch}/${buildLabel}/" />
+        <replace file="${resultingIndex}" token="@mirror@" value="${webtoolsDownloadURL}/${buildBranch}/${buildLabel}/" />
 
         <!--  Insert PreRequsites  -->
 
-        <replace file="${resultingIndex}"
-                 token="@eclipseFile@"
-                 value="${eclipse.file.linux-gtk-x86}" />
-        <replace file="${resultingIndex}"
-                 token="@eclipseURL@"
-                 value="${eclipse.url}/${eclipse.file.linux-gtk-x86}" />
-        <replace file="${resultingIndex}"
-                 token="@eclipseBuildURL@"
-                 value="${eclipse.url}" />
-        <replace file="${resultingIndex}"
-                 token="@emfFile@"
-                 value="${emf.file}" />
-        <replace file="${resultingIndex}"
-                 token="@emfURL@"
-                 value="${emf.url}/${emf.file}" />
-        <replace file="${resultingIndex}"
-                 token="@gefFile@"
-                 value="${gef.file}" />
-        <replace file="${resultingIndex}"
-                 token="@gefURL@"
-                 value="${gef.url}/${gef.file}" />
-        <replace file="${resultingIndex}"
-                 token="@jemFile@"
-                 value="${jem.file}" />
-        <replace file="${resultingIndex}"
-                 token="@jemURL@"
-                 value="${jem.url}/${jem.file}" />
+    	<!-- Eclipse -->
+        <replace file="${resultingIndex}" token="@eclipseFile@"     value="${eclipse.file.linux-gtk-x86}" />
+        <replace file="${resultingIndex}" token="@eclipseURL@"      value="${eclipse.url}/${eclipse.file.linux-gtk-x86}" />
+        <replace file="${resultingIndex}" token="@eclipseBuildURL@" value="${eclipse.url}" />
+    	<!-- EMF -->
+        <replace file="${resultingIndex}" token="@emfFile@"         value="${emf.file}" />
+        <replace file="${resultingIndex}" token="@emfURL@"          value="${emf.url}/${emf.file}" />
+    	<!--DEARBY-->
+    	<replace file="${resultingIndex}" token="@dearbyFile@"         value="${dearby.file}" />
+    	<replace file="${resultingIndex}" token="@dearbyURL@"          value="${dearby.url}/${dearby.file}" />
+    	<!-- EMF-XSD -->
+    	<!--replace file="${resultingIndex}" token="@xsdFile@"         value="${emf_xsd.file}" /-->
+    	<!--replace file="${resultingIndex}" token="@xsdURL@"          value="${emf_xsd.url}/${emf_xsd.file}" /-->
+    	<!-- GEF -->
+        <replace file="${resultingIndex}" token="@gefFile@"         value="${gef.file}" />
+        <replace file="${resultingIndex}" token="@gefURL@"          value="${gef.url}/${gef.file}" />
+    	<!-- JEM -->
+        <replace file="${resultingIndex}" token="@jemFile@"         value="${jem.file}" />
+        <replace file="${resultingIndex}" token="@jemURL@"          value="${jem.url}/${jem.file}" />
         <!-- 
 	   these token/s should not exist in maintenance stream, but 
 	   no harm done, so in the interests of keeping builder 
@@ -278,8 +253,7 @@
         <!--  Update timestamp on file to permit overwrite through Ant copy task  -->
         <touch file="${resultingIndex}" />
     </target>
-
-
+	
     <target name="getStaticFiles">
         <!--get static files required in the buildLabel directory-->
         <copy todir="${resultDir}">
@@ -337,9 +311,51 @@
                            property="org.eclipse.dltk.xotcl" />
             <replacefilter token="@org.eclipse.dltk.xotcl.sdk@"
                            property="org.eclipse.dltk.xotcl.sdk" />     
+            <replacefilter token="@org.eclipse.dltk.itcl@"
+                           property="org.eclipse.dltk.itcl" />
+            <replacefilter token="@org.eclipse.dltk.itcl.sdk@"
+                           property="org.eclipse.dltk.itcl.sdk" />     
+            <replacefilter token="@org.eclipse.dltk.rse@"
+                           property="org.eclipse.dltk.rse" />     
+            <replacefilter token="@org.eclipse.dltk.rse.sdk@"
+                           property="org.eclipse.dltk.rse.sdk" />     
+            <replacefilter token="@org.eclipse.dltk.mylyn@"
+                           property="org.eclipse.dltk.mylyn" />     
+            <replacefilter token="@org.eclipse.dltk.mylyn.sdk@"
+                           property="org.eclipse.dltk.mylyn.sdk" />     
     </replace>
     	<echo message = "Done site.xml: ${buildDirectory}/${buildLabel}/updateSite/site.xml" />
     </target>
+	
+	<target name="digest">
+		
+		<echo message="baseDir: ${basedir}"/>
+		
+		<property file="${dltk.builder.home}/build.properties" />
+		<property name="pde.builder.path" value="${env.BUILD_HOME}/builders/${eclipse.builder.version}/${eclipse.builder}" />
+		<echo message="pde.builder.path: ${pde.builder.path}" />
+		<echo message="eclipse.builder.version: ${eclipse.builder.version}" />
+		<echo message="eclipse.builder: ${eclipse.builder}" />
+		
+		<echo message="Running site digesting..."/>
+	        <java
+	            jar="${pde.builder.path}/plugins/org.eclipse.equinox.launcher.jar"
+	            fork="true"
+	            jvm="${env.JAVA_5_HOME}/bin/java"
+	            failonerror="true"
+	            maxmemory="256m"
+	            dir="${buildDirectory}">
+	            <arg
+	                line="${logIfDebug}" />
+	            <arg
+	                line="-application org.eclipse.update.core.siteOptimizer" />
+	        	<arg 
+	        		line="-digestBuilder -digestOutputDir=${buildDirectory}/${buildLabel}/updateSite/ -siteXML=${buildDirectory}/${buildLabel}/updateSite/site.xml"/>  	        	
+	            <!--arg
+	                line="-jarProcessor  ${verboseIfDebug} -outputDir ${buildDirectory}/${buildLabel}/updateSite -pack ${buildDirectory}/${buildLabel}/updateSite"/-->	        	
+	        </java>
+		<echo message="Done site digesting"/>
+	</target>
 
     <target name="countFiles">
         <!--	

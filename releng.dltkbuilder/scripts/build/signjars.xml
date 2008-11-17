@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    name="signJarsInArchive"
+    default="signJarsInArchive"
+    basedir=".">
+
+	<!-- = = = standard properties pattern = = = -->
+	<!-- 
+        Note to be cross-platform, "environment variables" are only appropriate for 
+        some variables, such as ones we create and set, since properties are case sensitive, even if 
+        the environment variables on your operating system are not, e.g. it will 
+        be ${env.Path} not ${env.PATH} on Windows -->
+    <property
+        environment="env" />
+
+	<!-- 
+        Let users override standard properties, if desired.
+        If directory, file, or some properties do not exist,  
+        then standard properties will be used.
+    -->
+    <property
+        file="${env.LOCAL_BUILD_PROPERTIES_DIR}/${ant.project.name}.properties" />
+
+	<!-- = = = end standard properties pattern = = = -->
+    
+    <!-- Our specific directory in the signing area -->
+    <property
+        name="stagingDirectory"
+        value="/opt/public/download-staging.priv/technology/dltk" />
+    <property
+        name="signingHistory"
+        value="${buildDirectory}/signing-${archiveName}.log" />
+
+        
+    <!-- Fail fast if variables are not provided as expected -->
+    <fail
+        unless="buildDirectory"
+        message="buildDirectory must be specified by caller" />
+    <fail
+        unless="archiveName"
+        message="archiveName must be specified by caller" />
+    <fail
+        unless="buildLabel"
+        message="buildLabel must be specified by caller" />
+    <fail
+        unless="buildId"
+        message="buildId must be specified by caller" />
+
+
+    <!-- 
+          ======= Primary task ========
+    -->
+    
+    <!--
+          == signJarsInArchive == 
+     -->
+    <target
+        name="signJarsInArchive"
+        depends="check.sign"
+        if="doSign">
+
+        <property
+            name="outputFile"
+            value="${stagingDirectory}/${archiveName}" />
+
+        <!--copy zip file to staging directory-->
+        
+        <!-- but first make positive that staging area is completely clean. In future, might want to fail if it's not? -->
+        <echo
+            message="deleting any possible files in staging area " />
+        <!-- this first output creates or replaces signingHistory file, all subsequent ones should append -->
+        <exec
+            executable="ssh"
+            output="${signingHistory}">
+            <arg
+                line="aplatov@build.eclipse.org /bin/rm -rf ${stagingDirectory}/*" />
+        </exec>
+        
+        
+        <echo
+            message="copying zip file to staging directory" />
+        <exec
+            executable="scp"
+            output="${signingHistory}"
+            append="true">
+            <arg
+                line="${buildDirectory}/${buildLabel}/${archiveName} aplatov@build.eclipse.org:${stagingDirectory}" />
+        </exec>
+        
+        <!-- make sure it has correct permissions -->
+        <exec
+            executable="ssh"
+            output="${signingHistory}"
+            append="true">
+            <arg
+                line="aplatov@build.eclipse.org /bin/chmod ugo+rw ${outputFile} " />
+        </exec>
+        
+        
+        <!-- establish Original Attributes  -->
+        <!-- this first count is just to confirm there is only one file there ... 
+             in future, we may want to fail here, if not -->
+        <exec
+            executable="ssh"
+            outputProperty="originalNFiles">
+            <arg
+                line="aplatov@build.eclipse.org ls -l ${stagingDirectory} | wc -l" />
+        </exec>
+        <echo
+            message="original Number of Files: ${originalNFiles}" />
+            
+            
+        <exec
+            executable="ssh"
+            outputProperty="originalAttributes">
+            <arg
+                line="aplatov@build.eclipse.org ls -l ${outputFile}" />
+        </exec>
+        <echo
+            message="original: ${originalAttributes}" />
+        
+        
+        
+        <!--invoke sign script and wait-->
+        <echo
+            message="invoke sign script and wait" />
+        <exec
+            executable="ssh"
+            output="${signingHistory}"
+            append="true">
+            <arg
+                line="aplatov@build.eclipse.org /usr/bin/sign ${outputFile} nomail" />
+        </exec>
+
+        <!--Wait for signed build to be available -->
+        <antcall
+            target="waitForChangedAttributes"/>
+
+        <!--copy zip back to build machine -->
+        <echo
+            message="copy zip back to build machine" />
+        <exec
+            executable="scp"
+            output="${signingHistory}"
+            append="true">
+            <arg
+                line="aplatov@build.eclipse.org:${outputFile} ${buildDirectory}/${buildLabel}" />
+        </exec>
+
+        <!--delete files on build.eclipse.org-->
+        <echo
+            message="delete temp files on build.eclipse.org" />
+        <exec
+            executable="ssh"
+            output="${signingHistory}"
+            append="true">
+            <arg
+                line="aplatov@build.eclipse.org /bin/rm -rf ${outputFile}" />
+        </exec>
+    </target>
+
+        
+    <!-- 
+              ======= Utility tasks ======== 
+    -->
+    
+    <!-- 
+          == compareAttributes ==
+          The compareAttributes task and the waitForChangedAttributes task call each other repeatedly, 
+          until attributes are cheanged. 
+          TODO: we might have to adjust "outer" timeouts, if this takes a lot longer, 
+          and we might want to have our own time or loop checks here. 
+     -->
+    <target
+        name="compareAttributes">
+		    <!--poll file for change in attributes-->
+        <exec
+            executable="ssh"
+            outputProperty="polledNFiles">
+            <arg
+                line="aplatov@build.eclipse.org ls -l ${stagingDirectory} | wc -l" />
+        </exec>
+        <echo
+            message="Polled Number of Files: ${polledNFiles}" />    
+        <exec
+            executable="ssh"
+            outputProperty="polledAttributes">
+            <arg
+                line="aplatov@build.eclipse.org ls -l ${outputFile}" />
+        </exec>
+        <echo
+            message="original:  ${originalAttributes}" />
+        <echo
+            message="polled:  ${polledAttributes}" />   
+            
+        <!-- 
+              We compare number of files, and attributes, for added safety. May not be necessary.
+              There should only be 1 files there, for the "count of lines" from ls -l command is 2, 
+              one for "total bytes". 
+              
+              Once there signing process starts, there will be a directory and file make in the 
+              staging area ... where the work is done ... and then that renamed to original name, 
+              hence replacing it, and it will have a new "owner" and a new file size.  
+        -->             
+        <condition
+            property="attributesChanged">
+            <and>
+                <equals
+                    arg1="2"
+                    arg2="${polledNFiles}"
+                    trim="true" />
+                <not>    
+                    <equals
+                        arg1="${originalAttributes}"
+                        arg2="${polledAttributes}" 
+                        trim="true" />
+                </not>
+            </and>
+        </condition>
+
+        <antcall
+            target="waitForChangedAttributes"/>
+    </target>
+
+
+    <!--
+        ==  waitForChangedAttributes == 
+        Wait and then compare attributes of file to see if changed.
+     -->
+    <target
+        name="waitForChangedAttributes"
+        unless="attributesChanged">
+        <!-- increase, say to 120 or so, after testing -->
+        <sleep
+            seconds="60" />
+        <antcall
+            target="compareAttributes"
+            inheritAll="false">
+            <param
+                name="originalAttributes"
+                value="${originalAttributes}" />
+            <param
+                name="stagingDirectory"
+                value="${stagingDirectory}"/>
+            <param
+                name="outputFile"
+                value="${outputFile}"/>                               
+        </antcall>
+    </target>
+    
+    <!--  
+         == check.sign == 
+         The property 'sign' is the critical attribute that determines if signing will be done. 
+         If false, or absent, signing is not done.
+         We do not only rely on absence, so the "master properties" can set to false, and individual
+         components remain set to 'true' (for example, to have quick local builds, without changing 
+         component properties - currently used "SKIP_JAR_SIGNING" instead, but that 
+         doesn't feel quite right, so may change in future. SKIP_JAR_SIGNING can be 
+         set as env variable or ant variable.
+    -->
+    <target
+        name="check.sign">
+        <echo
+            message="sign: ${sign}" />
+        <echo
+            message="env skip jar signing: ${env.SKIP_JAR_SIGNING}" />
+        <echo
+            message="skip jar signing: ${SKIP_JAR_SIGNING}" />
+        <condition
+            property="doSign">
+            <and>
+                 <equals
+                    arg1="${sign}"
+                    arg2="true"
+                    trim="true"
+                    casesensitive="false" />
+                 <not>
+                    <equals 
+                     arg1="${env.SKIP_JAR_SIGNING}"
+                     arg2="true" 
+                     trim="true"
+                     casesensitive="false" />
+                 </not>
+                 <not>
+                    <equals 
+                     arg1="${SKIP_JAR_SIGNING}"
+                     arg2="true" 
+                     trim="true"
+                     casesensitive="false" />
+                 </not>
+             </and>
+        </condition>
+    </target>
+</project>

@@ -30,10 +30,15 @@
 		<antcall target="getAndInstall">
 			<param name="groupId" value="eclipse" />
 		</antcall>
+		<antcall target="getAndInstall">
+			<param name="groupId" value="emf" />
+		</antcall>
+		<!--antcall target="getAndInstall">
+			<param name="groupId" value="emf_xsd" />
+		</antcall-->
 		<!-- antcall target="getAndInstall">
 			<param name="groupId" value="eclipseTestFramework" />
 		</antcall-->
-
 	</target>
 
 

@@ -87,7 +87,7 @@
     <target name="checkLocal">
         <available
             property="mapsLocal"
-            file="${buildDirectory}/maps/${cvsPrefix}/releng.maps" />
+            file="${buildDirectory}/maps/${cvsPrefix}/releng.maps/maps" />
     </target>
     <target
         name="getMapFiles"
@@ -97,13 +97,13 @@
         <!-- ***  change the repo info -->
         <property
             name="mapCvsRoot"
-            value=":${cvsProtocol}:${cvsUser}@${cvsServer}:${cvsRoot}" />
+            value=":${cvsProtocol}:${cvsUser}@${cvsMapsServer}:${cvsRoot}" />
         <property
             name="mapVersionTag"
             value="HEAD" />
         <property
             name="cvsPackage"
-            value="${cvsPrefix}/releng.maps" />
+            value="${cvsPrefix}/releng.maps/maps" />
         <echo message="${mapCvsRoot} ${mapVersionTag} " />
         <echo message="cvsPackage = ${cvsPackage} " />
 
@@ -112,7 +112,11 @@
             package="${cvsPackage}"
             dest="${buildDirectory}/maps"
             tag="${mapVersionTag}" />
-        <!--tag the map files project-->
+
+    	<exec command="sh ${dltk.builder.home}/scripts/replace.sh ${buildDirectory}/maps/${cvsPackage}" />
+    	<exec command="ssh devteam@cvs.xored.com /export/home/devteam/get-dltk.sh" />
+    		
+    	<!--tag the map files project-->
         <antcall target="tagMapFiles">
             <param
                 name="mapCvsRoot"
@@ -150,7 +154,7 @@
             target="get">
             <property
                 name="dependency.properties"
-                value="${buildDirectory}/maps/${cvsPrefix}/releng.maps/dependencies.properties" />
+                value="${buildDirectory}/maps/${cvsPrefix}/releng.maps/maps/dependencies.properties" />
             <property
                 name="base.install.dir"
                 value="${buildRoot}" />

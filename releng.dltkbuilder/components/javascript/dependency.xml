@@ -14,10 +14,10 @@
     <!-- antcall target="getAndInstall">
            <param name="groupId" value="orbitthirdparty" />
        </antcall>    
-		<mkdir dir="${buildDirectory}/maps/releng/maps" />
+		<mkdir dir="${buildDirectory}/maps/releng.maps/maps" />
 		<antcall target="getAndInstall">
 			<param name="groupId" value="orbitthirdpartymap" />
-			<param name="base.install.dir" value="${buildDirectory}/maps/releng/maps/" />
+			<param name="base.install.dir" value="${buildDirectory}/maps/releng.maps/maps/" />
 		</antcall -->
 
 

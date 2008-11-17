@@ -20,7 +20,7 @@
                 value="feature" />
             <property
                 name="id"
-                value="org.eclipse.dltk.python.sdk" />
+                value="org.eclipse.dltk.mylyn" />
         </ant>
     </target>
 
@@ -31,22 +31,22 @@
     <!-- Add one target for each root element and each configuration -->
     <!-- ===================================================================== -->
 
-    <target name="assemble.org.eclipse.dltk.python.sdk">
+    <target name="assemble.org.eclipse.dltk.mylyn">
         <property
             name="archiveName"
-            value="dltk-python-sdk-${buildLabel}-incubation.zip" />
+            value="dltk-mylyn-${buildLabel}-incubation.zip" />
         <ant
             antfile="${assembleScriptName}"
             dir="${buildDirectory}" />
+
     </target>
 
     <target name="prePackage" />
 
     <target name="postPackage">
-
         <property
             name="archiveName"
-            value="dltk-python-sdk-${buildLabel}-incubation.zip" />
+            value="dltk-mylyn-${buildLabel}-incubation.zip" />
 
         <ant
             antfile="${dltk.builder.home}/scripts/build/buildutilities.xml"
@@ -156,6 +156,9 @@
                 value="${buildRoot}" />
         </ant>
 
+    	
+    	
+    	
     </target>
 
     <!-- ===================================================================== -->
@@ -174,6 +177,7 @@
     <target name="postGenerate">
         <customizeAccessRules bundleDirectory="${buildDirectory}/plugins" defaultRules="+org/eclipse/dltk/**/*" />
     </target>
+
     <!-- ===================================================================== -->
     <!-- Steps to do after generating the build scripts. -->
     <!-- ===================================================================== -->
@@ -196,10 +200,10 @@
     <!-- Steps to do after running the build.xmls for the elements being built. -->
     <!-- ===================================================================== -->
     <target name="postProcess">
-            <condition property="logsAvailable">
+        <condition property="logsAvailable">
             <istrue value="${javacVerbose}" />
         </condition>
-    	<antcall target="gatherLogs" />
+    	 <antcall target="gatherLogs" />
     </target>
 
 
@@ -207,6 +211,7 @@
     <!-- Steps to do before running assemble. -->
     <!-- ===================================================================== -->
     <target name="preAssemble">
+
     </target>
 
     <!-- ===================================================================== -->
@@ -250,7 +255,7 @@
         <unzip
             dest="${buildDirectory}/${buildLabel}/compilelogs"
             overwrite="true">
-            <fileset dir="${buildDirectory}/features/org.eclipse.dltk.python.sdk">
+            <fileset dir="${buildDirectory}/features/org.eclipse.dltk.mylyn">
                 <include name="**/*.log.zip" />
             </fileset>
         </unzip>

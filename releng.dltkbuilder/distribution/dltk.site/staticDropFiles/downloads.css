@@ -247,7 +247,6 @@ line-height:19px;
 vertical-align:top;
 }
 div.build_item th{
-width:872px;
 background:url(images/capt_list.png) repeat-x bottom;
 padding:4px 0px 8px 18px;
 margin:0px;
@@ -265,4 +264,8 @@ margin:0px;
 }
 .bold{
 font-weight:bold;
+}
+p.description{
+text-indent:17px;
+line-height:20px;
 }

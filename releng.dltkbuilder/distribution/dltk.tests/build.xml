@@ -51,19 +51,63 @@
 		<ant antfile="${test.component.dir}/testdependency.xml"
 			target="get">
 			<property name="dependency.properties"
-				value="${buildDirectory}/maps/org.eclipse.dltk/releng.maps/dependencies.properties" />
+				value="${buildDirectory}/maps/org.eclipse.dltk/releng.maps/maps/dependencies.properties" />
 			<property name="base.install.dir" value="${testRoot}" />
 		</ant>
 
 		<antcall target="unzipTests" />
-
+				
 		<antcall target="runTestEclipse">
 			<param name="testTarget" value="all" />
 		</antcall>
+		
+		<antcall target="generatePerformance"/>
+		
 		<antcall target="postRunTestEclipse">
 			<param name="testTarget" value="all" />
 		</antcall>
 
+	</target>
+	
+
+	<target name="generatePerformance">
+		<property name="performance.baseline" value="200810210345"/>
+		<property name="performance.dbloc" value="/storage/linux/dltk/perfDB"/>
+		<mkdir dir="${buildDirectory}/${buildLabel}/performance" />
+		<echo message="Generating performance results from database"/>
+		<exec failonerror="false" executable="${env.JAVA_5_HOME}/bin/java" dir="${testRoot}/eclipse">
+			<arg value="-Xms256m"/>
+			<arg value="-Xmx256m" />
+			<arg value="-Declipse.perf.dbloc=${performance.dbloc}"/>
+			
+			<arg value="-Dosgi.ws=${env.BASEWS}" />
+			<arg value="-Dosgi.os=${env.BASEOS}" />
+			<arg value="-Dosgi.arch=${env.BASEARCH}" />
+			<arg value="-Dws=${env.BASEWS}" />
+			<arg value="-Dos=${env.BASEOS}" />
+			<arg value="-Darch=${env.BASEARCH}" />
+			<env key="DISPLAY" value="${env.DISPLAY}" />			
+			<arg value="-jar"/>
+			<arg value="plugins/org.eclipse.equinox.launcher_1.0.100.v20080509-1800.jar"/>
+			<arg value="-consolelog"/>	
+            <arg value="-application" />
+            <arg value="org.eclipse.test.performance.ui.resultGenerator" />
+            <arg value="-baseline" />
+            <arg value="N.1_${performance.baseline}_${performance.baseline}" />
+            <arg value="-current" />
+			<arg value="N.1_${timestamp}_${timestamp}"/>
+			<arg value="-config"/>
+			<arg value="DLTK_Performance"/>
+			<arg value="-jvm"/>
+			<arg value="sun"/>
+			<arg value="-output"/>
+			<arg value="${buildDirectory}/${buildLabel}/performance/"/>
+			<arg value="-scenario.filter"/>
+			<arg value="org.eclipse.dltk%"/>
+			<arg value="-print"/>
+		</exec>
+		<!--move tofile="${buildDirectory}/${buildLabel}/performance/index.php" file="${buildDirectory}/${buildLabel}/performance/org.eclipse.dltk.php"/-->
+		<echo message="Performance results generated"/>
 	</target>
 
 	<target name="unzipTests">
@@ -79,7 +123,7 @@
 
 		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip"
 			failonerror="false">
-			<arg line="-o -qq dltk-xotcl-sdk-${buildLabel}-incubation.zip -d ${testRoot}" />
+			<arg line="-o -qq dltk-itcl-sdk-${buildLabel}-incubation.zip -d ${testRoot}" />
 		</exec>
 
 		
@@ -88,7 +132,14 @@
 			<arg
 				line="-o -qq dltk-Automated_Tests-${buildLabel}-incubation.zip -d ${testRoot}" />
 		</exec>
+					
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip"
+			failonerror="false">
+			<arg
+				line="-o -qq dltk-itcl-Automated_Tests-${buildLabel}-incubation.zip -d ${testRoot}" />
+		</exec>
 
+			
 	</target>
 
 	<!-- time out may need to be set/adjust for api or performance tests?
@@ -141,6 +192,7 @@
 			Remember: using -debug for org.eclipse.ant.core.antRunner 
 			produces ant debug info to be output ... which is a TON of stuff 
 		-->
+		<echo message="Performance tests information: -Declipse.perf.config=build=I.1_${buildId};jvm=sun;config=DLTK_Performance;"/>
 		<java 
 		    taskname="unit-test-masterprocess" 
 		    fork="true"
@@ -157,7 +209,7 @@
 			</classpath>
 			
 			<jvmarg value="-Xms256m"/>
-			<jvmarg value="-Xmx512m" />
+			<jvmarg value="-Xmx256m" />
 			
 			<jvmarg value="-Dosgi.ws=${env.BASEWS}" />
 			<jvmarg value="-Dosgi.os=${env.BASEOS}" />
@@ -171,7 +223,9 @@
 			<jvmarg value="-DbuildBranch=${buildBranch}" />
 			<jvmarg value="-DbuildType=${buildType}" />
 			<jvmarg value="-DbuildId=${buildId}" />
-
+			<!---Declipse.perf.config=build=I.1_${buildId};jvm=sun;config=DLTK_Performance;-->
+			<!---Declipse.perf.dbloc=D:/kanshin/performance/derby-->
+			
 			<arg value="-nosplash" />
 			<arg value="-consolelog" />
 			
@@ -184,9 +238,9 @@
 			<arg value="-logger" />
 			<arg value="org.apache.tools.ant.DefaultLogger" />
 			<env key="DISPLAY" value="${env.DISPLAY}" />
-			<redirector 
+			<!--redirector  
 				output="${testRoot}/results/fullOutput.txt"
-				error="${testRoot}/results/fullErrorLog.txt"/>
+				error="${testRoot}/results/fullErrorLog.txt" /-->
 			<sysproperty key="build.home" value="${env.BUILD_HOME}" />
 			<sysproperty key="buildDirectory" value="${buildDirectory}" />
 			<sysproperty key="buildLabel" value="${buildLabel}" />

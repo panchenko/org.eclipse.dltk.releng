@@ -1,9 +1,5 @@
 <project name="Automated Eclipse Testing" default="all" basedir=".">
 
-	<echo message="starting Automated Eclipse Testing" />
-	<echo message="basedir: ${basedir}" />
-	<echo message="testRoot: ${testRoot}" />
-
 	<fail message="testRoot must be set" unless="testRoot" />
 
 	<!--properties file containing the some server name properties -->
@@ -31,6 +27,10 @@
 	<property name="jonas432Dir" value="${testRoot}/${jonas432DirName}" />
 
 	<target name="init">
+		<echo message="starting Automated Eclipse Testing" />
+		<echo message="basedir: ${basedir}" />
+		<echo message="testRoot: ${testRoot}" />
+
 		<antcall target="setPropertyJOnAS432Dir" />
 		<antcall target="computePluginVersion" />
 	</target>
@@ -58,6 +58,7 @@
 
 	<target name="runtests" depends="setup" description="Runs ant on the test.xml for a specified plugin.">
 		<available file="${eclipse-home}/plugins/${testPlugin}/test.xml" property="test.xml.exists" />
+		<echo message="Test file:${eclipse-home}/plugins/${testPlugin}/test.xml exists ${test.xml.exists}"/>
 		<antcall target="runtests2" />
 	</target>
 
@@ -125,6 +126,34 @@
 		</antcall>
 	</target>
 	
+	<target name="ruby-ui-bot-tests" description="Runs the org.eclipse.dltk.ruby.ui.bot.tests test.xml">
+		<antcall target="runtests">
+			<param name="testPlugin" value="${org.eclipse.dltk.ruby.ui.bot.tests}" />
+			<param name="report" value="org.eclipse.dltk.ruby.ui.bot.tests" />
+		</antcall>
+	</target>
+	
+	<target name="ruby-debug-tests" description="Runs the org.eclipse.dltk.ruby.debug.tests test.xml">
+		<antcall target="runtests">
+			<param name="testPlugin" value="${org.eclipse.dltk.ruby.debug.tests}" />
+			<param name="report" value="org.eclipse.dltk.ruby.debug.tests" />
+		</antcall>
+	</target>
+	
+	<target name="ruby-formatter-tests" description="Runs the org.eclipse.dltk.ruby.formatter.tests test.xml">
+		<antcall target="runtests">
+			<param name="testPlugin" value="${org.eclipse.dltk.ruby.formatter.tests}" />
+			<param name="report" value="org.eclipse.dltk.ruby.formatter.tests" />
+		</antcall>
+	</target>
+
+	<target name="ruby-testing-tests" description="Runs the org.eclipse.dltk.ruby.testing.tests test.xml">
+		<antcall target="runtests">
+			<param name="testPlugin" value="${org.eclipse.dltk.ruby.testing.tests}" />
+			<param name="report" value="org.eclipse.dltk.ruby.testing.tests" />
+		</antcall>
+	</target>
+
 	<!-- DLTK Tcl -->
 
 	<target name="tcl-core-tests" description="Runs the org.eclipse.dltk.tcl.core.tests test.xml">
@@ -134,6 +163,20 @@
 		<antcall target="runtests">
 			<param name="testPlugin" value="${org.eclipse.dltk.tcl.core.tests}" />
 			<param name="report" value="org.eclipse.dltk.tcl.core.tests" />
+		</antcall>
+	</target>
+	<target name="tcl-parser-tests" description="Runs the org.eclipse.dltk.tcl.parser.tests test.xml">
+		<echo message="hello from Tcl parser-tests" />
+		<antcall target="runtests">
+			<param name="testPlugin" value="${org.eclipse.dltk.tcl.parser.tests}" />
+			<param name="report" value="org.eclipse.dltk.tcl.parser.tests" />
+		</antcall>
+	</target>
+	<target name="tcl-validators-tests" description="Runs the org.eclipse.dltk.tcl.validators.tests test.xml">
+		<echo message="hello from Tcl validators-tests" />
+		<antcall target="runtests">
+			<param name="testPlugin" value="${org.eclipse.dltk.tcl.validators.tests}" />
+			<param name="report" value="org.eclipse.dltk.tcl.validators.tests" />
 		</antcall>
 	</target>
 
@@ -184,6 +227,29 @@
 			<param name="report" value="org.eclipse.dltk.xotcl.core.tests" />
 		</antcall>
 	</target>
+	
+	<!-- DLTK ITcl -->
+
+	<target name="itcl-tests" description="Runs the org.eclipse.dltk.itcl.core.tests test.xml">
+		<antcall target="runtests">
+			<param name="testPlugin" value="${org.eclipse.dltk.itcl.core.tests}" />
+			<param name="report" value="org.eclipse.dltk.itcl.core.tests" />
+		</antcall>
+	</target>
+	
+	<target name="performance-tests" description="Runs the org.eclipse.dltk.performance test.xml">
+		<antcall target="runtests">
+			<param name="testPlugin" value="${org.eclipse.dltk.tests.performance}" />
+			<param name="report" value="org.eclipse.dltk.tests.performance" />
+		</antcall>
+	</target>
+	
+	<target name="swtbot-ui-tests" description="Runs the org.eclipse.dltk.ui.tests.swtbot test.xml">
+		<antcall target="runtests">
+			<param name="testPlugin" value="${org.eclipse.dltk.ui.tests.swtbot}" />
+			<param name="report" value="org.eclipse.dltk.ui.tests.swtbot" />
+		</antcall>
+	</target>
 
 	<target name="all" depends="init">
 		<property file="${testRoot}/test2.properties" />
@@ -205,11 +271,14 @@
 		<echo message="Starting Ruby Core tests" />
 		<antcall target="ruby-core-tests" />
 
-		<echo message="Starting Ruby UI tests" />
-		<antcall target="ruby-ui-tests" />
-
 		<echo message="Starting Tcl Core tests" />
 		<antcall target="tcl-core-tests" />
+		
+		<echo message="Starting Tcl Parser tests" />
+		<antcall target="tcl-parser-tests" />
+		
+		<echo message="Starting Tcl Core tests" />
+		<antcall target="tcl-validators-tests" />
 
 		<echo message="Starting Additional Tcl tests" />
 		<antcall target="tcl-tests" />
@@ -229,6 +298,30 @@
 		<echo message="Starting Xotcl Core tests" />
 		<antcall target="xotcl-tests" />
 
+		<echo message="Starting Ruby Debug tests" />
+		<antcall target="ruby-debug-tests" />
+
+		<echo message="Starting Ruby Formatter tests" />
+		<antcall target="ruby-formatter-tests" />
+
+		<echo message="Starting Ruby Testing tests" />
+		<antcall target="ruby-testing-tests" />
+
+		<echo message="Starting Ruby UI tests" />
+		<antcall target="ruby-ui-tests" />
+
+		<echo message="Starting Ruby UI SWTBot tests" />
+		<antcall target="ruby-ui-bot-tests" />
+		
+		<echo message="Starting Performance tests" />
+		<antcall target="performance-tests" />
+		
+		<!--echo message="Starting SWTBOT UI tests" />
+		<antcall target="swtbot-ui-tests" /-->
+
+		<!--echo message="Starting ITcl Core tests" />
+		<antcall target="itcl-tests" /-->
+		
 		<echo message="Ended DLTK Unit Tests" />
 
 	</target>

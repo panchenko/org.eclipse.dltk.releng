@@ -18,7 +18,20 @@
 		<antcall target="getAndInstall">
 			<param name="groupId" value="eclipseTestFramework" />
 		</antcall>
-
+<!--
+		<antcall target="getAndInstall">
+			<param name="groupId" value="windowtester" />
+		</antcall>
+-->
+		<antcall target="getAndInstall">
+			<param name="groupId" value="swtbot" />
+		</antcall>
+		<antcall target="getAndInstall">
+			<param name="groupId" value="swtbot-eclipse" />
+		</antcall>
+		<antcall target="getAndInstall">
+			<param name="groupId" value="derby" />
+		</antcall>
 
 	</target>
 

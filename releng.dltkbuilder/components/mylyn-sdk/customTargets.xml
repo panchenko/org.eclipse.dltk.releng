@@ -20,7 +20,7 @@
                 value="feature" />
             <property
                 name="id"
-                value="org.eclipse.dltk.python.sdk" />
+                value="org.eclipse.dltk.mylyn.sdk" />
         </ant>
     </target>
 
@@ -31,10 +31,10 @@
     <!-- Add one target for each root element and each configuration -->
     <!-- ===================================================================== -->
 
-    <target name="assemble.org.eclipse.dltk.python.sdk">
+    <target name="assemble.org.eclipse.dltk.mylyn.sdk">
         <property
             name="archiveName"
-            value="dltk-python-sdk-${buildLabel}-incubation.zip" />
+            value="dltk-mylyn-sdk-${buildLabel}-incubation.zip" />
         <ant
             antfile="${assembleScriptName}"
             dir="${buildDirectory}" />
@@ -46,7 +46,7 @@
 
         <property
             name="archiveName"
-            value="dltk-python-sdk-${buildLabel}-incubation.zip" />
+            value="dltk-mylyn-sdk-${buildLabel}-incubation.zip" />
 
         <ant
             antfile="${dltk.builder.home}/scripts/build/buildutilities.xml"
@@ -250,7 +250,7 @@
         <unzip
             dest="${buildDirectory}/${buildLabel}/compilelogs"
             overwrite="true">
-            <fileset dir="${buildDirectory}/features/org.eclipse.dltk.python.sdk">
+            <fileset dir="${buildDirectory}/features/org.eclipse.dltk.mylyn.sdk">
                 <include name="**/*.log.zip" />
             </fileset>
         </unzip>

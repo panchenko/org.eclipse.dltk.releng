@@ -11,23 +11,20 @@
 <project name="test" default="get">
 
 	<target name="get">
+  
+
+		<property name="pde.builder.path" value="${env.BUILD_HOME}/builders/${eclipse.builder.version}/${eclipse.builder}" />
+		<echo message="pde.builder.path: ${pde.builder.path}" />
+		<echo message="eclipse.builder.version: ${eclipse.builder.version}" />
+		<echo message="eclipse.builder: ${eclipse.builder}" />
+
 
 		<antcall target="getAndInstall">
 			<param name="groupId" value="eclipse" />
 		</antcall>
 		<antcall target="getAndInstall">
-			<param name="groupId" value="eclipseTestFramework" />
+			<param name="groupId" value="mylyn" />
 		</antcall>
-		<antcall target="getAndInstall">
-			<param name="groupId" value="swtbot" />
-		</antcall>
-		<antcall target="getAndInstall">
-			<param name="groupId" value="swtbot-eclipse" />
-		</antcall>
-		<antcall target="getAndInstall">
-			<param name="groupId" value="derby" />
-		</antcall>
-
 
 	</target>
 
