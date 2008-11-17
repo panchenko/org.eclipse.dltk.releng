@@ -204,9 +204,9 @@
     	<get dest="${basebuilder.path}/org.eclipse.releng.basebuilder/${eppTools.file}"
     		src="${eppTools.url}/${eppTools.file}" /-->
 		
-		<exec dir="${basebuilder.path}/org.eclipse.releng.basebuilder" executable="unzip" failonerror="true">
+		<!--exec dir="${basebuilder.path}/org.eclipse.releng.basebuilder" executable="unzip" failonerror="true">
 			<arg line="-o -qq ${eppTools.file} -d ${basebuilder.path}/org.eclipse.releng.basebuilder/plugins/" />
-		</exec>
+		</exec-->
     </target>
 
     <target name="checkdltkBaseBuilder">

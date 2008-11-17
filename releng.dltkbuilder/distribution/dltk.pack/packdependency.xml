@@ -17,12 +17,12 @@
 		<antcall target="getAndInstall">
 			<param name="groupId" value="eclipse_windows" />
 		</antcall>
-		<antcall target="getAndInstall">
+		<!--antcall target="getAndInstall">
 			<param name="groupId" value="epp_windows" />
-		</antcall>
-		<antcall target="getAndInstall">
+		</antcall-->
+		<!--antcall target="getAndInstall">
 			<param name="groupId" value="epp-tools" />
-		</antcall>
+		</antcall-->
 	</target>
 
 
