@@ -4,18 +4,18 @@
 if [ -n $BUILD_INITIALIZED ] 
 then
    source commonVariations.shsource
-   source computeCommon.shsource   
+   source commonComputedVariables.shsource   
 fi
 
 # allow to terminate themselves, if they will
 echo "Attempting normal terminate of all java processes"
-killall ${JAVA_HOME}/jre/bin/java
+killall ${JAVA_5_HOME}/bin/java
 #   pause briefly to allow shutdown to finish
 sleep 10s
 
 # but if the do not terminate themselves, we can safely force them down
 echo "forcing termination of any remaing java processes"
-killall -9 ${JAVA_HOME}/jre/bin/java/jre/bin/java
+killall -9 ${JAVA_5_HOME}/bin/java
 #    pause briefly to allow ports to free up, etc.
 sleep 10s
 
