@@ -81,11 +81,11 @@
     <project name="dltk-R1.0-I">
         <!-- Defines where cruise looks for changes, to decide whether to run the build -->
         <modificationset quietperiod="120">
-            <cvs module="${env.CVS_RELENG}" />
+        <cvs module="${env.CVS_RELENG}" />
 
         </modificationset>
 
-        <schedule interval="${time.oneHour}">
+        <schedule interval="${time.VeryVeryLongTime}">
             <ant
                 antscript="${env.BUILD_HOME}/releng.control/ant.sh"
                 buildfile="cc_project_build.xml"
@@ -118,48 +118,6 @@
         </schedule>
 
     </project>
-<!-- Cisco DLTK 1.0 build target-->
-    <!--project name="dltk-R1.0-I-cisco">
-        <modificationset quietperiod="120">
-            <cvs module="${env.CVS_RELENG}" />
-
-        </modificationset>
-
-        <schedule interval="${time.oneHour}">
-            <ant
-                antscript="${env.BUILD_HOME}/releng.control/ant.sh"
-                buildfile="cc_project_build.xml"
-                target="Build"
-                useQuiet="false"
-                useLogger="false"
-                savelogdir="${logDir}"
-                usedebug="false"
-                antworkingdir="${env.BUILD_HOME}/releng.control">
-                <property
-                    name="buildType"
-                    value="I" />
-                <property
-                    name="buildBranch"
-                    value="R1.0" />
-                <property
-                    name="checkoutprojectname"
-                    value="${project.name}" />
-
-                <property
-                    name="mapVersionTag"
-                    value="wave" />
-                <property
-                    name="build.distribution"
-                    value="dltk" />
-                <property
-                    name="SKIP_JAR_SIGNING"
-                    value="true" />
-            </ant>
-        </schedule>
-
-    </project-->
-
-<!-- Cisco DLTK 1.0 build target-->
 
     <project name="dltk-R1.0-N">
 
@@ -255,7 +213,7 @@
 
         </modificationset>
 
-        <schedule interval="${time.oneHour}">
+        <schedule interval="${time.VeryVeryLongTime}">
             <ant
                 antscript="${env.BUILD_HOME}/releng.control/ant.sh"
                 buildfile="cc_project_build.xml"
@@ -356,7 +314,7 @@
                 module="${env.CVS_RELENG}" />
         </modificationset>
 
-        <schedule interval="${time.oneHour}">
+        <schedule interval="${time.VeryVeryLongTime}">
             <ant
                 antscript="${env.BUILD_HOME}/releng.control/ant.sh"
                 buildfile="cc_project_build.xml"
