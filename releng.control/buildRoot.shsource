@@ -1,0 +1,4 @@
+#!/bin/sh
+export BUILD_HOME=/home/dltk
+export DISPLAY=:5.0
+

@@ -9,9 +9,7 @@
 # executed on its own. 
 
 
-export BUILD_HOME=/home/dltk
-
-export DISPLAY=:5.0
+source buildRoot.shsource
 
 export JAVA_4_DIR="j2sdk1.4.2_13"
 export JAVA_5_DIR="jdk1.5.0_09"
@@ -47,5 +45,5 @@ export USE_DEBUG=true
 # this is used especially during signing, where we need to execute 
 # the signing script from a signer ID, while running as wtpBuild.
 # should be blank or omitted in local builds
-export REMOTE_SSH_COMMAND="ssh aplatov@build.eclipse.org "
+export REMOTE_SSH_COMMAND=" "
 
