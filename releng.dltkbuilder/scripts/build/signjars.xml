@@ -88,13 +88,13 @@
         </exec>
         
         <!-- make sure it has correct permissions -->
-        <exec
+        <!--exec
             executable="ssh"
             output="${signingHistory}"
             append="true">
             <arg
                 line="aplatov@build.eclipse.org /bin/chmod ugo+rw ${outputFile} " />
-        </exec>
+        </exec-->
         
         
         <!-- establish Original Attributes  -->

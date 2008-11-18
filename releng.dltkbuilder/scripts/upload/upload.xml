@@ -57,12 +57,12 @@
 		<!--exec executable="chmod">
             <arg line="-Rc  o+rx  ${buildDirectory}/${buildLabel}" />
         </exec-->
-		<exec executable="sudo">
+		<!--exec executable="sudo">
 			<arg line="chmod -R g+w ${uploadRemoteDirectory}/${buildLabel}" />
 		</exec>
 		<exec executable="sudo">
 			<arg line="chown -R devteam:devteam ${uploadRemoteDirectory}/${buildLabel}" />
-		</exec>
+		</exec-->
 
 		<!--echo message="RSYNC to: ${uploadRemoteDirectory}/${buildLabel}" /-->
 
