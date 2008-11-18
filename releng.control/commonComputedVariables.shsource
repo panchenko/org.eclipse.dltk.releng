@@ -10,7 +10,6 @@ export PROJECT_HOME=`dirname "$0"`
 
 export ANT_HOME=${BUILD_HOME}/apps/${ANT_DIR}
 
-export JAVA_4_HOME=${BUILD_HOME}/apps/${JAVA_4_DIR}
 export JAVA_5_HOME=${BUILD_HOME}/apps/${JAVA_5_DIR}
 
 export PATH=${PATH}:${HOME}/bin:${ANT_HOME}/bin:${JAVA_HOME}/bin
@@ -21,8 +20,8 @@ export LOG_DIR=${BUILD_HOME}/cruise-project-logs
 # need for some PPC or Linux issues? 
 export JAVA_HIGH_ZIPFDS=500
 
-# Spec java 1.4 as default vm to use
-export JAVA_HOME=${JAVA_4_HOME}
+# Spec java 1.5 as default vm to use
+export JAVA_HOME=${JAVA_5_HOME}
 
 export RECOMMENDED_TMP_DIR=${BUILD_HOME}/tmp
 
@@ -47,13 +46,13 @@ esac
 
 
 # set initial values as if for IBM's PPC VM
-export bootclasspath="${JAVA_4_HOME}/jre/lib/core.jar:${JAVA_4_HOME}/jre/lib/xml.jar:${JAVA_4_HOME}/jre/lib/graphics.jar:${JAVA_4_HOME}/jre/lib/server.jar"
+export bootclasspath="${JAVA_5_HOME}/jre/lib/core.jar:${JAVA_5_HOME}/jre/lib/xml.jar:${JAVA_5_HOME}/jre/lib/graphics.jar:${JAVA_5_HOME}/jre/lib/server.jar"
 export bootclasspath_15="${JAVA_5_HOME}/jre/lib/core.jar:${JAVA_5_HOME}/jre/lib/vm.jar:${JAVA_5_HOME}/jre/lib/xml.jar:${JAVA_5_HOME}/jre/lib/graphics.jar:${JAVA_5_HOME}/jre/lib/server.jar"
 export ANT_OPTS="-Xms128m -Xmx512m"
 
 # and change them if Sun's VM is being used
 if $sunjvm ; then
-	export bootclasspath="${JAVA_4_HOME}/jre/lib/rt.jar"
+	export bootclasspath="${JAVA_5_HOME}/jre/lib/rt.jar"
 	export bootclasspath_15="${JAVA_5_HOME}/jre/lib/rt.jar"
 	export ANT_OPTS="-Xms128m -Xmx512m -XX:MaxPermSize=128M -XX:+UseParallelGC"
 fi
@@ -80,7 +79,7 @@ echo "    Project Home: ${PROJECT_HOME}"
 echo "    Build Home: ${BUILD_HOME}"
 echo "    DISPLAY: ${DISPLAY}"
 echo " "
-echo "    JAVA_4_HOME: ${JAVA_4_HOME}"
+echo "    JAVA_5_HOME: ${JAVA_5_HOME}"
 echo "        ${bootclasspath}"
 echo " "
 echo "    JAVA_5_HOME: ${JAVA_5_HOME}"
