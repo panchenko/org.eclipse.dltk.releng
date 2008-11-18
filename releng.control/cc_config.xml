@@ -83,7 +83,7 @@
 	        <cvs module="${env.CVS_RELENG}" />
         </modificationset>
 
-        <schedule>
+        <schedule interval="${time.oneHour}">
             <ant
                 antscript="${env.BUILD_HOME}/releng.control/ant.sh"
                 buildfile="cc_project_build.xml"
