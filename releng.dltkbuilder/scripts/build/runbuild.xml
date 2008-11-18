@@ -304,7 +304,7 @@
             <jvmarg value="-Dbuild.distribution=${build.distribution}" />
             <jvmarg value="-Dcomponent=${component}" />
             <jvmarg value="-DJ2SE-1.5=${env.J2SE15}" />
-            <jvmarg value="-DJ2SE-1.4=${env.J2SE14}" />
+            <!--jvmarg value="-DJ2SE-1.4=${env.J2SE14}" /-->
             <jvmarg
                 value="-DSKIP_JAR_SIGNING=${SKIP_JAR_SIGNING}" />
             <arg value="-application" />
@@ -345,7 +345,7 @@
             <jvmarg value="-Dbuild.distribution=${build.distribution}" />
             <jvmarg value="-Dcomponent=${component}" />
             <jvmarg value="-DJ2SE-1.5=${env.J2SE15}" />
-            <jvmarg value="-DJ2SE-1.4=${env.J2SE14}" />
+            <!--jvmarg value="-DJ2SE-1.4=${env.J2SE14}" /-->
             <jvmarg
                 value="-DSKIP_JAR_SIGNING=${SKIP_JAR_SIGNING}" />
             <arg value="-application" />
