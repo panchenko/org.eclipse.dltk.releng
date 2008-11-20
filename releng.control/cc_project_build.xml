@@ -72,8 +72,6 @@
 
 
     <target name="clean" depends="check.clean" if="doClean">
-	<delete dir="/home/dltk/build-dltk-R1.0-I"/>
-	<delete dir="/home/dltk/test-dltk-R1.0-I"/>
         <delete dir="${env.BUILD_HOME}/build-${checkoutprojectname}"
                 failonerror="false" />
         <delete dir="${env.BUILD_HOME}/test-${checkoutprojectname}"
