@@ -11,7 +11,7 @@
 <project name="test" default="get">
 
 	<target name="get">
-  
+
 
 		<property name="pde.builder.path" value="${env.BUILD_HOME}/builders/${eclipse.builder.version}/${eclipse.builder}" />
 		<echo message="pde.builder.path: ${pde.builder.path}" />
@@ -22,7 +22,7 @@
 		<antcall target="getAndInstall">
 			<param name="groupId" value="eclipse" />
 		</antcall>
-		<antcall target="getAndInstall">
+		<antcall target="getAndInstallEclipse">
 			<param name="groupId" value="mylyn" />
 		</antcall>
 
@@ -38,7 +38,15 @@
 			<property name="install.destination" value="${base.install.dir}" />
 		</ant>
 	</target>
-
+	<target name="getAndInstallEclipse">
+		<ant antfile="${dependencyTargets}" target="checkDependency">
+			<property name="groupId" value="${groupId}" />
+		</ant>
+		<ant antfile="${dependencyTargets}" target="installDependency">
+			<property name="groupId" value="${groupId}" />
+			<property name="install.destination" value="${base.install.dir}/eclipse" />
+		</ant>
+	</target>
 
 
 
