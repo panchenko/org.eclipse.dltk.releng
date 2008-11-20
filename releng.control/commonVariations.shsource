@@ -11,6 +11,8 @@
 
 source buildRoot.shsource
 
+source performance.shsource
+
 export JAVA_4_DIR="j2sdk1.4.2_13"
 export JAVA_5_DIR="jdk1.5.0_09"
 export ANT_DIR="apache-ant-1.7.0"
