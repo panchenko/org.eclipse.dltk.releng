@@ -244,10 +244,10 @@
 		</antcall>
 	</target>
 	
-	<target name="swtbot-ui-tests" description="Runs the org.eclipse.dltk.ui.tests.swtbot test.xml">
+	<target name="swtbot-ui-tests" description="Runs the org.eclipse.dltk.tcl.ui.tests.swtbot test.xml">
 		<antcall target="runtests">
-			<param name="testPlugin" value="${org.eclipse.dltk.ui.tests.swtbot}" />
-			<param name="report" value="org.eclipse.dltk.ui.tests.swtbot" />
+			<param name="testPlugin" value="${org.eclipse.dltk.tcl.ui.tests.swtbot}" />
+			<param name="report" value="org.eclipse.dltk.tcl.ui.tests.swtbot" />
 		</antcall>
 	</target>
 
@@ -316,8 +316,8 @@
 		<echo message="Starting Performance tests" />
 		<antcall target="performance-tests" />
 		
-		<!--echo message="Starting SWTBOT UI tests" />
-		<antcall target="swtbot-ui-tests" /-->
+		<echo message="Starting SWTBOT UI tests" />
+		<antcall target="swtbot-ui-tests" />
 
 		<!--echo message="Starting ITcl Core tests" />
 		<antcall target="itcl-tests" /-->

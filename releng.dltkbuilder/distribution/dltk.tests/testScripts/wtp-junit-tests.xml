@@ -106,7 +106,7 @@
 			</condition>
 			<fail message="Did not find expected number of launcher jars. Check installation." unless="expectedNumberOfLaunchers" />
 		-->
-	    <property name="performance.dbloc" value="/storage/linux/dltk/perfDB"/>	
+	    <property name="performance.dbloc" value="${env.BUILD_HOME}/perfDB/"/>	
 		<echo message="DBLOCATION:-Declipse.perf.dbloc=${performance.dbloc}"/>
 		<echo message="PERF_PARAMS:-Declipse.perf.config=build=N.1_${timestamp}_${timestamp};jvm=sun;config=DLTK_Performance;"/>
 		<java 

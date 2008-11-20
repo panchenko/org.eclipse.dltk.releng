@@ -1,5 +1,4 @@
-<project name="Build specific targets and properties"
-	default="runTest">
+<project name="Build specific targets and properties" default="runTest">
 
 	<!-- Note to be cross-platform, "environment variables" are only appropriate for
 		some variables, e.g. ones we set, since properties are case sensitive, even if
@@ -7,16 +6,14 @@
 		be ${env.Path} not ${env.PATH} on Windows -->
 	<property environment="env" />
 
-	<fail message="testRoot must be set for this task"
-		unless="testRoot" />
+	<fail message="testRoot must be set for this task" unless="testRoot" />
 
 	<!-- ===================================================================== -->
 	<!-- Steps to do after the build is done. -->
 	<!-- ===================================================================== -->
 	<target name="test">
 		<dirname file="${ant.file}" property="currentDirectory" />
-		<ant antfile="${ant.file}" target="runTest"
-			dir="${currentDirectory}" />
+		<ant antfile="${ant.file}" target="runTest" dir="${currentDirectory}" />
 	</target>
 
 	<!-- ===================================================================== -->
@@ -29,8 +26,7 @@
 		<property file="${buildDirectory}/label.properties" />
 		<property file="${dltk.builder.home}/build.properties" />
 
-		<fail message="testRoot must be set for this task"
-			unless="testRoot" />
+		<fail message="testRoot must be set for this task" unless="testRoot" />
 		<mkdir dir="${testRoot}" />
 
 		<!-- if results already exist, delete them -->
@@ -42,72 +38,74 @@
 		<mkdir dir="${testRoot}/results/consolelogs/configuration-logs" />
 
 		<copy todir="${testRoot}" overwrite="true">
-			<fileset dir="${test.component.dir}/testScripts"></fileset>
+			<fileset dir="${test.component.dir}/testScripts">
+			</fileset>
 		</copy>
 
-		<echo
-			message="BASEOS: ${env.BASEOS}   BASEWS: ${env.BASEWS}   BASEARCH: ${env.BASEARCH} " />
+		<echo message="BASEOS: ${env.BASEOS}   BASEWS: ${env.BASEWS}   BASEARCH: ${env.BASEARCH} " />
 
-		<ant antfile="${test.component.dir}/testdependency.xml"
-			target="get">
-			<property name="dependency.properties"
-				value="${buildDirectory}/maps/org.eclipse.dltk/releng.maps/maps/dependencies.properties" />
+		<ant antfile="${test.component.dir}/testdependency.xml" target="get">
+			<property name="dependency.properties" value="${buildDirectory}/maps/org.eclipse.dltk/releng.maps/maps/dependencies.properties" />
 			<property name="base.install.dir" value="${testRoot}" />
 		</ant>
 
 		<antcall target="unzipTests" />
-				
+
 		<antcall target="runTestEclipse">
 			<param name="testTarget" value="all" />
 		</antcall>
-		
-		<antcall target="generatePerformance"/>
-		
+
+		<antcall target="generatePerformance" />
+
 		<antcall target="postRunTestEclipse">
 			<param name="testTarget" value="all" />
 		</antcall>
 
 	</target>
-	
 
 	<target name="generatePerformance">
-		<property name="performance.baseline" value="200810210345"/>
-		<property name="performance.dbloc" value="/storage/linux/dltk/perfDB"/>
+		<condition property="performance.baseline" value="${timestamp}">
+			<not>
+				<isset property="${env.DLTK_BASELINE}" />
+			</not>
+		</condition>
+		<property name="performance.baseline" value="${env.DLTK_BASELINE}" />
+		<property name="performance.dbloc" value="${env.BUILD_HOME}/perfDB/" />
 		<mkdir dir="${buildDirectory}/${buildLabel}/performance" />
-		<echo message="Generating performance results from database"/>
+		<echo message="Generating performance results from database" />
 		<exec failonerror="false" executable="${env.JAVA_5_HOME}/bin/java" dir="${testRoot}/eclipse">
-			<arg value="-Xms256m"/>
+			<arg value="-Xms256m" />
 			<arg value="-Xmx256m" />
-			<arg value="-Declipse.perf.dbloc=${performance.dbloc}"/>
-			
+			<arg value="-Declipse.perf.dbloc=${performance.dbloc}" />
+
 			<arg value="-Dosgi.ws=${env.BASEWS}" />
 			<arg value="-Dosgi.os=${env.BASEOS}" />
 			<arg value="-Dosgi.arch=${env.BASEARCH}" />
 			<arg value="-Dws=${env.BASEWS}" />
 			<arg value="-Dos=${env.BASEOS}" />
 			<arg value="-Darch=${env.BASEARCH}" />
-			<env key="DISPLAY" value="${env.DISPLAY}" />			
-			<arg value="-jar"/>
-			<arg value="plugins/org.eclipse.equinox.launcher_1.0.100.v20080509-1800.jar"/>
-			<arg value="-consolelog"/>	
-            <arg value="-application" />
-            <arg value="org.eclipse.test.performance.ui.resultGenerator" />
-            <arg value="-baseline" />
-            <arg value="N.1_${performance.baseline}_${performance.baseline}" />
-            <arg value="-current" />
-			<arg value="N.1_${timestamp}_${timestamp}"/>
-			<arg value="-config"/>
-			<arg value="DLTK_Performance"/>
-			<arg value="-jvm"/>
-			<arg value="sun"/>
-			<arg value="-output"/>
-			<arg value="${buildDirectory}/${buildLabel}/performance/"/>
-			<arg value="-scenario.filter"/>
-			<arg value="org.eclipse.dltk%"/>
-			<arg value="-print"/>
+			<env key="DISPLAY" value="${env.DISPLAY}" />
+			<arg value="-jar" />
+			<arg value="plugins/org.eclipse.equinox.launcher_1.0.100.v20080509-1800.jar" />
+			<arg value="-consolelog" />
+			<arg value="-application" />
+			<arg value="org.eclipse.test.performance.ui.resultGenerator" />
+			<arg value="-baseline" />
+			<arg value="N.1_${performance.baseline}_${performance.baseline}" />
+			<arg value="-current" />
+			<arg value="N.1_${timestamp}_${timestamp}" />
+			<arg value="-config" />
+			<arg value="DLTK_Performance" />
+			<arg value="-jvm" />
+			<arg value="sun" />
+			<arg value="-output" />
+			<arg value="${buildDirectory}/${buildLabel}/performance/" />
+			<arg value="-scenario.filter" />
+			<arg value="org.eclipse.dltk%" />
+			<arg value="-print" />
 		</exec>
 		<!--move tofile="${buildDirectory}/${buildLabel}/performance/index.php" file="${buildDirectory}/${buildLabel}/performance/org.eclipse.dltk.php"/-->
-		<echo message="Performance results generated"/>
+		<echo message="Performance results generated" />
 	</target>
 
 	<target name="unzipTests">
@@ -116,30 +114,24 @@
 			we use 'unzip' here, so we can continue on error
 			(such as if zip was not created, due to other failures or options).
 		-->
-		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip"
-			failonerror="false">
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-sdk-${buildLabel}-incubation.zip -d ${testRoot}" />
 		</exec>
 
-		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip"
-			failonerror="false">
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
 			<arg line="-o -qq dltk-itcl-sdk-${buildLabel}-incubation.zip -d ${testRoot}" />
 		</exec>
 
-		
-		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip"
-			failonerror="false">
-			<arg
-				line="-o -qq dltk-Automated_Tests-${buildLabel}-incubation.zip -d ${testRoot}" />
-		</exec>
-					
-		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip"
-			failonerror="false">
-			<arg
-				line="-o -qq dltk-itcl-Automated_Tests-${buildLabel}-incubation.zip -d ${testRoot}" />
+
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
+			<arg line="-o -qq dltk-Automated_Tests-${buildLabel}-incubation.zip -d ${testRoot}" />
 		</exec>
 
-			
+		<exec dir="${buildDirectory}/${buildLabel}" executable="unzip" failonerror="false">
+			<arg line="-o -qq dltk-itcl-Automated_Tests-${buildLabel}-incubation.zip -d ${testRoot}" />
+		</exec>
+
+
 	</target>
 
 	<!-- time out may need to be set/adjust for api or performance tests?
@@ -156,15 +148,12 @@
 	<property name="testTimeLimit" value="7200000" />
 	<property name="testFailOnError" value="false" />
 
-	<target name="runTestEclipse"
-		description="Run our JUnit's within an instance of antRunner">
+	<target name="runTestEclipse" description="Run our JUnit's within an instance of antRunner">
 
 
 		<property name="test-vm" value="${env.JAVA_5_HOME}/bin/java" />
-		<property name="plugin-path"
-			value="${testRoot}/eclipse/plugins" />
-		<property name="vmargs"
-			value="-Xms256m -Xmx512m -Dosgi.ws=${env.BASEWS} -Dosgi.os=${env.BASEOS} -Dosgi.arch=${env.BASEARCH} -Dws=${env.BASEWS} -Dos=${env.BASEOS} -Darch=${env.BASEARCH} -Dosgi.clean=true -Dnoclean=true -DbuildBranch=${buildBranch} -DbuildType=${buildType} -DbuildId=${buildId} -DtestRoot=${testRoot} -DtestDir=${testRoot} -DbuildDirectory=${buildDirectory} -Dbuild.home=${env.BUILD_HOME} -DeclipseBuilderDirectory=${pde.builder.path} -DbuildLabel=${buildLabel} -Dtest-vm=${test-vm}  -Dperf.buildId=${buildType}${date}-${time}" />
+		<property name="plugin-path" value="${testRoot}/eclipse/plugins" />
+		<property name="vmargs" value="-Xms256m -Xmx512m -Dosgi.ws=${env.BASEWS} -Dosgi.os=${env.BASEOS} -Dosgi.arch=${env.BASEARCH} -Dws=${env.BASEWS} -Dos=${env.BASEOS} -Darch=${env.BASEARCH} -Dosgi.clean=true -Dnoclean=true -DbuildBranch=${buildBranch} -DbuildType=${buildType} -DbuildId=${buildId} -DtestRoot=${testRoot} -DtestDir=${testRoot} -DbuildDirectory=${buildDirectory} -Dbuild.home=${env.BUILD_HOME} -DeclipseBuilderDirectory=${pde.builder.path} -DbuildLabel=${buildLabel} -Dtest-vm=${test-vm}  -Dperf.buildId=${buildType}${date}-${time}" />
 
 
 		<!-- set path to eclipse folder. If local folder, use '.'; otherwise, use c:\path\to\eclipse or /path/to/eclipse/ -->
@@ -192,32 +181,24 @@
 			Remember: using -debug for org.eclipse.ant.core.antRunner 
 			produces ant debug info to be output ... which is a TON of stuff 
 		-->
-		<echo message="Performance tests information: -Declipse.perf.config=build=I.1_${buildId};jvm=sun;config=DLTK_Performance;"/>
-		<java 
-		    taskname="unit-test-masterprocess" 
-		    fork="true"
-			resultProperty="dltkmasterjunitresult" 
-			failonerror="false"
-			timeout="${testTimeLimit}" 
-			dir="${testRoot}/eclipse"
-			jvm="${env.JAVA_5_HOME}/bin/java" 
-			classname="org.eclipse.equinox.launcher.Main">
+		<echo message="Performance tests information: -Declipse.perf.config=build=I.1_${buildId};jvm=sun;config=DLTK_Performance;" />
+		<java taskname="unit-test-masterprocess" fork="true" resultProperty="dltkmasterjunitresult" failonerror="false" timeout="${testTimeLimit}" dir="${testRoot}/eclipse" jvm="${env.JAVA_5_HOME}/bin/java" classname="org.eclipse.equinox.launcher.Main">
 			<classpath>
 				<fileset dir="${testRoot}/eclipse/plugins">
 					<include name="org.eclipse.equinox.launcher_*.jar" />
 				</fileset>
 			</classpath>
-			
-			<jvmarg value="-Xms256m"/>
+
+			<jvmarg value="-Xms256m" />
 			<jvmarg value="-Xmx256m" />
-			
+
 			<jvmarg value="-Dosgi.ws=${env.BASEWS}" />
 			<jvmarg value="-Dosgi.os=${env.BASEOS}" />
 			<jvmarg value="-Dosgi.arch=${env.BASEARCH}" />
 			<jvmarg value="-Dws=${env.BASEWS}" />
 			<jvmarg value="-Dos=${env.BASEOS}" />
 			<jvmarg value="-Darch=${env.BASEARCH}" />
-			
+
 			<jvmarg value="-Dosgi.clean=true" />
 			<jvmarg value="-Dnoclean=true" />
 			<jvmarg value="-DbuildBranch=${buildBranch}" />
@@ -225,10 +206,10 @@
 			<jvmarg value="-DbuildId=${buildId}" />
 			<!---Declipse.perf.config=build=I.1_${buildId};jvm=sun;config=DLTK_Performance;-->
 			<!---Declipse.perf.dbloc=D:/kanshin/performance/derby-->
-			
+
 			<arg value="-nosplash" />
 			<arg value="-consolelog" />
-			
+
 			<arg value="-data" />
 			<arg value="${testRoot}/overallTestWorkspace" />
 			<arg value="-application" />
@@ -247,49 +228,37 @@
 			<sysproperty key="baseLocation" value="${baseLocation}" />
 			<sysproperty key="testRoot" value="${testRoot}" />
 			<sysproperty key="testDir" value="${testRoot}" />
-			<sysproperty key="perf.buildId"
-				value="${buildType}${date}-${time}" />
-			<sysproperty key="eclipseBuilderDirectory"
-				value="${pde.builder.path}" />
+			<sysproperty key="perf.buildId" value="${buildType}${date}-${time}" />
+			<sysproperty key="eclipseBuilderDirectory" value="${pde.builder.path}" />
 			<sysproperty key="buildLabel" value="${buildLabel}" />
 		</java>
 
-		<echo message="dltkmasterjunitresult ${dltkmasterjunitresult}"/>
+		<echo message="dltkmasterjunitresult ${dltkmasterjunitresult}" />
 	</target>
 
 
 	<target name="postRunTestEclipse">
-		<copy
-			todir="${buildDirectory}/${buildLabel}/testResults/consolelogs/testLogs"
-			overwrite="true" failonerror="false">
+		<copy todir="${buildDirectory}/${buildLabel}/testResults/consolelogs/testLogs" overwrite="true" failonerror="false">
 			<fileset dir="${testRoot}/results">
 				<include name="*output.txt" />
 			</fileset>
 		</copy>
-		<copy
-			todir="${buildDirectory}/${buildLabel}/testResults/consolelogs/testSysErrorLogs"
-			overwrite="true" failonerror="false">
+		<copy todir="${buildDirectory}/${buildLabel}/testResults/consolelogs/testSysErrorLogs" overwrite="true" failonerror="false">
 			<fileset dir="${testRoot}/results">
 				<include name="*error.txt" />
 			</fileset>
 		</copy>
-		<copy file="${testRoot}/results/fullOutput.txt"
-			toDir="${buildDirectory}/${buildLabel}/testResults/consolelogs/full"
-			overwrite="true" failonerror="false">
+		<copy file="${testRoot}/results/fullOutput.txt" toDir="${buildDirectory}/${buildLabel}/testResults/consolelogs/full" overwrite="true" failonerror="false">
 		</copy>
-		<copy file="${testRoot}/results/fullErrorLog.txt"
-			toDir="${buildDirectory}/${buildLabel}/testResults/consolelogs/full"
-			overwrite="true" failonerror="false">
+		<copy file="${testRoot}/results/fullErrorLog.txt" toDir="${buildDirectory}/${buildLabel}/testResults/consolelogs/full" overwrite="true" failonerror="false">
 		</copy>
 
-		<copy todir="${buildDirectory}/${buildLabel}/testResults/xml"
-			overwrite="true" failonerror="false">
+		<copy todir="${buildDirectory}/${buildLabel}/testResults/xml" overwrite="true" failonerror="false">
 			<fileset dir="${testRoot}/results/xml">
 				<include name="*.xml" />
 			</fileset>
 		</copy>
-		<copy todir="${buildDirectory}/${buildLabel}/testResults/html"
-			overwrite="true" failonerror="false">
+		<copy todir="${buildDirectory}/${buildLabel}/testResults/html" overwrite="true" failonerror="false">
 			<fileset dir="${testRoot}/results/html">
 				<include name="*.html" />
 			</fileset>
