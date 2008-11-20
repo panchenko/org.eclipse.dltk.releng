@@ -57,7 +57,7 @@
             <forceonly />
         </modificationset>
         <publishers>
-            <email
+            <!--email
                 mailhost="gaea.xored.com"
                 returnaddress="${env.BUILD_BUILDMASTER_EMAIL}"
                 skipusers="false"
@@ -65,7 +65,7 @@
                 spamwhilebroken="false"
                 buildresultsurl="${env.BUILD_RESULT_URL}/${project.name}">
                 <always address="${env.BUILD_TOADDRESS}" />
-            </email>
+            </email-->
         </publishers>
     </plugin>
 
