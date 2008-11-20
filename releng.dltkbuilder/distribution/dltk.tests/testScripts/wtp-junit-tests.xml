@@ -136,6 +136,7 @@
 			<jvmarg value="-Dwtp.autotest.noninteractive=true" />
 			<jvmarg value="-Dosgi.clean=true" />
 			<jvmarg value="-DPLUGIN_PATH=${plugin-path}"/>
+			<jvmarg value="-DBUILD_HOME=${env.BUILD_HOME}"/>
 			<jvmarg value="-Declipse.perf.dbloc=${performance.dbloc}"/>
 			<jvmarg value="-Declipse.perf.config=build=N.1_${timestamp}_${timestamp};jvm=sun;config=DLTK_Performance;"/>
 			<jvmarg line="${extraVMargs}"/>

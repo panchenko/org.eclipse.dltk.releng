@@ -64,12 +64,10 @@
 	</target>
 
 	<target name="generatePerformance">
-		<condition property="performance.baseline" value="${timestamp}">
-			<not>
-				<isset property="${env.DLTK_BASELINE}" />
-			</not>
+		<condition property="performance.baseline" value="${env.DLTK_BASELINE}">
+			<isset property="${env.DLTK_BASELINE}" />
 		</condition>
-		<property name="performance.baseline" value="${env.DLTK_BASELINE}" />
+		<property name="performance.baseline" value="${timestamp}" />
 		<property name="performance.dbloc" value="${env.BUILD_HOME}/perfDB/" />
 		<mkdir dir="${buildDirectory}/${buildLabel}/performance" />
 		<echo message="Generating performance results from database" />
