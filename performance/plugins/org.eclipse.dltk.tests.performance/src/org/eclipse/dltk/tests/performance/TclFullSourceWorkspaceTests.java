@@ -23,6 +23,7 @@ public abstract class TclFullSourceWorkspaceTests extends
 	public String getFullWorkspaceZip() {
 		// return getPluginDirectoryPath(Activator.PLUGIN_ID + ".data")
 		// + File.separator + "bigFile.zip";
-		return "/home/dltk/data/bigFile.zip";
+		String property = System.getProperty("BUILD_HOME", "/home/dltk");
+		return property + "/data/bigFile.zip";
 	}
 }
