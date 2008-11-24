@@ -1,2 +1,2 @@
 #!/bin/sh
-#export DLTK_BASELINE=
+export DLTK_BASELINE=
