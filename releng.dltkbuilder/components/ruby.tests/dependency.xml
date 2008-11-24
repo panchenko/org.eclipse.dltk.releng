@@ -24,7 +24,7 @@
 		<antcall target="getAndInstall">
 			<param name="groupId" value="swtbot-eclipse" />
 		</antcall>
-		<antcall target="getAndInstall">
+		<antcall target="getAndInstallEclipse">
 			<param name="groupId" value="derby" />
 		</antcall>
 
@@ -41,7 +41,15 @@
 			<property name="install.destination" value="${base.install.dir}" />
 		</ant>
 	</target>
-
+	<target name="getAndInstallEclipse">
+		<ant antfile="${dependencyTargets}" target="checkDependency">
+			<property name="groupId" value="${groupId}" />
+		</ant>
+		<ant antfile="${dependencyTargets}" target="installDependency">
+			<property name="groupId" value="${groupId}" />
+			<property name="install.destination" value="${base.install.dir}/eclipse" />
+		</ant>
+	</target>
 
 
 
