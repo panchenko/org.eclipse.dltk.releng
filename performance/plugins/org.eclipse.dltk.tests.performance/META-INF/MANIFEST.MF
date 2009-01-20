@@ -4,7 +4,8 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: org.eclipse.dltk.tests.performance;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.dltk.tests.performance.Activator
-Bundle-Vendor: %providerName
+Bundle-Vendor: %pluginProvider
+Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.dltk.core.tests,
  org.eclipse.dltk.core,
