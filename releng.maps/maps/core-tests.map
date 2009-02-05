@@ -1,12 +1,12 @@
 !
 ! Eclipse Dynamic Languages Toolkit (DLTK) Core JUnit Test
 !
-! $Id: core-tests.map,v 1.28 2009/01/26 14:28:39 apanchenk Exp $
+! $Id: core-tests.map,v 1.29 2009/02/05 12:29:53 apanchenk Exp $
 
 feature@org.eclipse.dltk.core.tests=v20080925-1710,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core.tests
 
 plugin@org.eclipse.dltk.core.tests=v20081201,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/tests/org.eclipse.dltk.core.tests
-plugin@org.eclipse.dltk.debug.tests=v20090126,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/tests/org.eclipse.dltk.debug.tests
+plugin@org.eclipse.dltk.debug.tests=v20090205,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/tests/org.eclipse.dltk.debug.tests
 plugin@org.eclipse.dltk.ui.tests=v20081105,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/tests/org.eclipse.dltk.ui.tests
 plugin@org.eclipse.dltk.ui.bot.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/tests/org.eclipse.dltk.ui.bot.tests
 plugin@org.eclipse.dltk.validators.core.tests=v20080919,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/tests/org.eclipse.dltk.validators.core.tests
