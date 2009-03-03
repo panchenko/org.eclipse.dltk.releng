@@ -1,7 +1,7 @@
 
 ! Javascript Development Tools (DLTK)
 !
-! $Id: javascript.map,v 1.102 2009/03/02 14:27:56 apanchenk Exp $ 
+! $Id: javascript.map,v 1.103 2009/03/03 14:01:22 apanchenk Exp $ 
 
 feature@org.eclipse.dltk.javascript=v20081105-1828,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript-feature
 feature@org.eclipse.dltk.javascript.sdk=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript.sdk
@@ -12,7 +12,7 @@ plugin@org.eclipse.dltk.javascript.core.dom.support.sample=v20080915-1616,:pserv
 plugin@org.eclipse.dltk.javascript.debug=v20081218,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.debug
 plugin@org.eclipse.dltk.javascript.debug.ui=v20081218,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.debug.ui
 plugin@org.eclipse.dltk.javascript.jdt.integration=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.jdt.integration
-plugin@org.eclipse.dltk.javascript.launching=v20090302,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.launching
+plugin@org.eclipse.dltk.javascript.launching=v20090303,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.launching
 plugin@org.eclipse.dltk.javascript.rhino=v20090129,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.rhino
 plugin@org.eclipse.dltk.javascript.rhino.dbgp=v20090224,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.rhino.dbgp
 plugin@org.eclipse.dltk.javascript.ui=v20090302,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.ui
