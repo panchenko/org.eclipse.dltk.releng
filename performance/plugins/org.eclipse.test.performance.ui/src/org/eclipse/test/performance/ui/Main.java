@@ -19,11 +19,11 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
 
 import org.eclipse.core.runtime.FileLocator;
+import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.test.internal.performance.results.AbstractResults;
@@ -533,7 +533,8 @@ public class Main implements IApplication {
 			}
 			this.currentBuildPrefixes.add("I");
 		}
-		return new PerformanceResults(currentBuildId, baseline, this.print);
+		return new PerformanceResults(currentBuildId, baseline,
+				this.print ? System.out : null);
 	}
 
 	/*
@@ -904,7 +905,7 @@ public class Main implements IApplication {
 		PerformanceResults performanceResults = parse(context.getArguments()
 				.get("application.args"));
 		performanceResults.read(this.configDescriptors, this.scenarioPattern,
-				this.dataDir, this.failure_threshold);
+				this.dataDir, this.failure_threshold,new NullProgressMonitor());
 
 		// Print whole scenarios summary
 		if (this.print)
@@ -931,9 +932,9 @@ public class Main implements IApplication {
 		}
 		long start = System.currentTimeMillis();
 		printComponent(performanceResults, "global");
-		Iterator components = performanceResults.getComponents().iterator();
-		while (components.hasNext()) {
-			printComponent(performanceResults, (String) components.next());
+		String[] components = performanceResults.getComponents();
+		for (int i = 0; i < components.length; ++i) {
+			printComponent(performanceResults, components[i]);
 		}
 		if (this.print) {
 			String duration = AbstractResults.timeString(System
