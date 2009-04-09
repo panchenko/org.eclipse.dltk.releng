@@ -1,6 +1,6 @@
 !********* Eclipse Dynamic Languages Toolkit (DLTK)
 !
-! $Id: tcl-tests.map,v 1.30 2009/04/08 18:10:14 apanchenk Exp $
+! $Id: tcl-tests.map,v 1.31 2009/04/09 01:39:10 apanchenk Exp $
 !
 
 feature@org.eclipse.dltk.tcl.tests=v20090408-1322,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/features/org.eclipse.dltk.tcl.tests-feature
@@ -15,4 +15,4 @@ plugin@org.eclipse.dltk.tcl.validators.tests=v20081014-1440,:pserver:anonymous@d
 ! SWT bot DLTK/TCL Tests
 plugin@org.eclipse.dltk.tcl.ui.tests.swtbot=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/tests/org.eclipse.dltk.tcl.ui.tests.swtbot
 
-plugin@org.eclipse.dltk.tcl.activestatedebugger.tests=v20090409-0110,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/tests/org.eclipse.dltk.tcl.activestatedebugger.tests
+plugin@org.eclipse.dltk.tcl.activestatedebugger.tests=v20090409-0838,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/tests/org.eclipse.dltk.tcl.activestatedebugger.tests
