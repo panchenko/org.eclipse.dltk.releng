@@ -19,7 +19,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.dltk.core.IModelElement;
-import org.eclipse.dltk.core.SourceParserUtil;
 import org.eclipse.dltk.core.search.IDLTKSearchConstants;
 import org.eclipse.dltk.core.search.IDLTKSearchScope;
 import org.eclipse.dltk.core.search.SearchEngine;
@@ -124,31 +123,13 @@ public class FullSourceWorkspaceSearchTests extends TclFullSourceWorkspaceTests
 
 	/**
 	 * Simple type name requestor: only count classes and interfaces.
-	 * 
-	 * @deprecated
-	 */
-	class OldSearchTypeNameRequestor extends TypeNameRequestor {
-		int count = 0;
-
-		public void acceptClass(char[] packageName, char[] simpleTypeName,
-				char[][] enclosingTypeNames, String path) {
-			this.count++;
-		}
-
-		public void acceptInterface(char[] packageName, char[] simpleTypeName,
-				char[][] enclosingTypeNames, String path) {
-			this.count++;
-		}
-	}
-
-	/**
-	 * Simple type name requestor: only count classes and interfaces.
 	 */
 	class SearchTypeNameRequestor extends TypeNameRequestor {
 		int count = 0;
 
 		public void acceptType(int modifiers, char[] packageName,
-				char[] simpleTypeName, char[][] enclosingTypeNames, String path) {
+				char[] simpleTypeName, char[][] enclosingTypeNames,
+				char[][] superTypes, String path) {
 			this.count++;
 		}
 	}
