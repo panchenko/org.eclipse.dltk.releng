@@ -30,6 +30,7 @@ import org.eclipse.dltk.core.search.TypeNameMatch;
 import org.eclipse.dltk.core.search.TypeNameMatchRequestor;
 import org.eclipse.dltk.core.search.TypeNameRequestor;
 import org.eclipse.dltk.core.tests.model.AbstractModelTests;
+import org.eclipse.dltk.internal.core.search.ProjectIndexerManager;
 import org.eclipse.dltk.internal.core.search.processing.IJob;
 import org.eclipse.dltk.tcl.core.TclLanguageToolkit;
 import org.eclipse.test.performance.Performance;
@@ -254,7 +255,7 @@ public class FullSourceWorkspaceSearchTests extends TclFullSourceWorkspaceTests
 			// Restart brand new indexing
 			INDEX_MANAGER.request(new Measuring(true/* start measuring */));
 			for (int j = 0, length = ALL_PROJECTS.length; j < length; j++) {
-				INDEX_MANAGER.indexAll(ALL_PROJECTS[j].getProject());
+				ProjectIndexerManager.indexProject(ALL_PROJECTS[j].getProject());
 			}
 			AbstractModelTests.waitUntilIndexesReady();
 
