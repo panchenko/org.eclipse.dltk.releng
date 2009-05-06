@@ -55,7 +55,7 @@ http://www.eclipse.org/legal/epl-v10.html
       <import feature="org.eclipse.dltk.tcl" version="1.0.0.qualifier"/>
       <import feature="org.eclipse.dltk.tcl.tests" version="1.0.0.qualifier"/>
       <import feature="org.eclipse.dltk.xotcl" version="1.0.0.qualifier"/>
-      <import plugin="org.eclipse.test.performance"/>
+      <!--import plugin="org.eclipse.test.performance"/-->
    </requires>
 
    <plugin
@@ -70,6 +70,11 @@ http://www.eclipse.org/legal/epl-v10.html
          install-size="0"
          version="0.0.0"/>
 
+   <plugin
+         id="org.eclipse.test.performance"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
    <plugin
          id="org.eclipse.test.performance.ui"
          download-size="0"
