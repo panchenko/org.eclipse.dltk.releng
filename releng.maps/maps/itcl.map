@@ -2,11 +2,11 @@
 ! itcl
 ! Copyright (c) 2004, 2007 xored software, Inc.
 !
-! $Id: itcl.map,v 1.32 2009/05/19 11:40:02 apanchenk Exp $ 
+! $Id: itcl.map,v 1.33 2009/05/20 11:06:55 asobolev Exp $ 
 
 feature@org.eclipse.dltk.itcl=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/itcl/features/org.eclipse.dltk.itcl-feature
 feature@org.eclipse.dltk.itcl.sdk=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/itcl/features/org.eclipse.dltk.itcl.sdk
 
 plugin@org.eclipse.dltk.itcl=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/itcl/plugins/org.eclipse.dltk.itcl
-plugin@org.eclipse.dltk.itcl.core=v20090519-1837,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/itcl/plugins/org.eclipse.dltk.itcl.core
+plugin@org.eclipse.dltk.itcl.core=v20090520-1801,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/itcl/plugins/org.eclipse.dltk.itcl.core
 plugin@org.eclipse.dltk.itcl.ui=v20080815-1326,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/itcl/plugins/org.eclipse.dltk.itcl.ui
