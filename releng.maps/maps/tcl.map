@@ -1,7 +1,7 @@
 
 ! Tcl Development Tools (DLTK)
 !
-! $Id: tcl.map,v 1.237 2009/07/13 11:29:00 apanchenk Exp $ 
+! $Id: tcl.map,v 1.238 2009/07/14 08:07:31 apanchenk Exp $ 
 
 feature@org.eclipse.dltk.tcl=v20090610-1638,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/features/org.eclipse.dltk.tcl-feature
 feature@org.eclipse.dltk.tcl.sdk=v20090610-1638,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/features/org.eclipse.dltk.tcl.sdk
@@ -11,7 +11,7 @@ plugin@org.eclipse.dltk.tcl.core=v20090713-1828,:pserver:anonymous@dev.eclipse.o
 plugin@org.eclipse.dltk.tcl.parser=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.parser
 plugin@org.eclipse.dltk.tcl.validators=v20090710-1835,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.validators
 plugin@org.eclipse.dltk.tcl.tcllib=v20090610-1638,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.tcllib
-plugin@org.eclipse.dltk.tcl.launching=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.launching
+plugin@org.eclipse.dltk.tcl.launching=v20090714-1507,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.launching
 plugin@org.eclipse.dltk.tcl.ui=v20090713-1828,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.ui
 
 plugin@org.eclipse.dltk.tcl.debug=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.debug
@@ -19,7 +19,7 @@ plugin@org.eclipse.dltk.tcl.debug.ui=v20090708-1856,:pserver:anonymous@dev.eclip
 
 plugin@org.eclipse.dltk.tcl.tclchecker=v20090713-1828,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.tclchecker
 
-plugin@org.eclipse.dltk.tcl.activestatedebugger=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.activestatedebugger
+plugin@org.eclipse.dltk.tcl.activestatedebugger=v20090714-1507,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.activestatedebugger
 
 plugin@org.eclipse.dltk.tcl.testing=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.testing
 plugin@org.eclipse.dltk.tcl.testing.tcltest=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.testing.tcltest
