@@ -16,7 +16,7 @@ plugin@org.eclipse.dltk.debug=v20090728-1212,:pserver:anonymous@dev.eclipse.org:
 plugin@org.eclipse.dltk.debug.ui=v20090728-1212,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.debug.ui
 
 plugin@org.eclipse.dltk.validators.core=v20090728-1212,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.core
-plugin@org.eclipse.dltk.validators.ui=v20090728-1622,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.ui
+plugin@org.eclipse.dltk.validators.ui=v20090728-1822,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.ui
 plugin@org.eclipse.dltk.validators.externalchecker=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.externalchecker
 
 plugin@org.eclipse.dltk.testing=v20090728-1212,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.testing
