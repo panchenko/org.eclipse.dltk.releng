@@ -37,20 +37,19 @@ http://www.eclipse.org/legal/epl-v10.html
    </license>
 
    <requires>
-      <import feature="org.eclipse.dltk.tcl" version="1.0.0" match="compatible"/>
-      <import feature="org.eclipse.dltk.core" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.core.tests" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.itcl" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.itcl.tests" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.javascript" version="1.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.tcl" version="2.0.0" match="compatible"/>
+      <import feature="org.eclipse.dltk.core" version="2.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.core.tests" version="2.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.itcl" version="2.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.itcl.tests" version="2.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.javascript" version="2.0.0.qualifier"/>
       <import feature="org.eclipse.dltk.javascript.tests" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.python" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.ruby" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.ruby.tests" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.tcl" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.tcl.tests" version="1.0.0.qualifier"/>
-      <import feature="org.eclipse.dltk.xotcl" version="1.0.0.qualifier"/>
-      <!--import plugin="org.eclipse.test.performance"/-->
+      <import feature="org.eclipse.dltk.python" version="2.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.ruby" version="2.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.ruby.tests" version="2.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.tcl" version="2.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.tcl.tests" version="2.0.0.qualifier"/>
+      <import feature="org.eclipse.dltk.xotcl" version="2.0.0.qualifier"/>
    </requires>
 
    <plugin
@@ -70,6 +69,7 @@ http://www.eclipse.org/legal/epl-v10.html
          download-size="0"
          install-size="0"
          version="0.0.0"/>
+
    <plugin
          id="org.eclipse.test.performance.ui"
          download-size="0"
