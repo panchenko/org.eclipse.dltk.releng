@@ -1,9 +1,9 @@
 
 ! Javascript Development Tools (DLTK)
 !
-! $Id: javascript.map,v 1.144 2009/07/30 07:09:25 asobolev Exp $ 
+! $Id: javascript.map,v 1.145 2009/07/30 08:11:57 asobolev Exp $ 
 
-feature@org.eclipse.dltk.javascript=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript-feature
+feature@org.eclipse.dltk.javascript=v20090730-1514,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript-feature
 feature@org.eclipse.dltk.javascript.sdk=v20090730-1412,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript.sdk
 
 plugin@org.eclipse.dltk.javascript.core=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.core

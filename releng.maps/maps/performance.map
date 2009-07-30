@@ -1,9 +1,9 @@
 
 ! Performance (DLTK)
 !
-! $Id: performance.map,v 1.8 2009/07/30 06:09:21 asobolev Exp $ 
+! $Id: performance.map,v 1.9 2009/07/30 08:11:57 asobolev Exp $ 
 
-feature@org.eclipse.dltk.performance=v20090730-1311,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/performance/features/org.eclipse.dltk.performance-feature
+feature@org.eclipse.dltk.performance=v20090730-1514,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/performance/features/org.eclipse.dltk.performance-feature
 
 plugin@org.eclipse.dltk.performance=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/performance/plugins/org.eclipse.dltk.performance
 plugin@org.eclipse.dltk.core.tests.performance=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/performance/plugins/org.eclipse.dltk.core.tests.performance
