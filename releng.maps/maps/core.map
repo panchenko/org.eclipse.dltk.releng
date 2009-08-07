@@ -21,3 +21,6 @@ plugin@org.eclipse.dltk.validators.externalchecker=v20090803-1754,:pserver:anony
 
 plugin@org.eclipse.dltk.testing=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.testing
 plugin@org.eclipse.dltk.core.doc.isv=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.doc.isv
+
+plugin@org.eclipse.dltk.core.index.sql=v2000,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql
+plugin@org.eclipse.dltk.core.index.sql.h2=v2000,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql.h2
