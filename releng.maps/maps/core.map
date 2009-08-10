@@ -4,8 +4,8 @@ feature@org.eclipse.dltk.core=v20090807-1936,:pserver:anonymous@dev.eclipse.org:
 feature@org.eclipse.dltk.core.sdk=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core.sdk
 
 plugin@org.eclipse.dltk=v20090615-1430,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk
-plugin@org.eclipse.dltk.core=v20090808-0009,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core
-plugin@org.eclipse.dltk.ui=v20090806-1512,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.ui
+plugin@org.eclipse.dltk.core=v20090810-1523,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core
+plugin@org.eclipse.dltk.ui=v20090810-1523,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.ui
 plugin@org.eclipse.dltk.launching=v20090806-1512,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.launching
 plugin@org.eclipse.dltk.formatter=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.formatter
 
@@ -23,4 +23,4 @@ plugin@org.eclipse.dltk.testing=v20090730-1127,:pserver:anonymous@dev.eclipse.or
 plugin@org.eclipse.dltk.core.doc.isv=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.doc.isv
 
 plugin@org.eclipse.dltk.core.index.sql=v20090808-0009,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql
-plugin@org.eclipse.dltk.core.index.sql.h2=v20090807-1936,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql.h2
+plugin@org.eclipse.dltk.core.index.sql.h2=v20090810-1523,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql.h2
