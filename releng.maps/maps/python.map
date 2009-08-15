@@ -1,14 +1,14 @@
 
 ! Python Development Tools (DLTK)
 !
-! $Id: python.map,v 1.76 2009/07/30 08:11:57 asobolev Exp $ 
+! $Id: python.map,v 1.77 2009/08/15 16:24:20 apanchenk Exp $ 
 
 feature@org.eclipse.dltk.python=v20090730-1514,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python-feature
 feature@org.eclipse.dltk.python.sdk=v20090730-1514,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python.sdk
 
 plugin@org.eclipse.dltk.python.core=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.core
-plugin@org.eclipse.dltk.python.launching=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.launching
+plugin@org.eclipse.dltk.python.launching=v20090815,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.launching
 plugin@org.eclipse.dltk.python.debug=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.debug
 plugin@org.eclipse.dltk.python.ui=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.ui
-plugin@org.eclipse.dltk.python.debug.ui=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.debug.ui
-plugin@org.eclipse.dltk.python.activestatedebugger=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.activestatedebugger
+plugin@org.eclipse.dltk.python.debug.ui=v20090815,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.debug.ui
+plugin@org.eclipse.dltk.python.activestatedebugger=v20090815,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/plugins/org.eclipse.dltk.python.activestatedebugger
