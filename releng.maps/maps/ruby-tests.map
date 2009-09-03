@@ -1,6 +1,6 @@
 !********* Eclipse Dynamic Languages Toolkit (DLTK)
 !
-! $Id: ruby-tests.map,v 1.54 2009/08/15 16:24:20 apanchenk Exp $
+! $Id: ruby-tests.map,v 1.55 2009/09/03 07:11:36 apanchenk Exp $
 !
 
 feature@org.eclipse.dltk.ruby.tests=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/features/org.eclipse.dltk.ruby.tests
@@ -8,6 +8,6 @@ feature@org.eclipse.dltk.ruby.tests=v20090730-1127,:pserver:anonymous@dev.eclips
 plugin@org.eclipse.dltk.ruby.core.tests=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.core.tests
 plugin@org.eclipse.dltk.ruby.ui.tests=v20090815,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.ui.tests
 plugin@org.eclipse.dltk.ruby.ui.bot.tests=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.ui.bot.tests
-plugin@org.eclipse.dltk.ruby.debug.tests=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.debug.tests
+plugin@org.eclipse.dltk.ruby.debug.tests=v20090903,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.debug.tests
 plugin@org.eclipse.dltk.ruby.formatter.tests=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.formatter.tests
 fragment@org.eclipse.dltk.ruby.testing.tests=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/tests/org.eclipse.dltk.ruby.testing.tests
