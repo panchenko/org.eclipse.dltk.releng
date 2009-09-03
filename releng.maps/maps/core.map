@@ -1,11 +1,11 @@
 !***************  DLTK CONTRIBUTION  ******************************************************** 
 
-feature@org.eclipse.dltk.core=v20090903,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core-feature
+feature@org.eclipse.dltk.core=v20090903-1554,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core-feature
 feature@org.eclipse.dltk.core.sdk=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core.sdk
 
 plugin@org.eclipse.dltk=v20090827,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk
-plugin@org.eclipse.dltk.core=v20090901,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core
-plugin@org.eclipse.dltk.ui=v20090901,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.ui
+plugin@org.eclipse.dltk.core=v20090903-1554,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core
+plugin@org.eclipse.dltk.ui=v20090903-1554,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.ui
 plugin@org.eclipse.dltk.launching=v20090827,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.launching
 plugin@org.eclipse.dltk.formatter=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.formatter
 
