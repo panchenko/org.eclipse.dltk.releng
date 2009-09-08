@@ -30,5 +30,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.junit,
  org.eclipse.dltk.ruby.testing,
  org.eclipse.dltk.tcl.activestatedebugger.tests,
+ org.eclipse.dltk.formatter.tests,
  org.eclipse.dltk.javascript.formatter.tests
 Eclipse-LazyStart: true
