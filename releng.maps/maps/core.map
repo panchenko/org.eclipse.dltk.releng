@@ -19,7 +19,7 @@ plugin@org.eclipse.dltk.validators.core=v20090908-1616,:pserver:anonymous@dev.ec
 plugin@org.eclipse.dltk.validators.ui=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.ui
 plugin@org.eclipse.dltk.validators.externalchecker=v20090803-1754,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.externalchecker
 
-plugin@org.eclipse.dltk.testing=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.testing
+plugin@org.eclipse.dltk.testing=v20090914-1703,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.testing
 plugin@org.eclipse.dltk.core.doc.isv=v20090708-1856,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.doc.isv
 
 plugin@org.eclipse.dltk.core.index.sql=v20090910-1958,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql
