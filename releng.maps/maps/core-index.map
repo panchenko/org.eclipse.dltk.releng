@@ -1,6 +1,6 @@
 !***************  DLTK CONTRIBUTION  ********************************************************
-feature@org.eclipse.dltk.core.index=v20090916-1823,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core.index-feature
-feature@org.eclipse.dltk.core.index.sdk=v20090917-1518,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core.index.sdk
+feature@org.eclipse.dltk.core.index=v20090917-1539,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core.index-feature
+feature@org.eclipse.dltk.core.index.sdk=v20090917-1539,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core.index.sdk
 
 plugin@org.eclipse.dltk.core.index=v20090916-1520,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index
 plugin@org.eclipse.dltk.core.index.sql=v20090916-1742,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql
