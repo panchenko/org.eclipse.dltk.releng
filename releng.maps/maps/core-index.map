@@ -3,7 +3,7 @@ feature@org.eclipse.dltk.core.index=v20090928-1132,:pserver:anonymous@dev.eclips
 feature@org.eclipse.dltk.core.index.sdk=v20090917-1539,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/features/org.eclipse.dltk.core.index.sdk
 
 plugin@org.eclipse.dltk.core.index=v20090916-1520,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index
-plugin@org.eclipse.dltk.core.index.sql=v20091005-2144,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql
+plugin@org.eclipse.dltk.core.index.sql=v20091007-1944,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql
 plugin@org.eclipse.dltk.core.index.sql.h2=v20091005-2144,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.index.sql.h2
 
 plugin@org.h2.core=v20090917-1924,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/org.eclipse.dltk/external/plugins/org.h2.core
