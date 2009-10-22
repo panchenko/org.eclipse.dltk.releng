@@ -13,7 +13,7 @@ plugin@org.eclipse.dltk.console=v20090730-1127,:pserver:anonymous@dev.eclipse.or
 plugin@org.eclipse.dltk.console.ui=v20090910-1958,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.console.ui
 
 plugin@org.eclipse.dltk.debug=v200909260103,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.debug
-plugin@org.eclipse.dltk.debug.ui=v20091021-1732,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.debug.ui
+plugin@org.eclipse.dltk.debug.ui=v20091022-1254,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.debug.ui
 
 plugin@org.eclipse.dltk.validators.core=v200909260103,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.core
 plugin@org.eclipse.dltk.validators.ui=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.ui
