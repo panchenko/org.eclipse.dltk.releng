@@ -1,7 +1,7 @@
 
 ! Tcl Development Tools (DLTK)
 !
-! $Id: tcl.map,v 1.274 2009/11/03 12:13:24 apanchenk Exp $ 
+! $Id: tcl.map,v 1.275 2009/11/04 18:43:38 apanchenk Exp $ 
 
 feature@org.eclipse.dltk.tcl=v20090730-1514,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/features/org.eclipse.dltk.tcl-feature
 feature@org.eclipse.dltk.tcl.sdk=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/features/org.eclipse.dltk.tcl.sdk
@@ -15,7 +15,7 @@ plugin@org.eclipse.dltk.tcl.launching=v20091027-0050,:pserver:anonymous@dev.ecli
 plugin@org.eclipse.dltk.tcl.ui=v20091103-1812,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.ui
 
 plugin@org.eclipse.dltk.tcl.debug=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.debug
-plugin@org.eclipse.dltk.tcl.debug.ui=v20091029-1936,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.debug.ui
+plugin@org.eclipse.dltk.tcl.debug.ui=v20091105-0043,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.debug.ui
 
 plugin@org.eclipse.dltk.tcl.tclchecker=v200909260103,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.tclchecker
 
