@@ -55,6 +55,7 @@ public class AllTests {
 		suite.addTest(org.eclipse.dltk.formatter.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.javascript.formatter.tests.AllTests
 				.suite());
+		suite.addTest(org.eclipse.dltk.tcl.formatter.tests.AllTests.suite());
 		// $JUnit-END$
 		return suite;
 	}
