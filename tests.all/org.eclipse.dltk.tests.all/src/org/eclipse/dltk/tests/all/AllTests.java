@@ -75,11 +75,11 @@ public class AllTests {
 					}
 				};
 			}
-			final Class clazz = bundle.loadClass(className);
+			final Class<?> clazz = bundle.loadClass(className);
 			final Method suiteMethod = clazz.getMethod("suite", new Class[0]); //$NON-NLS-1$
 			if (Modifier.isStatic(suiteMethod.getModifiers())
 					&& Modifier.isPublic(suiteMethod.getModifiers())) {
-				return (Test) suiteMethod.invoke(null, null);
+				return (Test) suiteMethod.invoke(null, (Object[]) null);
 			} else {
 				return new TestCase(className) {
 					protected void runTest() throws Throwable {
