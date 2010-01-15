@@ -23,7 +23,7 @@ import org.osgi.framework.Bundle;
 public class AllTests {
 
 	public static Test suite() {
-		TestSuite suite = new TestSuite("Test all DLTK"); //$NON-NLS-1$
+		TestSuite suite = new TestSuite("DLTK tests"); //$NON-NLS-1$
 		// $JUnit-BEGIN$
 		suite.addTest(org.eclipse.dltk.core.tests.AllTests.suite());
 		suite.addTest(org.eclipse.dltk.debug.tests.AllTests.suite());
@@ -70,6 +70,7 @@ public class AllTests {
 			final Bundle bundle = Platform.getBundle(pluginName);
 			if (bundle == null) {
 				return new TestCase(className) {
+					@Override
 					protected void runTest() throws Throwable {
 						fail(NLS.bind("Bundle {0} is not found", pluginName)); //$NON-NLS-1$
 					}
@@ -82,6 +83,7 @@ public class AllTests {
 				return (Test) suiteMethod.invoke(null, (Object[]) null);
 			} else {
 				return new TestCase(className) {
+					@Override
 					protected void runTest() throws Throwable {
 						fail("suite() method is not public and static"); //$NON-NLS-1$
 					}
@@ -89,6 +91,7 @@ public class AllTests {
 			}
 		} catch (final Exception e) {
 			return new TestCase(className) {
+				@Override
 				protected void runTest() throws Throwable {
 					throw e;
 				}
