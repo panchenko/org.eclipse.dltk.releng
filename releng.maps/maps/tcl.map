@@ -1,7 +1,7 @@
 
 ! Tcl Development Tools (DLTK)
 !
-! $Id: tcl.map,v 1.286 2010/01/15 17:25:53 apanchenk Exp $ 
+! $Id: tcl.map,v 1.287 2010/01/15 17:27:39 apanchenk Exp $ 
 
 feature@org.eclipse.dltk.tcl=v20100115-2213,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/features/org.eclipse.dltk.tcl-feature
 feature@org.eclipse.dltk.tcl.sdk=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/features/org.eclipse.dltk.tcl.sdk
@@ -23,6 +23,6 @@ plugin@org.eclipse.dltk.tcl.activestatedebugger=v20091028-1402,:pserver:anonymou
 
 plugin@org.eclipse.dltk.tcl.testing=v20091005-2107,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.testing
 plugin@org.eclipse.dltk.tcl.testing.tcltest=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.testing.tcltest
-plugin@org.eclipse.dltk.tcl.formatter=v2009,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.testing.formatter
+plugin@org.eclipse.dltk.tcl.formatter=v20100115-2327,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/plugins/org.eclipse.dltk.tcl.formatter
 
 plugin@org.eclipse.dltk.tcl.doc.user=v20090613-1432,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/docs/org.eclipse.dltk.tcl.doc.user
