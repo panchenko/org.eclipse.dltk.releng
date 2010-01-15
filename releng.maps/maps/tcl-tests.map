@@ -1,6 +1,6 @@
 !********* Eclipse Dynamic Languages Toolkit (DLTK)
 !
-! $Id: tcl-tests.map,v 1.61 2010/01/15 16:16:29 apanchenk Exp $
+! $Id: tcl-tests.map,v 1.62 2010/01/15 17:28:47 apanchenk Exp $
 !
 
 feature@org.eclipse.dltk.tcl.tests=v20100115-2213,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/features/org.eclipse.dltk.tcl.tests-feature
@@ -11,6 +11,8 @@ plugin@org.eclipse.dltk.tcl.ui.tests=v20100115-2213,:pserver:anonymous@dev.eclip
 
 plugin@org.eclipse.dltk.tcl.parser.tests=v20100115-2213,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/tests/org.eclipse.dltk.tcl.parser.tests
 plugin@org.eclipse.dltk.tcl.validators.tests=v20100115-2213,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/tests/org.eclipse.dltk.tcl.validators.tests
+
+plugin@org.eclipse.dltk.tcl.formatter.tests=v20100115-2328,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/tests/org.eclipse.dltk.tcl.formatter.tests
 
 ! SWT bot DLTK/TCL Tests
 plugin@org.eclipse.dltk.tcl.ui.tests.swtbot=HEAD,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/tcl/tests/org.eclipse.dltk.tcl.ui.tests.swtbot
