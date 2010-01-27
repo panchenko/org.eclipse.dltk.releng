@@ -53,6 +53,9 @@ public class AllTests {
 				"org.eclipse.dltk.ruby.testing.tests.AllTests")); //$NON-NLS-1$
 
 		suite.addTest(org.eclipse.dltk.formatter.tests.AllTests.suite());
+		suite
+				.addTest(org.eclipse.dltk.javascript.parser.tests.AllTests
+						.suite());
 		suite.addTest(org.eclipse.dltk.javascript.formatter.tests.AllTests
 				.suite());
 		suite.addTest(org.eclipse.dltk.tcl.formatter.tests.AllTests.suite());
