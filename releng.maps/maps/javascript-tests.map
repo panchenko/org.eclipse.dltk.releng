@@ -1,11 +1,11 @@
 !********* Eclipse Dynamic Languages Toolkit (DLTK)
 !
-! $Id: javascript-tests.map,v 1.75 2010/11/25 11:44:36 apanchenk Exp $
+! $Id: javascript-tests.map,v 1.76 2010/11/26 18:26:54 apanchenk Exp $
 !
 
 feature@org.eclipse.dltk.javascript.tests=v20101125-1247,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript.tests
 
-plugin@org.eclipse.dltk.javascript.core.tests=v20101125-1247,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/tests/org.eclipse.dltk.javascript.core.tests
+plugin@org.eclipse.dltk.javascript.core.tests=v20101127-0026,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/tests/org.eclipse.dltk.javascript.core.tests
 plugin@org.eclipse.dltk.javascript.formatter.tests=v20101104-2356,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/tests/org.eclipse.dltk.javascript.formatter.tests
 plugin@org.eclipse.dltk.javascript.parser.tests=v20101021-1903,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/tests/org.eclipse.dltk.javascript.parser.tests
-plugin@org.eclipse.dltk.javascript.ui.tests=v20101125-1744,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/tests/org.eclipse.dltk.javascript.ui.tests
+plugin@org.eclipse.dltk.javascript.ui.tests=v20101127-0026,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/tests/org.eclipse.dltk.javascript.ui.tests
