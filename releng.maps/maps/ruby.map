@@ -1,16 +1,16 @@
 
 ! Ruby Development Tools (DLTK)
 !
-! $Id: ruby.map,v 1.229 2010/12/09 08:26:10 apanchenk Exp $ 
+! $Id: ruby.map,v 1.230 2010/12/10 21:32:04 apanchenk Exp $ 
 
 feature@org.eclipse.dltk.ruby=v20100505-1154,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/features/org.eclipse.dltk.ruby-feature
 feature@org.eclipse.dltk.ruby.sdk=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/features/org.eclipse.dltk.ruby.sdk
 
-plugin@org.eclipse.dltk.ruby=v20090615-1430,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby
-plugin@org.eclipse.dltk.ruby.core=v20101021-1903,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby.core
+plugin@org.eclipse.dltk.ruby=v20101211-0331,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby
+plugin@org.eclipse.dltk.ruby.core=v20101211-0331,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby.core
 plugin@org.eclipse.dltk.ruby.launching=v20100524-0038,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby.launching
 plugin@org.eclipse.dltk.ruby.debug=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby.debug
-plugin@org.eclipse.dltk.ruby.ui=v20101209,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby.ui
+plugin@org.eclipse.dltk.ruby.ui=v20101211-0331,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby.ui
 plugin@org.eclipse.dltk.ruby.formatter=v20100212-1450,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby.formatter
 plugin@org.eclipse.dltk.ruby.testing=v20100212-1450,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby.testing
 plugin@org.eclipse.dltk.ruby.debug.ui=v20100212-1450,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby.debug.ui

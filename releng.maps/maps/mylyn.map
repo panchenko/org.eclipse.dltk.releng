@@ -1,9 +1,9 @@
 
 ! RSE Environment implementation (DLTK)
 !
-! $Id: mylyn.map,v 1.30 2010/10/25 19:00:47 apanchenk Exp $ 
+! $Id: mylyn.map,v 1.31 2010/12/10 21:32:04 apanchenk Exp $ 
 
 feature@org.eclipse.dltk.mylyn=v20101025-2100,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/mylyn/features/org.eclipse.dltk.mylyn-feature
 feature@org.eclipse.dltk.mylyn.sdk=v20101025-2100,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/mylyn/features/org.eclipse.dltk.mylyn.sdk
 
-plugin@org.eclipse.dltk.mylyn=v20101025-2100,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/mylyn/plugins/org.eclipse.dltk.mylyn
+plugin@org.eclipse.dltk.mylyn=v20101211-0331,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/mylyn/plugins/org.eclipse.dltk.mylyn
