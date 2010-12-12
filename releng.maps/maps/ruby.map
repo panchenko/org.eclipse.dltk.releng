@@ -1,9 +1,9 @@
 
 ! Ruby Development Tools (DLTK)
 !
-! $Id: ruby.map,v 1.231 2010/12/12 05:07:26 apanchenk Exp $ 
+! $Id: ruby.map,v 1.232 2010/12/12 06:57:00 apanchenk Exp $ 
 
-feature@org.eclipse.dltk.ruby=v20100505-1154,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/features/org.eclipse.dltk.ruby-feature
+feature@org.eclipse.dltk.ruby=v20101212-1256,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/features/org.eclipse.dltk.ruby-feature
 feature@org.eclipse.dltk.ruby.sdk=v20090730-1127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/features/org.eclipse.dltk.ruby.sdk
 
 plugin@org.eclipse.dltk.ruby=v20101211-0331,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/ruby/plugins/org.eclipse.dltk.ruby
