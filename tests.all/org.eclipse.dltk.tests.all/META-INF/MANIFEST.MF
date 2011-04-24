@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Dltk all tests Plug-in
 Bundle-SymbolicName: org.eclipse.dltk.tests.all
-Bundle-Version: 1.0.0
+Bundle-Version: 3.0.0
 Bundle-Activator: org.eclipse.dltk.tests.all.Activator
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.dltk.core.tests,
