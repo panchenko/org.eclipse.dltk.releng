@@ -13,8 +13,8 @@ plugin@org.eclipse.dltk.formatter=v20110423,:pserver:anonymous@dev.eclipse.org:/
 plugin@org.eclipse.dltk.console=v20101211-0412,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.console
 plugin@org.eclipse.dltk.console.ui=v20101212-1106,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.console.ui
 
-plugin@org.eclipse.dltk.logconsole=v20101211-1000,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.logconsole
-plugin@org.eclipse.dltk.logconsole.ui=v20101211-1000,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.logconsole.ui
+plugin@org.eclipse.dltk.logconsole=v20110424,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.logconsole
+plugin@org.eclipse.dltk.logconsole.ui=v20110424,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.logconsole.ui
 
 plugin@org.eclipse.dltk.debug=v20101211-0412,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.debug
 plugin@org.eclipse.dltk.debug.ui=v20110423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.debug.ui
@@ -24,4 +24,4 @@ plugin@org.eclipse.dltk.validators.ui=v20110423,:pserver:anonymous@dev.eclipse.o
 plugin@org.eclipse.dltk.validators.externalchecker=v20110423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.validators.externalchecker
 
 plugin@org.eclipse.dltk.testing=v20110423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.testing
-plugin@org.eclipse.dltk.core.doc.isv=v20101102-1808,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.doc.isv
+plugin@org.eclipse.dltk.core.doc.isv=v20110424,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/core/plugins/org.eclipse.dltk.core.doc.isv

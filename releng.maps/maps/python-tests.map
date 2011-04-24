@@ -1,9 +1,9 @@
 !********* Eclipse Dynamic Languages Toolkit (DLTK)
 !
-! $Id: python-tests.map,v 1.10 2010/02/12 09:55:40 apanchenk Exp $
+! $Id: python-tests.map,v 1.11 2011/04/24 14:53:34 apanchenk Exp $
 !
 
 feature@org.eclipse.dltk.python.tests=v20090730-1311,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/features/org.eclipse.dltk.python.tests
 
-plugin@org.eclipse.dltk.python.tests=v20100212-1555,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/tests/org.eclipse.dltk.python.tests
-plugin@org.eclipse.dltk.python.ui.tests=v20100115-2213,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/tests/org.eclipse.dltk.python.ui.tests
+plugin@org.eclipse.dltk.python.tests=v20110424,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/tests/org.eclipse.dltk.python.tests
+plugin@org.eclipse.dltk.python.ui.tests=v20110424,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/python/tests/org.eclipse.dltk.python.ui.tests
