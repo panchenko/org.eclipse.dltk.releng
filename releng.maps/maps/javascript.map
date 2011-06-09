@@ -1,12 +1,12 @@
 
 ! Javascript Development Tools (DLTK)
 !
-! $Id: javascript.map,v 1.213 2011/04/29 08:02:40 apanchenk Exp $ 
+! $Id: javascript.map,v 1.214 2011/06/09 13:26:25 apanchenk Exp $ 
 
 feature@org.eclipse.dltk.javascript=v20101127-0026,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript-feature
 feature@org.eclipse.dltk.javascript.sdk=v20101125-1247,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/features/org.eclipse.dltk.javascript.sdk
 
-plugin@org.eclipse.dltk.javascript.core=v20110429,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.core
+plugin@org.eclipse.dltk.javascript.core=v20110609-1525,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.core
 plugin@org.eclipse.dltk.javascript.core.manipulation=v20110423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.core.manipulation
 plugin@org.eclipse.dltk.javascript.core.dom.support=v20110429,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.core.dom.support
 plugin@org.eclipse.dltk.javascript.core.dom.support.sample=v20100222-1537,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.core.dom.support.sample
@@ -16,9 +16,9 @@ plugin@org.eclipse.dltk.javascript.jdt.integration=v20110429,:pserver:anonymous@
 plugin@org.eclipse.dltk.javascript.launching=v20110429,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.launching
 plugin@org.eclipse.dltk.javascript.rhino=v20110429,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.rhino
 plugin@org.eclipse.dltk.javascript.rhino.dbgp=v20110429,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.rhino.dbgp
-plugin@org.eclipse.dltk.javascript.ui=v20110424,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.ui
-plugin@org.eclipse.dltk.javascript.formatter=v20110429,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.formatter
-plugin@org.eclipse.dltk.javascript.parser=v20110423,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.parser
+plugin@org.eclipse.dltk.javascript.ui=v20110609-1525,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.ui
+plugin@org.eclipse.dltk.javascript.formatter=v20110609-1525,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.formatter
+plugin@org.eclipse.dltk.javascript.parser=v20110609-1525,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.parser
 plugin@org.eclipse.dltk.javascript.jsjdtdebugger=v20110429,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.javascript.jsjdtdebugger
 plugin@org.eclipse.dltk.wst.javascript.core=v20071127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.wst.javascript.core
 plugin@org.eclipse.dltk.wst.javascript.ui=v20071127,:pserver:anonymous@dev.eclipse.org:/cvsroot/technology,,org.eclipse.dltk/javascript/plugins/org.eclipse.dltk.wst.javascript.ui
