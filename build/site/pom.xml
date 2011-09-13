@@ -66,7 +66,7 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
 					<execution>
-						<phase>package</phase>
+						<phase>install</phase>
 						<configuration>
 							<tasks>
 								<property
@@ -205,6 +205,14 @@
 									</fileset>
 									<report format="noframes" todir="target/site/reports" />
 								</junitreport>
+								<mkdir dir="target/tozip" />
+								<mkdir dir="target/tozip/${buildLabel}${buildId}-${buildId}" />
+								<copy todir="target/tozip/${buildLabel}${buildId}-${buildId}">
+									<fileset dir="target/site" />
+								</copy>
+								<zip destfile="target/dltk-site-${buildLabel}${buildId}-${buildId}.zip"
+									basedir="target/tozip" />
+								<delete dir="target/tozip" failonerror="false" />
 							</tasks>
 						</configuration>
 						<goals>
@@ -235,26 +243,6 @@
 						<version>1.6.5</version>
 					</dependency>
 				</dependencies>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.2.1</version>
-				<configuration>
-					<descriptors>
-						<descriptor>assembly.xml</descriptor>
-					</descriptors>
-					<finalName>dltk</finalName>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
 	</build>
