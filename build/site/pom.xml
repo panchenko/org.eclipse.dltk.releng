@@ -16,6 +16,7 @@
 	<properties>
 		<buildLabel>I-</buildLabel>
 		<buildBranch>4.0.0</buildBranch>
+		<buildTypeId>Integration</buildTypeId>
 	</properties>
 
 	<build>
@@ -148,7 +149,7 @@
 									tofile="${basedir}/target/site/dltk-rse-sdk-${buildLabel}${buildId}.zip" />
 
 								<replace file="${resultingIndex}" token="@date@" value="${TODAY}" />
-								<replace file="${resultingIndex}" token="@type@" value="${buildBranch}" />
+								<replace file="${resultingIndex}" token="@type@" value="${buildTypeId}" />
 								<replace file="${resultingIndex}" token="@build@"
 									value="${buildLabel}${buildId}" />
 								<replace file="${resultingIndex}" token="@buildBranch@"
