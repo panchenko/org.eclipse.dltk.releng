@@ -31,7 +31,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/</outputDirectory>
+							<outputDirectory>${basedir}/target/site/</outputDirectory>
 							<resources>
 								<resource>
 									<directory>static</directory>
@@ -46,7 +46,7 @@
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${basedir}/target/reports/</outputDirectory>
+							<outputDirectory>${basedir}/target/site/reports/</outputDirectory>
 							<resources>
 								<resource>
 									<directory>../../</directory>
@@ -65,13 +65,14 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
 					<execution>
-						<phase>install</phase>
+						<phase>package</phase>
 						<configuration>
 							<tasks>
 								<property
 									file="${basedir}/../../releng.maps/maps/dependencies.properties" />
 								<property name="indexFileName" value="index.php" />
-								<property name="resultingIndex" value="${basedir}/target/${indexFileName}" />
+								<property name="resultingIndex"
+									value="${basedir}/target/site/${indexFileName}" />
 								<copy overwrite="true" file="${basedir}/template/index.php.template"
 									tofile="${resultingIndex}" />
 								<!-- Rename archives to timestamp format -->
@@ -84,67 +85,67 @@
 
 								<copy overwrite="true"
 									file="${basedir}/../runtime.sites/update.site/target/dltk-updates.zip"
-									tofile="${basedir}/target/dltk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-${buildLabel}${buildId}.zip" />
 								<copy overwrite="true"
 									file="${basedir}/../update.site/target/dltk-updates.zip"
-									tofile="${basedir}/target/dltk-sdk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-sdk-${buildLabel}${buildId}.zip" />
 
 
 								<copy overwrite="true"
 									file="${basedir}/../runtime.sites/core/target/dltk-core.zip"
-									tofile="${basedir}/target/dltk-core-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-core-${buildLabel}${buildId}.zip" />
 								<copy overwrite="true"
 									file="${basedir}/../../core/update.site/target/dltk-core.zip"
-									tofile="${basedir}/target/dltk-core-sdk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-core-sdk-${buildLabel}${buildId}.zip" />
 
 								<copy overwrite="true"
 									file="${basedir}/../runtime.sites/tcl/target/dltk-tcl.zip"
-									tofile="${basedir}/target/dltk-tcl-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-tcl-${buildLabel}${buildId}.zip" />
 								<copy overwrite="true"
 									file="${basedir}/../../tcl/update.site/target/dltk-tcl.zip"
-									tofile="${basedir}/target/dltk-tcl-sdk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-tcl-sdk-${buildLabel}${buildId}.zip" />
 
 								<copy overwrite="true"
 									file="${basedir}/../runtime.sites/itcl/target/dltk-itcl.zip"
-									tofile="${basedir}/target/dltk-itcl-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-itcl-${buildLabel}${buildId}.zip" />
 								<copy overwrite="true"
 									file="${basedir}/../../itcl/update.site/target/dltk-itcl.zip"
-									tofile="${basedir}/target/dltk-itcl-sdk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-itcl-sdk-${buildLabel}${buildId}.zip" />
 
 								<copy overwrite="true"
 									file="${basedir}/../runtime.sites/ruby/target/dltk-ruby.zip"
-									tofile="${basedir}/target/dltk-ruby-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-ruby-${buildLabel}${buildId}.zip" />
 								<copy overwrite="true"
 									file="${basedir}/../../ruby/update.site/target/dltk-ruby.zip"
-									tofile="${basedir}/target/dltk-ruby-sdk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-ruby-sdk-${buildLabel}${buildId}.zip" />
 
 								<copy overwrite="true"
 									file="${basedir}/../runtime.sites/xotcl/target/dltk-xotcl.zip"
-									tofile="${basedir}/target/dltk-xotcl-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-xotcl-${buildLabel}${buildId}.zip" />
 								<copy overwrite="true"
 									file="${basedir}/../../xotcl/update.site/target/dltk-xotcl.zip"
-									tofile="${basedir}/target/dltk-xotcl-sdk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-xotcl-sdk-${buildLabel}${buildId}.zip" />
 
 								<copy overwrite="true"
 									file="${basedir}/../runtime.sites/mylyn/target/dltk-mylyn.zip"
-									tofile="${basedir}/target/dltk-mylyn-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-mylyn-${buildLabel}${buildId}.zip" />
 								<copy overwrite="true"
 									file="${basedir}/../../mylyn/update.site/target/dltk-mylyn.zip"
-									tofile="${basedir}/target/dltk-mylyn-sdk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-mylyn-sdk-${buildLabel}${buildId}.zip" />
 
 								<copy overwrite="true"
 									file="${basedir}/../runtime.sites/javascript/target/dltk-javascript.zip"
-									tofile="${basedir}/target/dltk-javascript-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-javascript-${buildLabel}${buildId}.zip" />
 								<copy overwrite="true"
 									file="${basedir}/../../javascript/update.site/target/dltk-javascript.zip"
-									tofile="${basedir}/target/dltk-javascript-sdk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-javascript-sdk-${buildLabel}${buildId}.zip" />
 
 								<copy overwrite="true"
 									file="${basedir}/../runtime.sites/rse/target/dltk-rse.zip"
-									tofile="${basedir}/target/dltk-rse-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-rse-${buildLabel}${buildId}.zip" />
 								<copy overwrite="true"
 									file="${basedir}/../../rse/update.site/target/dltk-rse.zip"
-									tofile="${basedir}/target/dltk-rse-sdk-${buildLabel}${buildId}.zip" />
+									tofile="${basedir}/target/site/dltk-rse-sdk-${buildLabel}${buildId}.zip" />
 
 								<replace file="${resultingIndex}" token="@date@" value="${TODAY}" />
 								<replace file="${resultingIndex}" token="@type@" value="${buildBranch}" />
@@ -197,15 +198,13 @@
 									value="${h2.url}/${h2.file}" />
 
 
-								<junitreport todir="target/reports">
-									<fileset dir="target/reports">
+								<junitreport todir="target/site/reports">
+									<fileset dir="target/site/reports">
 										<include name="**/*.xml" />
 									</fileset>
-									<report format="noframes" todir="target/reports" />
+									<report format="noframes" todir="target/site/reports" />
 								</junitreport>
-
 							</tasks>
-
 						</configuration>
 						<goals>
 							<goal>run</goal>
@@ -234,8 +233,27 @@
 						<artifactId>ant-junit</artifactId>
 						<version>1.6.5</version>
 					</dependency>
-
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2.1</version>
+				<configuration>
+					<descriptors>
+						<descriptor>assembly.xml</descriptor>
+					</descriptors>
+					<finalName>dltk</finalName>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
