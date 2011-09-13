@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<compileSummary>
+<summaryItem>
+<name>totalBundles</name>
+<value>68</value>
+</summaryItem>
+<summaryItem>
+<name>totalErrors</name>
+<value>0</value>
+</summaryItem>
+<summaryItem>
+<name>totalWarnings</name>
+<value>395</value>
+</summaryItem>
+<summaryItem>
+<name>totalAccess</name>
+<value>381</value>
+</summaryItem>
+<summaryItem>
+<name>totaldiscouragedAccessWarningCount</name>
+<value>381</value>
+</summaryItem>
+<summaryItem>
+<name>totalforbiddenAccessWarningCount</name>
+<value>0</value>
+</summaryItem>
+</compileSummary>

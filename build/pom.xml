@@ -12,7 +12,8 @@
 		<tycho-version>0.12.0</tycho-version>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<eclipse-repository-url>http://download.eclipse.org/releases/indigo/</eclipse-repository-url>
+		<eclipse-repository-url>http://download.xored.com/mirrors/helios</eclipse-repository-url>
+		<pack200>${java.home}/bin</pack200>
 	</properties>
 
 	<repositories>
@@ -22,7 +23,7 @@
 			<url>${eclipse-repository-url}</url>
 		</repository>
 	</repositories>
-	
+
 	<modules>
 		<module>../core</module>
 		<module>../tcl</module>
@@ -30,7 +31,21 @@
 		<module>../itcl</module>
 		<module>../ruby</module>
 		<module>../javascript</module>
+		<module>../rse</module>
+		<module>../python</module>
+		<module>../mylyn</module>
 		<module>update.site</module>
+		<module>runtime.sites/core</module>
+		<module>runtime.sites/itcl</module>
+		<module>runtime.sites/javascript</module>
+		<module>runtime.sites/mylyn</module>
+		<module>runtime.sites/python</module>
+		<module>runtime.sites/rse</module>
+		<module>runtime.sites/ruby</module>
+		<module>runtime.sites/tcl</module>
+		<module>runtime.sites/update.site</module>
+		<module>runtime.sites/xotcl</module>
+		<module>site</module>
 	</modules>
 
 	<build>

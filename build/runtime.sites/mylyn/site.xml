@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.dltk.mylyn_4.0.0.qualifier.jar" id="org.eclipse.dltk.mylyn" version="4.0.0.qualifier"/>
+</site>

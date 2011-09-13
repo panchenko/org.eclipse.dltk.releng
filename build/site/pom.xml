@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.dltk.core</groupId>
+	<artifactId>site</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<parent>
+		<artifactId>dltk</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+		<groupId>org.eclipse.dltk</groupId>
+	</parent>
+	<packaging>pom</packaging>
+	<properties>
+		<buildLabel>I-</buildLabel>
+		<buildBranch>4.0.0</buildBranch>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/</outputDirectory>
+							<resources>
+								<resource>
+									<directory>static</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-resources2</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/reports/</outputDirectory>
+							<resources>
+								<resource>
+									<directory>../../</directory>
+									<includes>
+										<include>**/surefire-reports/*.xml</include>
+									</includes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- Update template files -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<configuration>
+							<tasks>
+								<property
+									file="${basedir}/../../releng.maps/maps/dependencies.properties" />
+								<property name="indexFileName" value="index.php" />
+								<property name="resultingIndex" value="${basedir}/target/${indexFileName}" />
+								<copy overwrite="true" file="${basedir}/template/index.php.template"
+									tofile="${resultingIndex}" />
+								<!-- Rename archives to timestamp format -->
+								<tstamp>
+									<format property="TODAY" pattern="MM d, yyyy" />
+								</tstamp>
+								<tstamp>
+									<format property="buildId" pattern="yyyyMMddhhmm" />
+								</tstamp>
+
+								<copy overwrite="true"
+									file="${basedir}/../runtime.sites/update.site/target/dltk-updates.zip"
+									tofile="${basedir}/target/dltk-${buildLabel}${buildId}.zip" />
+								<copy overwrite="true"
+									file="${basedir}/../update.site/target/dltk-updates.zip"
+									tofile="${basedir}/target/dltk-sdk-${buildLabel}${buildId}.zip" />
+
+
+								<copy overwrite="true"
+									file="${basedir}/../runtime.sites/core/target/dltk-core.zip"
+									tofile="${basedir}/target/dltk-core-${buildLabel}${buildId}.zip" />
+								<copy overwrite="true"
+									file="${basedir}/../../core/update.site/target/dltk-core.zip"
+									tofile="${basedir}/target/dltk-core-sdk-${buildLabel}${buildId}.zip" />
+
+								<copy overwrite="true"
+									file="${basedir}/../runtime.sites/tcl/target/dltk-tcl.zip"
+									tofile="${basedir}/target/dltk-tcl-${buildLabel}${buildId}.zip" />
+								<copy overwrite="true"
+									file="${basedir}/../../tcl/update.site/target/dltk-tcl.zip"
+									tofile="${basedir}/target/dltk-tcl-sdk-${buildLabel}${buildId}.zip" />
+
+								<copy overwrite="true"
+									file="${basedir}/../runtime.sites/itcl/target/dltk-itcl.zip"
+									tofile="${basedir}/target/dltk-itcl-${buildLabel}${buildId}.zip" />
+								<copy overwrite="true"
+									file="${basedir}/../../itcl/update.site/target/dltk-itcl.zip"
+									tofile="${basedir}/target/dltk-itcl-sdk-${buildLabel}${buildId}.zip" />
+
+								<copy overwrite="true"
+									file="${basedir}/../runtime.sites/ruby/target/dltk-ruby.zip"
+									tofile="${basedir}/target/dltk-ruby-${buildLabel}${buildId}.zip" />
+								<copy overwrite="true"
+									file="${basedir}/../../ruby/update.site/target/dltk-ruby.zip"
+									tofile="${basedir}/target/dltk-ruby-sdk-${buildLabel}${buildId}.zip" />
+
+								<copy overwrite="true"
+									file="${basedir}/../runtime.sites/xotcl/target/dltk-xotcl.zip"
+									tofile="${basedir}/target/dltk-xotcl-${buildLabel}${buildId}.zip" />
+								<copy overwrite="true"
+									file="${basedir}/../../xotcl/update.site/target/dltk-xotcl.zip"
+									tofile="${basedir}/target/dltk-xotcl-sdk-${buildLabel}${buildId}.zip" />
+
+								<copy overwrite="true"
+									file="${basedir}/../runtime.sites/mylyn/target/dltk-mylyn.zip"
+									tofile="${basedir}/target/dltk-mylyn-${buildLabel}${buildId}.zip" />
+								<copy overwrite="true"
+									file="${basedir}/../../mylyn/update.site/target/dltk-mylyn.zip"
+									tofile="${basedir}/target/dltk-mylyn-sdk-${buildLabel}${buildId}.zip" />
+
+								<copy overwrite="true"
+									file="${basedir}/../runtime.sites/javascript/target/dltk-javascript.zip"
+									tofile="${basedir}/target/dltk-javascript-${buildLabel}${buildId}.zip" />
+								<copy overwrite="true"
+									file="${basedir}/../../javascript/update.site/target/dltk-javascript.zip"
+									tofile="${basedir}/target/dltk-javascript-sdk-${buildLabel}${buildId}.zip" />
+
+								<copy overwrite="true"
+									file="${basedir}/../runtime.sites/rse/target/dltk-rse.zip"
+									tofile="${basedir}/target/dltk-rse-${buildLabel}${buildId}.zip" />
+								<copy overwrite="true"
+									file="${basedir}/../../rse/update.site/target/dltk-rse.zip"
+									tofile="${basedir}/target/dltk-rse-sdk-${buildLabel}${buildId}.zip" />
+
+								<replace file="${resultingIndex}" token="@date@" value="${TODAY}" />
+								<replace file="${resultingIndex}" token="@type@" value="${buildBranch}" />
+								<replace file="${resultingIndex}" token="@build@"
+									value="${buildLabel}${buildId}" />
+								<replace file="${resultingIndex}" token="@buildBranch@"
+									value="${buildBranch}" />
+
+								<!-- eclipse -->
+								<replace file="${resultingIndex}" token="@eclipseFile@"
+									value="${eclipse.file.linux-gtk-x86}" />
+								<replace file="${resultingIndex}" token="@eclipseURL@"
+									value="${eclipse.url}/${eclipse.file.linux-gtk-x86}" />
+								<replace file="${resultingIndex}" token="@eclipseBuildURL@"
+									value="${eclipse.url}" />
+								<!-- RSE -->
+								<replace file="${resultingIndex}" token="@rseFile@"
+									value="${rse.file}" />
+								<replace file="${resultingIndex}" token="@rseURL@"
+									value="${rse.url}/${rse.file}" />
+								<!-- EMF -->
+								<replace file="${resultingIndex}" token="@emfFile@"
+									value="${emf.file}" />
+								<replace file="${resultingIndex}" token="@emfURL@"
+									value="${emf.url}/${emf.file}" />
+								<!-- Mylyn -->
+								<replace file="${resultingIndex}" token="@mylynFile@"
+									value="${mylyn.file}" />
+								<replace file="${resultingIndex}" token="@mylynURL@"
+									value="${mylyn.url}/${mylyn.file}" />
+								<!--DERBY -->
+								<replace file="${resultingIndex}" token="@derbyFile@"
+									value="${derby.file}" />
+								<replace file="${resultingIndex}" token="@derbyURL@"
+									value="${derby.url}/${derby.file}" />
+								<!-- ANTLR Runtime from Orbit -->
+								<replace file="${resultingIndex}" token="@antlrFile@"
+									value="${antlr.file}" />
+								<replace file="${resultingIndex}" token="@antlrURL@"
+									value="${antlr.url}/${antlr.file}" />
+								<!-- JDT -->
+								<replace file="${resultingIndex}" token="@eclipseJDT_File@"
+									value="${eclipseJDT.file}" />
+								<replace file="${resultingIndex}" token="@eclipseJDT_URL@"
+									value="${eclipseJDT.url}/${eclipseJDT.file}" />
+								<!-- H2 -->
+								<replace file="${resultingIndex}" token="@h2File@"
+									value="${h2.file}" />
+								<replace file="${resultingIndex}" token="@h2URL@"
+									value="${h2.url}/${h2.file}" />
+
+
+								<junitreport todir="target/reports">
+									<fileset dir="target/reports">
+										<include name="**/*.xml" />
+									</fileset>
+									<report format="noframes" todir="target/reports" />
+								</junitreport>
+
+							</tasks>
+
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>ant-contrib</groupId>
+						<artifactId>ant-contrib</artifactId>
+						<version>1.0b3</version>
+						<exclusions>
+							<exclusion>
+								<groupId>ant</groupId>
+								<artifactId>ant</artifactId>
+							</exclusion>
+						</exclusions>
+					</dependency>
+					<dependency>
+						<groupId>ant</groupId>
+						<artifactId>ant-nodeps</artifactId>
+						<version>1.6.5</version>
+					</dependency>
+					<dependency>
+						<groupId>ant</groupId>
+						<artifactId>ant-junit</artifactId>
+						<version>1.6.5</version>
+					</dependency>
+
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
