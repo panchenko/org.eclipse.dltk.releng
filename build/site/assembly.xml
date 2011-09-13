@@ -1,5 +1,5 @@
 <assembly>
-  <id>site</id>
+  <id>site${buildLabel}${buildId}</id>
   <formats>
     <format>zip</format>
   </formats>
