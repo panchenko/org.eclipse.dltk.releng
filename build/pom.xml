@@ -35,17 +35,7 @@
 		<module>../python</module>
 		<module>../mylyn</module>
 		<module>update.site</module>
-		<module>runtime.sites/core</module>
-		<module>runtime.sites/itcl</module>
-		<module>runtime.sites/javascript</module>
-		<module>runtime.sites/mylyn</module>
-		<module>runtime.sites/python</module>
-		<module>runtime.sites/rse</module>
-		<module>runtime.sites/ruby</module>
-		<module>runtime.sites/tcl</module>
-		<module>runtime.sites/update.site</module>
-		<module>runtime.sites/xotcl</module>
-		<module>site</module>
+		<!-- <module>site</module> -->
 	</modules>
 
 	<build>
