@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site
 	pack200="true"
-	mirrorsURL="http://www.eclipse.org/downloads/download.php?file=/technology/dltk/updates-dev/4.0-nightly/site.xml&format=xml"
+	mirrorsURL="http://www.eclipse.org/downloads/download.php?file=/technology/dltk/updates-dev/4.0-nightly/site.xml&amp;format=xml"
 	digestURL="http://download.eclipse.org/technology/dltk/updates-dev/4.0-nightly/">
    <description url="http://www.eclipse.org/dltk/">
       The update site contains the features of
