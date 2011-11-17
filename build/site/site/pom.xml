@@ -7,9 +7,8 @@
 	<artifactId>site</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<parent>
-		<artifactId>dltk</artifactId>
+		<artifactId>dltk.sites</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath>
 		<groupId>org.eclipse.dltk</groupId>
 	</parent>
 	<packaging>pom</packaging>
