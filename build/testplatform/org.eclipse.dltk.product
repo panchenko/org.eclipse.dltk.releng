@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="DLTK Test platform" uid="org.eclipse.dltk.product" id="org.eclise.dltk.product" application="org.eclipse.ui.ide.workbench" version="4.0.0.qualifier" useFeatures="true" includeLaunchers="false">
+
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-showsplash</programArgs>
+      <vmArgs>-Xms128m
+-Xmx256m
+-XX:PermSize=128M
+-XX:MaxPermSize=192M</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+
+   <launcher name="DLTK">
+      <solaris/>
+      <win useIco="true">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="org.eclipse.pde"/>
+      <feature id="org.eclipse.emf.ecore"/>
+      <feature id="org.eclipse.emf.workspace"/>
+      <feature id="org.eclipse.platform"/>
+      <feature id="org.eclipse.emf.common"/>
+      <feature id="org.eclipse.emf.common.ui"/>
+      <feature id="org.eclipse.emf.databinding"/>
+      <feature id="org.eclipse.emf.transaction"/>
+      <feature id="org.eclipse.emf.edit.ui"/>
+      <feature id="org.eclipse.emf.edit"/>
+      <feature id="org.eclipse.emf.validation"/>
+      <feature id="org.eclipse.epp.mpc"/>
+      <feature id="org.eclipse.equinox.p2.discovery.feature"/>
+      <feature id="org.eclipse.egit"/>
+      <feature id="org.eclipse.dltk.core"/>
+      <feature id="org.eclipse.dltk.javascript"/>
+      <feature id="org.eclipse.dltk.mylyn"/>
+      <feature id="org.eclipse.dltk.ruby"/>
+      <feature id="org.eclipse.dltk.xotcl"/>
+      <feature id="org.eclipse.dltk.tcl"/>
+      <feature id="org.eclipse.dltk.itcl"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+   </configurations>
+
+</product>

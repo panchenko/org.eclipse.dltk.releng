@@ -35,6 +35,8 @@
 		<module>../python</module>
 		<module>../mylyn</module>
 		<module>update.site</module>
+		<module>testplatform</module>
+		<module>javascript.tests</module>
 		<!-- <module>site</module> -->
 	</modules>
 

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.eclipse.dltk.tests</groupId>
+	<artifactId>javascript.tests</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>q7test</packaging>
+	<parent>
+		<artifactId>dltk</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+		<groupId>org.eclipse.dltk</groupId>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.eclipse.dltk.tests</groupId>
+			<artifactId>org.eclipse.dltk.product</artifactId>
+			<version>4.0.0-SNAPSHOT</version>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>q7-releases</id>
+			<name>Xored Q7 Maven repository</name>
+			<url>http://maven.xored.com/nexus/content/repositories/q7-releases/
+			</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<repositories>
+		<repository>
+			<id>eclipses</id>
+			<name>Eclipse packages in Nexus repository</name>
+			<url>http://maven.xored.com/nexus/content/repositories/thirdparty/
+			</url>
+		</repository>
+	</repositories>
+
+	<properties>
+		<q7-maven-version>1.1.4</q7-maven-version>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.xored.q7</groupId>
+				<artifactId>q7-maven-plugin</artifactId>
+				<version>${q7-maven-version}</version>
+				<extensions>true</extensions>
+				<configuration>
+					<aut>
+						<explicit>${project.basedir}/../testplatform/target/products/org.eclipse.dltk.product-[platform].zip</explicit>
+					</aut>
+					<q7>
+						<licenseFile>${project.basedir}/q7.license</licenseFile>
+						<version>${q7-maven-version}</version>
+					</q7>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project> 

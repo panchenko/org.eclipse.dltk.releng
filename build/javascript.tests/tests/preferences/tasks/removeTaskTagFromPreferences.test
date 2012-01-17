@@ -1,0 +1,85 @@
+--- Q7 testcase ---
+Q7-vendor: www.xored.com/q7
+Format-Version: 1.0
+Element-Name: removeTaskTagFromPreferences
+Tags: preferences/javascript/tasks
+External-Reference: 
+Element-Version: 3.0
+Contexts: _vux-ED2qEeGit9CrtuY7UA,_k86W8D2qEeGit9CrtuY7UA
+Save-Time: 1/16/12 2:53 PM
+Id: _aEECQD2jEeGit9CrtuY7UA
+
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa
+Entry-Name: .description
+Content-Type: text/plain
+
+1. Add task in code
+2. Open "Preferences->Javascript->Task Tags" 
+3. Delete task
+4. Make sure that task is removed from Tasks view, but is displayed in code
+------=_.description-216f885c-d591-38ce-8ea2-e4f8cb4d6ffa--
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac
+Entry-Name: .content
+Content-Type: text/ecl
+
+get-view "Script Explorer" | get-tree | select "javascript.project/testfolder/testfile.js" | double-click -nowait
+with [get-editor "testfile.js" | get-editbox] {
+    set-text-offset 0 8
+    type-text "// TODO"
+    key-type CR
+    set-text-offset 0 14
+    type-text "// XXX"
+    key-type CR
+    key-type "M1+s"
+}
+get-view Tasks | click
+with [get-view Tasks | get-tree] {
+    get-property itemCount | equals 2 | verify-true
+    get-item "" | get-property columns -index 0 | equals "" | verify-true
+    get-item "" | get-property columns -index 1 | equals "" | verify-true
+    get-item "" | get-property columns -index 2 | equals TODO | verify-true
+    get-item "" | get-property columns -index 3 | equals "testfile.js" | verify-true
+    get-item "" | get-property columns -index 4 | equals "/javascript.project/testfolder" | verify-true
+    get-item "" | get-property columns -index 5 | equals "line 9" | verify-true
+    get-item "" | get-property columns -index 6 | equals "JavaScript Task" | verify-true
+    get-item "" -index 1 | get-property columns -index 0 | equals "" | verify-true
+    get-item "" -index 1 | get-property columns -index 1 | equals "" | verify-true
+    get-item "" -index 1 | get-property columns -index 2 | equals XXX | verify-true
+    get-item "" -index 1 | get-property columns -index 3 | equals "testfile.js" | verify-true
+    get-item "" -index 1 | get-property columns -index 4 | equals "/javascript.project/testfolder" | verify-true
+    get-item "" -index 1 | get-property columns -index 5 | equals "line 15" | verify-true
+    get-item "" -index 1 | get-property columns -index 6 | equals "JavaScript Task" | verify-true
+}
+get-preferences-menu | click
+with [get-window Preferences] {
+    get-tree | select "JavaScript/Task Tags"
+    get-table | select XXX
+    get-button Remove | click
+    get-button Apply | click
+    get-window "Task Tags Settings Changed" | get-button Yes | click
+    get-button OK | click
+}
+with [get-view Tasks | get-tree] {
+    get-property itemCount | equals 1 | verify-true
+    get-item "" | get-property columns -index 0 | equals "" | verify-true
+    get-item "" | get-property columns -index 1 | equals "" | verify-true
+    get-item "" | get-property columns -index 2 | equals TODO | verify-true
+    get-item "" | get-property columns -index 3 | equals "testfile.js" | verify-true
+    get-item "" | get-property columns -index 4 | equals "/javascript.project/testfolder" | verify-true
+    get-item "" | get-property columns -index 5 | equals "line 9" | verify-true
+    get-item "" | get-property columns -index 6 | equals "JavaScript Task" | verify-true
+}
+get-editor "testfile.js" | get-editbox | get-property text | contains "// XXX\n\n" | verify-true
+------=_.content-0a7243a0-75d3-3d5f-9791-539de0e5b7ac--
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf
+Content-Type: q7/binary
+Entry-Name: .q7.content
+
+UEsDBBQACAAIAAAAIQAAAAAAAAAAAAAAAAAIAAAALmNvbnRlbnR9kF9LwzAUxd8Fv0PI+xKtYGtpNmSr
+4oOgOFGfRkjvarYlaZP0j9/edLgORfZ27z3n/pJ7slmvdqgF66TRDF+SC4xAC1NIXTLc+PUkwbPp+Vkm
+jCK9sVCQOiZOgOZWmvTlp0C9kulIiQZK4GqXhjnDn95XKaVd1xGjSmJsSd8fHw6Wf8njUlDpXqV1TA8q
+ARFGGGmugGELyrSw5G675OWdNerJwhpsOAMcPt52NfxKFgyveJ7PnxfRJod76W/m1jcf8estRp6XjuHq
+uE03vOVOWFl56gM/4PxXFZ4EscMhFYRCLtpD79101Tb9JF9E9W9qRkfHH/82uX5LTvuH5lTswfINUEsH
+CByn02MDAQAAwQEAAFBLAQIUABQACAAIAAAAIQAcp9NjAwEAAMEBAAAIAAAAAAAAAAAAAAAAAAAAAAAu
+Y29udGVudFBLBQYAAAAAAQABADYAAAA5AQAAAAA=
+------=_.q7.content-3d2e0690-ce48-3609-83e0-c704d49f1eaf--
