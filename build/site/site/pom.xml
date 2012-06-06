@@ -77,7 +77,7 @@
 									tofile="${resultingIndex}" />
 								<!-- Rename archives to timestamp format -->
 								<tstamp>
-									<format property="TODAY" pattern="MM d, yyyy" />
+									<format property="TODAY" pattern="MMM d, yyyy" />
 								</tstamp>
 								<tstamp>
 									<format property="buildId" pattern="yyyyMMddhhmm" />
