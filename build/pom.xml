@@ -25,15 +25,13 @@
 	</repositories>
 
 	<modules>
-		<module>../core</module>
-		<module>../tcl</module>
-		<module>../xotcl</module>
-		<module>../itcl</module>
-		<module>../ruby</module>
-		<module>../javascript</module>
-		<module>../rse</module>
-		<module>../python</module>
-		<module>../mylyn</module>
+		<module>../../org.eclipse.dltk.core/core</module>
+		<module>../../org.eclipse.dltk.javascript</module>
+		<module>../../org.eclipse.dltk.tcl</module>
+		<module>../../org.eclipse.dltk.ruby</module>
+		<module>../../org.eclipse.dltk.core/rse</module>
+		<module>../../org.eclipse.dltk.python</module>
+		<module>../../org.eclipse.dltk.core/mylyn</module>
 		<module>update.site</module>
 		<module>testplatform</module>
 		<module>javascript.tests</module>
