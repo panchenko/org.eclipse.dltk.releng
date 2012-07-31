@@ -14,7 +14,7 @@
    <feature url="features/org.eclipse.dltk.core.sdk_4.0.0.qualifier.jar" id="org.eclipse.dltk.core.sdk" version="4.0.0.qualifier">
       <category name="Dynamic Languages Toolkit (DLTK)"/>
    </feature>
-   <feature url="features/org.eclipse.dltk.4.0.0.qualifier.jar" id="org.eclipse.dltk.rse" version="4.0.0.qualifier">
+   <feature url="features/org.eclipse.dltk.rse.4.0.0.qualifier.jar" id="org.eclipse.dltk.rse" version="4.0.0.qualifier">
       <category name="Dynamic Languages Toolkit (DLTK)"/>
    </feature>
    <feature url="features/org.eclipse.dltk.rse.sdk_4.0.0.qualifier.jar" id="org.eclipse.dltk.rse.sdk" version="4.0.0.qualifier">
@@ -31,6 +31,9 @@
    </feature>
    <feature url="features/org.eclipse.dltk.mylyn.sdk_4.0.0.qualifier.jar" id="org.eclipse.dltk.mylyn.sdk" version="4.0.0.qualifier">
       <category name="Dynamic Languages Toolkit (DLTK)"/>
+   </feature>
+   <feature url="features/org.eclipse.dltk.core.tests_4.0.0.qualifier.jar" id="org.eclipse.dltk.core.tests" version="4.0.0.qualifier">
+      <category name="DLTK-Tests"/>
    </feature>
    <feature url="features/org.eclipse.dltk.ruby_4.0.0.qualifier.jar" id="org.eclipse.dltk.ruby" version="4.0.0.qualifier">
       <category name="Dynamic Languages Toolkit (DLTK)"/>
@@ -74,5 +77,7 @@
    Dynamic Languages
    Toolkit Project (DLTK).
       </description>
+   </category-def>
+   <category-def name="DLTK-Tests" label="Dynamic Languages Toolkit (DLTK) Tests">
    </category-def>
 </site>
