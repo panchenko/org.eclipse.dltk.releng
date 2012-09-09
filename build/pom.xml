@@ -24,8 +24,10 @@
 		<module>../../org.eclipse.dltk.python</module>
 		<module>../../org.eclipse.dltk.core/mylyn</module>
 		<module>update.site</module>
+<!--
 		<module>testplatform</module>
 		<module>javascript.tests</module>
+-->
 		<!-- <module>site</module> -->
 	</modules>
 

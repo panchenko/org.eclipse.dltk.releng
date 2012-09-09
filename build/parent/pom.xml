@@ -9,7 +9,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<tycho-version>0.12.0</tycho-version>
+		<tycho-version>0.15.0</tycho-version>
 		<tycho-groupid>org.eclipse.tycho</tycho-groupid>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<eclipse-repository-url>http://download.eclipse.org/releases/indigo/</eclipse-repository-url>
@@ -28,7 +28,7 @@
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
-				<artifactId>maven-osgi-packaging-plugin</artifactId>
+				<artifactId>tycho-packaging-plugin</artifactId>
 				<version>${tycho-version}</version>
 			</plugin>
 
@@ -45,7 +45,7 @@
 			</plugin>
 			<plugin>
 				<groupId>${tycho-groupid}</groupId>
-				<artifactId>maven-osgi-compiler-plugin</artifactId>
+				<artifactId>tycho-compiler-plugin</artifactId>
 				<version>${tycho-version}</version>
 			</plugin>
 
