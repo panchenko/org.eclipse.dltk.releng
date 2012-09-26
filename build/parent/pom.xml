@@ -69,6 +69,14 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<resolver>p2</resolver>
+					<target>
+						<artifact>
+							<groupId>org.eclipse.dltk</groupId>
+							<artifactId>parent</artifactId>
+							<version>1.0.0-SNAPSHOT</version>
+							<classifier>DLTK</classifier>
+						</artifact>
+					</target>
 					<environments>
 						<environment>
 							<os>linux</os>
