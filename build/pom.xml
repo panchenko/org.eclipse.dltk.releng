@@ -16,6 +16,7 @@
 	</parent>
 
 	<modules>
+		<module>targetplatform</module>
 		<module>../../org.eclipse.dltk.core/core</module>
 		<module>../../org.eclipse.dltk.javascript</module>
 		<module>../../org.eclipse.dltk.tcl</module>
